@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simosa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_simosa.css">
+    <style>
+        body {
+/*            background-color: #d3f9d8; /* Light green color */
+        }
+        .img-container {
+            display: flex;
+            flex-direction: column; /* Stack images vertically */
+            align-items: center; /* Center images horizontally */
+        }
+        .img-container img {
+            max-width: 100%; /* Responsive */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Space between images */
+        }
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <div class="watermark">Hamoon</div>
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>Q3: Does the Simosa app collect additional user credentials beyond those necessary for its functionality?</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">Yes</label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">No</label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">Submit</button>
+                    <!-- Feedback and Score will appear here -->
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <!-- Button group -->
+                    <div class="button-group">
+                        <a href="simosa_q2.html" class="btn btn-dark-pink">Back</a>
+                        <a href="simosa_q4.html" class="btn btn-dark-pink">Continue</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <img src="../pictures/reporter.png" alt="Pakistani Female" class="top-right-image">
+
+    <script>
+        // Retrieve score from localStorage or initialize to 0
+        let score = 2 || 0;
+
+        // Display initial score
+        document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
+
+        function checkAnswer() {
+            // Get the selected answer
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            
+            // Check if an option is selected
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+                const feedback = document.getElementById('feedback'); // Add feedback element reference
+
+                // Provide feedback based on the selected answer
+                if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-correct">Correct!</p> 
+                        <span>
+                            <p>Citizens use the Pak Identity app to request, update, and modify National Identity documents. The app does not require location coordinates to provide the promised service. It is not possible to use the app without allowing location permission. The location coordinates are transmitted to the app server at every log-in. That way it is possible for a (state) attacker to monitor and track the movements of an at-risk individual.</p>
+                           <span><p>The following images show the transmission of (exact) location coordinates to the app server.</p></span>
+                        </span> 
+                        <div class="img-container">
+                            <img src="pakistan_citizen_portal_authentication_req.png" alt="Extraneous PII">
+                        </div>
+                        <span><p> The image below again shows extraneous PII collection in the response message from the Pakistan Citizen Portal app server.</p></span>
+                        <div class="img-container">
+                            <img src="pakistancitizenportal_login_response.png" alt="Extraneous PII1">
+                        </div>
+                         <span><p> The image below is a continuation from the image above.</p></span>
+                        <div class="img-container">
+                            <img src="pakistancitizenportal_login_response_1.png" alt="Extraneous PII1">
+                        </div>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+
+                    // Increment score
+                    score = 3;
+                } else {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                    score = 2;
+                }
+
+                // Update score display and save to localStorage
+                document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
+                localStorage.setItem('score', score);
+            } else {
+                // No option selected
+                alert('Please select an answer.');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
