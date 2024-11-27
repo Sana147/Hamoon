@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pakistan Citizen Portal App</title>
+    <meta name="author" content="Hamoon"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9; /* Soft background color */
+            color: #333; /* Standard text color */
+            position: relative;
+        }
+        .navbar {
+            background-color: #ffffff; /* White navbar */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .navbar-nav .nav-link {
+            font-size: 1rem; /* Increased font size */
+        }
+        .main-content {
+            margin-top: 70px; /* Space below navbar */
+            padding: 20px;
+        }
+        .post-title, .large-bold-heading {
+            font-weight: bold; /* Make all headings bold */
+        }
+        .post-title {
+            font-size: 4rem; /* Increased title size */
+            color: #3399FF; /* Blue color */
+        }
+        .post-subtitle {
+            font-size: 3rem; /* Adjusted subtitle size */
+            color: #2C8E6D; /* Darker green for contrast */
+            margin-top: 0.5rem; /* Space above the subtitle */
+        }
+        .quote {
+            font-size: 1.5rem; /* Quote font size */
+            color: #555; /* Dark grey color */
+            margin-top: 2rem; /* Space above the quote */
+            font-style: italic; /* Italicize quote */
+            border-left: 4px solid #006400; /* Emphasis left border */
+            padding-left: 1rem; /* Space between border and text */
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Align buttons */
+            margin-top: 30px; /* Space above buttons */
+        }
+        .continue-button, .back-button {
+            width: 200px;
+            padding: 12px;
+            text-align: center;
+            font-size: 1.25rem; /* Unified font size */
+            background-color: #2C8E6D; /* Button color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .continue-button:hover, .back-button:hover {
+            background-color: #005C99; /* Darker on hover */
+        }
+        .large-bold-heading {
+            font-size: 2.5rem; /* Adjusted size */
+            color: #3399FF; /* Consistent color */
+            margin-top: 1.5rem; /* Space above */
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Align items vertically */
+            margin-bottom: 1rem; /* Space below header */
+        }
+        .header-image {
+            max-width: 150px; /* Set a max width for the image */
+            height: auto; /* Maintain aspect ratio */
+            margin-left: 20px; /* Space between text and image */
+        }
+        .email {
+            color: blue; /* Email color */
+        }
+        .package {
+            color: purple; /* Package color */
+        }
+        footer {
+            background-color: #2C8E6D; /* Updated footer color */
+            color: white; /* Footer text color */
+            text-align: center;
+            padding: 15px 0; /* Footer padding */
+            position: relative;
+            margin-top: 20px; /* Space above footer */
+        }
+    </style>
+</head>
+<body>
+    <div class="watermark">Hamoon</div>
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <div class="toggle-container">
+                            <a id="light-toggle"></a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container main-content">
+        <div class="post">
+            <header class="post-header">
+                <div class="header-container">
+                    <h1 class="post-title">Pakistan Citizen Portal App</h1>
+                    <img src="../pictures/pakistan_citizen_portal.png" alt="Pakistan Citizen Portal" class="header-image">
+                </div>
+                <h2 class="post-subtitle">(State-sponsored App)</h2>
+                <h3 class="spacing-between-headings">
+                    <p>The Pakistan Citizen Portal app is a grievance redressal system that allows citizens to put their complaints against government officials or private citizens. The app has 5M+ downloads and a rating of 3.5 stars out of 5 on Google Play Store.</p>
+                    <p>The developer email ID is: <span class="email">pmdu@pmo.gov.pk</span> and the app package is <span class="package">com.govpk.citizensportal.</span></p>
+                    <p>Are you ready to take the quiz and test your understanding of how to use the Pakistan Citizen Portal app (v3.2.18) securely? If yes, please select start quiz.</p>
+                </h3>
+                <h2 class="large-bold-heading">How the quiz works?</h2>
+                <h3 class="spacing-between-headings">
+                    <p>This quiz consists of ten questions, and there is no time limit. If you select an incorrect answer, the option to choose the correct answer will appear. Please ensure you select the correct answer for each question to understand the rationale behind it.</p>
+                </h3>
+            </header>
+            <article>
+                <!-- Add your article content here -->
+            </article>
+        </div>
+
+        <div class="button-container">
+            <button class="back-button" onclick="window.location.href='../continue.html'">Back</button>
+            <button class="continue-button" onclick="window.location.href='pakistan_citizen_portal_q1.html'">Start Quiz</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            © Copyright 2024 Anonymous Author. All Rights Reserved. Last updated: Sept 14, 2024.
+        </div>
+    </footer>
+
+    <!-- Include JS libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-DfXdz2htPH0lsSSs5nCTpuj/zy1z/2nN4R0CB5t8g3I=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha256-ZfQ7f0P1p2p/9JvQuDlbwn61A5qf1LpT5cVvWcC7Ylg=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-TX8tD8gR0ljA9OmNdIr14B8h8WIR7O3KzpVuIA0Jd8M=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
+
