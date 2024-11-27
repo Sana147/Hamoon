@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>uptcl App</title>
+    <meta name="author" content="Hamoon"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+    <style>
+        body {
+            /* background-color: #d3f9d8; /* Light green color */
+        }
+        .navbar-nav .nav-link {
+            font-size: 1rem; /* Increase font size of navigation tabs */
+        }
+        .main-content {
+            margin-top: 100px; /* Adjust this value as needed */
+        }
+        .post-title {
+            display: flex; /* Use flexbox */
+            justify-content: space-between; /* Space out elements */
+            align-items: center; /* Center vertically */
+        }
+        .post-title span.font-weight-bold {
+            color: #FF8C00; /* Dark green color */
+            font-size: 4rem; /* Increased font size */
+        }
+        .header-image {
+            max-width: 150px; /* Set a max width for the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .post-subtitle {
+            font-size: 3rem; /* Font size for main subheading */
+            color: #004d00; /* Darker green for contrast */
+            margin-top: 1rem; /* Space above the subheading */
+        }
+        .quote {
+            font-size: 1.5rem; /* Font size for quote */
+            color: #333; /* Dark grey color for contrast */
+            margin-top: 2rem; /* Space above the quote */
+            font-style: italic; /* Italicize the quote */
+            border-left: 4px solid #006400; /* Add a left border for emphasis */
+            padding-left: 1rem; /* Space between the border and the text */
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Align buttons to the sides */
+            margin-top: 20px; /* Space above buttons */
+        }
+        .continue-button, .back-button {
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.25rem; /* Unified font size */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem; /* Adjust size as needed */
+            color: rgba(0, 100, 0, 0.1); /* Light green color with transparency */
+            white-space: nowrap;
+            pointer-events: none; /* Prevent interaction */
+            user-select: none; /* Prevent selection */
+            z-index: -1; /* Send it to the background */
+            font-weight: bold;
+            text-align: center;
+        }        
+        
+        .continue-button {
+            background-color: #006400;
+            color: #fff;
+        }
+        .continue-button:hover {
+            background-color: #004d00;
+        }
+        .back-button {
+            background-color: #004d00;
+            color: #fff;
+        }
+        .back-button:hover {
+            background-color: #006400;
+        }
+        .spacing-between-headings {
+            margin-top: 1rem; /* Adjust this value to increase or decrease space */
+        }
+        .large-bold-heading {
+            font-size: 3rem; /* Adjust the size as needed */
+            font-weight: bold; /* Make the text bold */
+            color: #FF8C00; /* Dark green color for consistency */
+        }
+        .email {
+            color: blue; /* Set the email color to blue */
+        }
+        .package{
+            color: purple;
+        }
+        
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <div class="watermark">Hamoon</div>
+
+    <header>
+        <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse text-right" id="navbarNav">
+                    <ul class="navbar-nav ml-auto flex-nowrap">
+                        <div class="toggle-container">
+                            <a id="light-toggle"></a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="particles-js"></div>
+    <div class="container main-content mt-5">
+        <div class="post">
+            <header class="post-header">
+                <div class="post-title">
+                    <span class="font-weight-bold">UPTCL - App Up Your Life!</span>
+                    <img src="../pictures/uptcl.png" alt="uptcl logo" class="header-image">
+                </div>
+                <h2 class="post-subtitle">(State-sponsored App)</h2>
+                <h3 class="spacing-between-headings">
+                    <p>The UPTCL app is a telco app for Ufone subscribers and PTCL customers. The app has 10M+ downloads and a rating of 4.1 on Google Play Store. The app provides services for telecom management tasks such as making payments, changing to a different plan, and similar tasks.</p> 
+                    <p>The developer email ID is: <span class="email">google.developer@ufone.com</span> and the app package is <span class="package">com.ufoneselfcare.</span></p>
+                    <p>Are you ready to take the quiz and test your understanding of how to use the uptcl app securely? If yes, please select start quiz.</p>
+                </h3> 
+                <h2 class="large-bold-heading">How the quiz works?</h2> 
+                <h3 class="spacing-between-headings">This quiz consists of ten questions, and there is no time limit. If you select an incorrect answer, the option to choose the correct answer will appear. Please ensure you select the correct answer for each question to understand the rationale behind it.</h3> 
+            </header>
+            <article>
+                <!-- Add your article content here -->
+            </article>
+            <footer class="fixed-bottom">
+                <div class="container mt-0">
+                    © Copyright 2024 Anonymous Author. All Rights Reserved. Last updated: Sept 14, 2024.
+                </div>
+            </footer>
+            
+            <!-- Place the buttons here -->
+            <div class="button-container">
+                <button class="back-button" onclick="window.location.href='../continue.html'">Back</button>
+                <button class="continue-button" onclick="window.location.href='uptcl_q1.html'">Start Quiz</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Include JS libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
+
