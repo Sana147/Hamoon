@@ -73,15 +73,22 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>The Pakistan Citizen Portal app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is stolen, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, blood group, address, and profession from the cd /data/data/com.govpk. citizensportal/shared_prefs/userPref.xml directory.</p>
-                        <p>The following image shows redacted user credentials. </p></span> 
+                        <span><p> Yes, that is because the SIMOSA apps stores the phone number of the at-risk user in plaintext in the root directory of the Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/admob.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
                         <div class="img-container">
-                            <img src="pakistan_citizen_portal_android_file_system.png" alt="Spoofed Location Coordinates">
+                            <img src="jazz_os_information2_phonenumber.png" alt="User Mobile Number">
                         </div>
-                        <span><p>The image below is a continuation of the above image.</p></span>
+                        <span><p> A couple of user contacts to whom calls or SMS have been made is also stored in the root directory in Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/jazzB2C.prefs.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
                         <div class="img-container">
-                            <img src="pakistan_citizen_portal_android_file_system1_marked.png" alt="Spoofed Location Coordinates">
+                            <img src="jazz_androidfilesystemnumber.png" alt="Call History">
                         </div>
+                        <div class="img-container">
+                            <img src="jazz_androidfilesystemnumber1.png" alt="SMS History">
+                        </div>
+                        <span><p> Furthermore, the app also stores device details (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/databases/mixpanel-journal</span>).</p></span>
+                        <div class="img-container">
+                            <img src="jazz_os_information.png" alt="Device Details">
+                        </div>
+
 
                     `;
                     feedback.classList.add('feedback-correct');

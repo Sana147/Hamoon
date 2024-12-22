@@ -75,24 +75,11 @@
                 const feedback = document.getElementById('feedback'); // Add feedback element reference
 
                 // Provide feedback based on the selected answer
-                if (answerValue === 'yes') {
+                if (answerValue === 'no') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
                         <span>
-                            <p>Citizens use the Pak Identity app to request, update, and modify National Identity documents. The app does not require location coordinates to provide the promised service. It is not possible to use the app without allowing location permission. The location coordinates are transmitted to the app server at every log-in. That way it is possible for a (state) attacker to monitor and track the movements of an at-risk individual.</p>
-                           <span><p>The following images show the transmission of (exact) location coordinates to the app server.</p></span>
-                        </span> 
-                        <div class="img-container">
-                            <img src="pakistan_citizen_portal_authentication_req.png" alt="Extraneous PII">
-                        </div>
-                        <span><p> The image below again shows extraneous PII collection in the response message from the Pakistan Citizen Portal app server.</p></span>
-                        <div class="img-container">
-                            <img src="pakistancitizenportal_login_response.png" alt="Extraneous PII1">
-                        </div>
-                         <span><p> The image below is a continuation from the image above.</p></span>
-                        <div class="img-container">
-                            <img src="pakistancitizenportal_login_response_1.png" alt="Extraneous PII1">
-                        </div>
+                            <p>The SIMOSA app does not collect extraneous credentials from the user. The app only requires the mobile number and a One Time Password (OTP) sent to the mobile number to log into the app. </p>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -102,7 +89,7 @@
                 } else {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p> 
-                        <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span>
+                        <span><p>Please select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

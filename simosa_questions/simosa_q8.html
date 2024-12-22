@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q8: Is it possible to spoof PDF data via the Simosa?</p>
+                    <p>Q8: Is it possible to spoof PDF data via the SIMOSA?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -28,6 +28,13 @@
                             Yes
                         </label>
                     </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="inconclusive" value="inconclusive">
+                        <label class="form-check-label" for="inconclusive">
+                            Inconclusive
+                        </label>
+                    </div>
+
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
                         <label class="form-check-label" for="no">
@@ -62,33 +69,44 @@
             const form = document.getElementById('quizForm');
             const selectedOption = form.querySelector('input[name="answer"]:checked');
             
+            // Get feedback element
+            const feedback = document.getElementById('feedback');
+
             // Check if an option is selected
             if (selectedOption) {
                 const answerValue = selectedOption.value;
-                const feedback = document.getElementById('feedback');
 
                 // Provide feedback based on the selected answer
-                if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p class="feedback-correct">Correct!</p> 
-                    <span><p>The Pak Identity app server sends four distinct PDF files to the client device, each providing instructions for different tasks: taking and uploading photos, fingerprinting, making payments, and uploading documents. However, these PDF files could potentially be spoofed. If an at-risk user encounters a fake page—disguised as one of these instruction files—they might be prompted to re-enter their credentials, which could then be stolen.</p></span>
+                if (answerValue === 'inconclusive') {
+                    feedback.innerHTML = `
+                        <p class="feedback-correct">Correct!</p> 
+                        <span><p>While it is possible for a powerful adversary, such as an ISP with a trusted certificate, to intercept and spoof data, we were unable to replicate this in our experiments. Therefore, we consider this issue inconclusive for now. We will provide an update if there are any changes. </p> 
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
+                    // Increment score
+                    score = 2;
+                } else if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <span><p>Please select the correct answer, "Inconclusive" to learn the reason.</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove previous feedback styles
+                    score = 1; // Maintain score as is
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> 
-                    <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span>
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <span><p>Please select the correct answer, "Inconclusive" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
-                    score = 7;
+                    score = 1;
                 }
 
-                // Increment score and update display
-                if (answerValue === 'yes') {
-                    score += 1;
-                }
-                document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+                // Update score display and save to localStorage
+                document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
                 localStorage.setItem('score', score);
             } else {
                 // No option selected

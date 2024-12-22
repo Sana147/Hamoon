@@ -31,8 +31,8 @@
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="inconclusive" value="inconclusive">
-                        <label class="form-check-label" for="maybe">
-                            Maybe
+                        <label class="form-check-label" for="inconclusive">
+                            Inconclusive
                         </label>
                     </div>
                     <div class="form-check answer">
@@ -78,15 +78,11 @@
                 const answerValue = selectedOption.value;
 
                 // Provide feedback based on the selected answer
-                if (answerValue === 'maybe') {
+                if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>It is possible for a powerful adversary (such as an ISP with a trusted certificate) to see the location coordinates in plaintext, intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server.</p> 
-                        <p>That allows a powerful adversary to plant fake evidence indicating the presence of an at-risk user at a geo-location at a time. This effect becomes pronounced in the context of recent events in Pakistan, where geo-fencing and geo-tracking technologies were used to make arbitrary arrests of protestors.</p>
-                        <p> The image below shows spoofed location data.</p></span>
-                        <div class="img-container">
-                            <img src="pakistan_citizen_portal_spoofed_location_coordinates.png" alt="Spoofed Location Coordinates">
-                        </div>
+                        <span><p>While it is possible for a powerful adversary (such as an ISP with a trusted certificate) to see the location coordinates in plaintext, intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server.</p> 
+                        <p>We were unable to do so in our experiments. That is why we mark this as inconclusive for now. We will update here if we get more information.</p>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -96,7 +92,7 @@
                 } else if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p> 
-                        <span><p>Please select the correct answer, "Maybe" to learn the reason.</p></span>
+                        <span><p>Please select the correct answer, "Inconclusive" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove previous feedback styles
@@ -104,7 +100,7 @@
                 } else {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p> 
-                        <span><p>Please select the correct answer, "Maybe" to learn the reason.</p></span>
+                        <span><p>Please select the correct answer, "Inconclusive" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

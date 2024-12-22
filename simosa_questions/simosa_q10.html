@@ -20,13 +20,13 @@
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
                         <label class="form-check-label" for="yes">
-                            Yes, and one way to go about that is to change password frequently. 
+                            Yes. 
                         </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
                         <label class="form-check-label" for="no">
-                            No, it is not a problem. 
+                            No. 
                         </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">Submit</button>
@@ -65,13 +65,13 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Correct!</p>
-                    <span><p> The Pak Identity app does not contain an embedded trusted certificate. So, it is not possible to do Machine in The Middle unless the ISP has a trusted certificate.</p></span>
+                    <span><p> This is a significant issue. One way to mitigate the risk is to be cautious if you receive an OTP that you did not request, as it could indicate a potential compromise of your account.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>The correct answer is Yes.</p></span> 
+                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select the correct answer, "Yes" to learn the reason</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

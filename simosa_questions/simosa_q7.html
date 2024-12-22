@@ -72,7 +72,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Correct!</p> 
-                    <span><p>SSL pinning is a technique that helps to prevent MITM attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. </p></span>
+                    <span><p>SSL pinning is a technique that helps to prevent MITM attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. The SIMOSA app uses SSL pinning, which is a good thing. </p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
