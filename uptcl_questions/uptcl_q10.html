@@ -3,36 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uptcl</title>
+    <title>UPTCL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_uptcl.css">
-    <style>
-        body {
-/*            background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
-</head>
 
+</head>
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
-
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q10: The uptcl app does not has the feature to detect unknown login activity. Is this a problem and how to go about it?</p>
+                    <p>Q10: The UPTCL app does not has the feature to detect unknown login activity. Is this a problem and how to go about it?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
                         <label class="form-check-label" for="yes">
-                            Yes, and one way to go about that is to change password frequently. 
+                            Yes. 
                         </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
                         <label class="form-check-label" for="no">
-                            No, it is not a problem. 
+                            No. 
                         </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">Submit</button>
@@ -41,15 +35,15 @@
                     <div id="score" class="feedback"></div>
                     <!-- Button group -->
                     <div class="button-group">
-                        <a href="uptcl_q9.html" class="btn btn-dark-green">Back</a>
-                        <a href="../continue.html" class="btn btn-dark-green">Continue</a>
+                        <a href="uptcl_q9.html" class="btn btn-dark-pink">Back</a>
+                        <a href="../continue.html" class="btn btn-dark-pink">Continue</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
- 
-    <img src="../pictures/pakistani_female.png" alt="Pakistani Female" class="top-right-image">
+
+    <img src="../pictures/pakistani_female.jpg" alt="Pakistani Female" class="top-right-image">
 
     <script>
         // Retrieve score from localStorage or initialize to 0
@@ -71,13 +65,13 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Correct!</p>
-                    <span><p> The Pak Identity app does not contain an embedded trusted certificate. So, it is not possible to do Machine in The Middle unless the ISP has a trusted certificate.</p></span>
+                    <span><p> This is a significant issue. One way to mitigate the risk is to be cautious if you receive an OTP that you did not request, as it could indicate a potential compromise of your account.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>The correct answer is Yes.</p></span> 
+                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select the correct answer, "Yes" to learn the reason</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

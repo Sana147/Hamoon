@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q6: Does the uptcl app have root detection?</p>
+                    <p>Q6: Does the UPTCL app have root detection?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <img src="../pictures/pakistani_female.png" alt="Pakistani Female" class="top-right-image">
+    <img src="../pictures/pakistani_female.jpg" alt="Pakistani Female" class="top-right-image">
 
 
     <script>
@@ -69,10 +69,10 @@
                 const feedback = document.getElementById('feedback');
 
                 // Provide feedback based on the selected answer
-                if (answerValue === 'no') {
+                if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct">Correct!</p> 
                     <span><p>Root detection means that the app cannot be installed on a rooted phone. A rooted phone is an Android device that has been modified to gain superuser access, also known as root access. This process allows users to bypass the limitations imposed by the device manufacturer and the OS, granting them full control over the phone’s software and settings.</p> 
-                    <p>The Pak Identity app can be installed on a rooted phone, as the device does not have root detection. That is not a security issue per se. However, suppose a user has installed the app on a rooted phone, and the rooted phone is stolen or confiscated (by state actors). In that case, the attackers can exfiltrate user credentials from the Android File System in plaintext and use that to monitor an at-risk user. </p></span>
+                    <p>The UPTCL app cannot be installed on a rooted phone, as the app has root detection.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

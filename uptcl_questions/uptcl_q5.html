@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q5: Should you be concerned if your phone is rooted, the uptcl app is installed on it, and your device is confiscated?</p>
+                    <p>Q5: Should you be concerned if your phone is rooted, the UPTCL app is installed on it, and your device is confiscated?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <img src="../pictures/pakistani_female.png" alt="Pakistani Female" class="top-right-image">
+    <img src="../pictures/pakistani_female.jpg" alt="Pakistani Female" class="top-right-image">
 
     <script>
         // Retrieve score from localStorage or initialize to 0
@@ -68,17 +68,9 @@
                 const feedback = document.getElementById('feedback');
 
                 // Provide feedback based on the selected answer
-                if (answerValue === 'yes') {
+                if (answerValue === 'no') {
                     feedback.innerHTML = `<p class="feedback-correct"> Correct!</p> 
-                    <span><p>That is because the app stores user credentials in plaintext in the Android File System. These credentials include full name, password, email ID, and location coordinates. The attacker after exfiltrating the user credentials can spy on an at-risk user.</p>
-                        <p>The following image shows redacted user credentials. </p></span> 
-                        <div class="img-container">
-                            <img src="pakistan_citizen_portal_android_file_system.png" alt="Spoofed Location Coordinates">
-                        </div>
-                        <span><p>The image below is a continuation of the above image.</p></span>
-                        <div class="img-container">
-                            <img src="pakistan_citizen_portal_android_file_system1_marked.png" alt="Spoofed Location Coordinates">
-                        </div>
+                    <span><p>That is because the app does not store user credentials in plaintext in the root directory of the Android File System.</p>
                         `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -87,7 +79,7 @@
                     score = 5;
                 } else {
                     feedback.innerHTML = `<p class="feedback-incorrect">Incorrect!</p> 
-                    <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>`;
+                    <span><p> Please select the correct answer, "No" to learn the reason.</p></span>`;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
                     score = 4;

@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q4: Should concerns arise if you have a rooted phone, the uptcl app is installed on the device, and your phone is subsequently stolen?</p>
+                    <p>Q4: Should concerns arise if you have a rooted phone, the UPTCL app is installed on the device, and your phone is subsequently stolen?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -49,7 +49,7 @@
             </div>
         </div>
     </div>
-    <img src="../pictures/pakistani_female.png" alt="Pakistani Female" class="top-right-image">
+    <img src="../pictures/pakistani_female.jpg" alt="Pakistani Female" class="top-right-image">
 
     <script>
         // Retrieve score from localStorage or initialize to 0
@@ -72,15 +72,7 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>The Pakistan Citizen Portal app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is stolen, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, blood group, address, and profession from the cd /data/data/com.govpk. citizensportal/shared_prefs/userPref.xml directory.</p>
-                        <p>The following image shows redacted user credentials. </p></span> 
-                        <div class="img-container">
-                            <img src="pakistan_citizen_portal_android_file_system.png" alt="Spoofed Location Coordinates">
-                        </div>
-                        <span><p>The image below is a continuation of the above image.</p></span>
-                        <div class="img-container">
-                            <img src="pakistan_citizen_portal_android_file_system1_marked.png" alt="Spoofed Location Coordinates">
-                        </div>
+                        <span><p>Even though the UPTCL app does not store user credentials in plaintext in the root directory of the Android File System, the app lacks a user specified password. If the device is stolen and the attacker is aware of victim's phone number, the attacker can enter victim's phone number, receive a One Time Password (OTP) on the phone and log into the app. Once logged into the app, the attacker can get access to user's call history, SMS history, for specific periods of time. Moreover, the attacker may also be able to download the tax certificate that contains details such as full name, physical address, and citizen identity number.</p>
 
                     `;
                     feedback.classList.add('feedback-correct');
