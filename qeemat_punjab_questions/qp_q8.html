@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q8: Is it possible to spoof PDF data via the Qeemat Punjab app?</p>
+                    <p>Q8: Is it possible to spoof PDF data through the Qeemat Punjab app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -80,7 +80,10 @@
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>The My Telenor app gives the option to download the PDF file for Tax Certificate on the mobile device or have it sent to the email ID. </p> 
+                        <span><p>The Qeemat Punjab app does not use PDF files for data storage or transmission, which removes the risk of spoofing PDF data. However, there is a potential vulnerability in the app related to JSON data, where attackers can spoof and tamper with the prices of agri-poultry products. The images below illustrate this, showing the original prices (left) and the spoofed prices (right). </p> 
+                    <img src="qeemat_punjab_orig_prices.png" alt="original" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
+                    <img src="qeemat_punjab_fuzzed_prices.png" alt="fuzzed" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
+</span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

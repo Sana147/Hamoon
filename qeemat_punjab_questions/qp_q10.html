@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q10: The Qeemat Punjab app does not has the feature to detect unknown login activity. Is this a problem and how to go about it?</p>
+                    <p>Q10: The Qeemat Punjab app lacks a feature to detect unknown login activity. Is this a potential security issue, and how can it be addressed?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -36,7 +36,7 @@
                     <!-- Button group -->
                     <div class="button-group">
                         <a href="qp_q9.html" class="btn btn-dark-pink">Back</a>
-                        <a href="../continue.html" class="btn btn-dark-pink">Continue</a>
+                        <a href="congrats.html" class="btn btn-dark-pink">Continue</a>
                     </div>
                 </form>
             </div>
@@ -65,13 +65,13 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Correct!</p>
-                    <span><p> This is a significant issue. One way to mitigate the risk is to be cautious if you receive an OTP that you did not request, as it could indicate a potential compromise of your account.</p></span>
+                    <span><p> This is a significant issue. One effective way to mitigate the risk is by changing the password regularly to enhance security.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select the correct answer, "Yes" to learn the reason</p></span> 
+                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select "Yes" to learn the reason</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

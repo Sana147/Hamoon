@@ -73,22 +73,14 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p> Yes, that is because the My Telenor apps stores the phone number of the at-risk user in plaintext in the root directory of the Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/admob.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
+                        <span><p> Yes, this is because the Qeemat Punjab app stores user credentials in plaintext within the root directory of the Android File System. Specifically, these credentials can be found at the following path: <span style="color: blue;">cd data/data/com.pitb.qeematpunjab/shared_prefs/focial-session.xml</span>. The image below displays redacted information, including the mobile number, email ID, national identity number, and other personal details of an individual stored in plaintext in the root directory of the Android File System.</p>
                         <div class="img-container">
-                            <img src="jazz_os_information2_phonenumber.png" alt="User Mobile Number">
-                        </div>
-                        <span><p> A couple of user contacts to whom calls or SMS have been made is also stored in the root directory in Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/jazzB2C.prefs.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
-                        <div class="img-container">
-                            <img src="jazz_androidfilesystemnumber.png" alt="Call History">
+                            <img src="qeemat_punjab_android_file_system.png" alt="User Mobile Number">
                         </div>
                         <div class="img-container">
-                            <img src="jazz_androidfilesystemnumber1.png" alt="SMS History">
+                            <img src="qeemat_punjab_android_file_system1.png" alt="Call History">
                         </div>
-                        <span><p> Furthermore, the app also stores device details (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/databases/mixpanel-journal</span>).</p></span>
-                        <div class="img-container">
-                            <img src="jazz_os_information.png" alt="Device Details">
-                        </div>
-
+                        <p>If the device is stolen, attackers may be able to extract the user credentials stored on it, potentially using this information to monitor or spy on at-risk individuals.</p></span>
 
                     `;
                     feedback.classList.add('feedback-correct');

@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q6: Does the Qeemat Punjab app have root detection?</p>
+                    <p>Q6: Does the Qeemat Punjab app has root detection capability?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -72,8 +72,8 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `<p class="feedback-correct">Correct!</p> 
-                    <span><p>Root detection means that the app cannot be installed on a rooted phone. A rooted phone is an Android device that has been modified to gain superuser access, also known as root access. This process of root detection allows users to bypass the limitations imposed by the device manufacturer and the OS, granting them full control over the phone’s software and settings.</p> 
-                    <p>The My Telenor app can be installed on a rooted phone, as the device does not have root detection. That is not a security issue per se. However, suppose a user has installed the app on a rooted phone, and the rooted phone is stolen or confiscated (by state actors). In that case, the attackers can exfiltrate user credentials that are stored in plaintext in the root directory of the Android File System and use that to monitor an at-risk user. </p></span>
+                    <span><p>Root detection is a security measure that prevents apps from being installed on rooted phones. A rooted phone refers to an Android device modified to grant superuser or root access, allowing users to bypass limitations imposed by the manufacturer and the operating system, thereby gaining complete control over the phone’s software and settings. </p>
+<p>The Qeemat Punjab app does not feature root detection, allowing users to install the app on rooted phones. While this in itself is not necessarily a security issue, it becomes a significant concern if the rooted phone is stolen or confiscated. This is because the app stores user credentials in plaintext within the root directory of the Android File System. If an attacker gains access to the device, they could extract these unencrypted credentials, potentially using the information to track or target vulnerable individuals..
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

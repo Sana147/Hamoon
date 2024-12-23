@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q5: Should you be concerned if your phone is rooted, the Qeemat Punjab app is installed on it, and your device is confiscated?</p>
+                    <p>Q5: Should you be concerned if your phone is rooted, the Qeemat Punjab app is installed, and your device is confiscated?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -71,21 +71,15 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct"> Correct!</p> 
-                        <span><p> Yes, the reason is same as for Q4. Because the My Zong app stores the phone number of the at-risk user in plaintext in the root directory of the Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/admob.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
-                        <div class="img-container">
-                            <img src="jazz_os_information2_phonenumber.png" alt="User Mobile Number">
-                        </div>
-                        <span><p> A couple of user contacts to whom calls or SMS have been made is also stored in the root directory in Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/jazzB2C.prefs.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
-                        <div class="img-container">
-                            <img src="jazz_androidfilesystemnumber.png" alt="Call History">
+                        <span><p> Yes, the reason is the same as for Question 4: the Qeemat Punjab app stores user credentials in plaintext within the root directory of the Android File System. Specifically, these credentials are located at: <span style="color: blue;">cd data/data/com.pitb.qeematpunjab/shared_prefs/focial-session.xml</span>. The image below shows redacted details, including the mobile number, email ID, national identity number, and other personal information, all stored in plaintext in the root directory of the Android File System.</p>
+                       <div class="img-container">
+                            <img src="qeemat_punjab_android_file_system.png" alt="User Mobile Number">
                         </div>
                         <div class="img-container">
-                            <img src="jazz_androidfilesystemnumber1.png" alt="SMS History">
+                            <img src="qeemat_punjab_android_file_system1.png" alt="Call History">
                         </div>
-                        <span><p> Furthermore, the app also stores device details (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/databases/mixpanel-journal</span>).</p></span>
-                        <div class="img-container">
-                            <img src="jazz_os_information.png" alt="Device Details">
-                        </div>                        `;
+                        <p>In the event of device confiscation, attackers can extract user credentials stored on the device, potentially using this information to monitor or spy on at-risk individuals. </p></span>
+                                                `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
