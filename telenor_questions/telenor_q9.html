@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q9: Is it possible to Machine in the Middle due to trusted certificate for the My Telenor app?</p>
+                    <p>Q9: Is it possible to Machine in the Middle due to the trusted certificate for the My Telenor app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -70,7 +70,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Correct!</p>
-                    <span><p> The My Zong app contains embedded certificates (<span style="color: blue;"> assets/golootlo_key_prod.pem</span> and <span style="color: blue;">  assets/zong-staging-public-key.pem</span>). So, it is possible to do Machine in The Middle.</p></span>
+                    <span><p> The My Telenor app contains embedded certificates (<span style="color: blue;">assets/cbg_root.cer</span> and <span style="color: blue;"> res/GX.pem</span>). So, it is possible to do Machine in The Middle.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

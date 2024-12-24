@@ -71,21 +71,17 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct"> Correct!</p> 
-                        <span><p> Yes, the reason is same as for Q4. Because the My Zong app stores the phone number of the at-risk user in plaintext in the root directory of the Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/admob.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
+                        <span><p> Yes, the reason is same as for Question 4. This is because the My Telenor app stores the phone number of the at-risk user in plaintext in the root directory of the Android file system (<span style="color: blue;">cd /data/data/com.telenor.pakistan.mytelenor/shared_prefs/PrefName.xml</span>). The image below shows the redacted mobile number of the at-risk individual stored in the root directory in plaintext.</p>
                         <div class="img-container">
-                            <img src="jazz_os_information2_phonenumber.png" alt="User Mobile Number">
+                            <img src="mytelenor_memoryforensics_marked.png" alt="User Mobile Number">
                         </div>
-                        <span><p> A couple of user contacts to whom calls or SMS have been made is also stored in the root directory in Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/jazzB2C.prefs.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
+                        <span><p> Another file also stores the mobile number of the at-risk user in plaintext in the root directory of the Android file system (<span style="color: blue;">cd /data/data/com.telenor.pakistan.mytelenor/shared_prefs/com.telenor.pakistan.mytelenor.xml</span>). The image below shows the redacted mobile number from this file.</p></span>
                         <div class="img-container">
-                            <img src="jazz_androidfilesystemnumber.png" alt="Call History">
+                            <img src="mytelenor_memoryforensics1_marked.png" alt="Call History">
                         </div>
-                        <div class="img-container">
-                            <img src="jazz_androidfilesystemnumber1.png" alt="SMS History">
-                        </div>
-                        <span><p> Furthermore, the app also stores device details (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/databases/mixpanel-journal</span>).</p></span>
-                        <div class="img-container">
-                            <img src="jazz_os_information.png" alt="Device Details">
-                        </div>                        `;
+<p> Please note that we used two different phone numbers during testing, that is why the images below show two separate redacted mobile numbers, the first one starting with <span style="color:purple;"> 0340</span> and the second one starting with <span style="color:purple;">0343</span>. </p>
+<p>To understand the attack path, consider a scenario where an at-risk user's device is stolen. The My Telenor app is installed on the device, but the attacker is unaware of the user's phone number. However, the attacker can extract the phone number from the root directory of the Android file system. Once the phone number is obtained, the attacker can use it to log into the app. Since the app does not require a user-specified password and only asks for a One-Time Password (OTP) sent to the mobile device, the attacker can gain access to the app simply by knowing the phone number. Once logged in, the attacker can access sensitive information, including the user's full name, call history (from the last fourteen days), SMS history (from the last fourteen days), and national identity number (via the tax certificate). </p></span>
+                        `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 

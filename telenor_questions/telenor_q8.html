@@ -77,10 +77,24 @@
                 const answerValue = selectedOption.value;
 
                 // Provide feedback based on the selected answer
-                if (answerValue === 'no') {
+                if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>The My Telenor app gives the option to download the PDF file for Tax Certificate on the mobile device or have it sent to the email ID. </p> 
+                        <span><p>The My Telenor app offers users the option to either download the Tax Certificate PDF directly to their mobile device or have it sent to the provided email address. However, in our experiments, we were unable to spoof the PDF file. We will provide updates if new results emerge.</p>
+
+<p>That said, we did find an interesting detail. When a user requests to download the tax certificate, the app transmits the user's mobile number and OTP to the app server. After successful authentication, the app server responds with a URL to retrieve the tax certificate. The request and response messages are shown in the images below.</p> 
+                        
+                        <div class="img-container">
+                            <img src="request_download_Tax_Certificate_marked.png" alt="User Mobile Number">
+                        </div>
+                        <div class="img-container">
+                            <img src="response_download_Tax_Certificate_marked.png" alt="User Mobile Number">
+                        </div>
+                        <p> Interestingly, the link can be accessed in any browser to retrieve the tax certificate without requiring authentication.</p>
+                        <div class="img-container">
+                            <img src="url_tax_mytelenor_marked.png" alt="User Mobile Number">
+                        </div> 
+                        <p>To understand the attack path, consider a scenario where the ISP possesses a valid TLS certificate. With this, the ISP can intercept and observe all traffic between the user's mobile phone and the app server. The user's mobile number is easily accessible as it is included in every request sent to the server. If the user requests to download the tax certificate, the attacker, positioned in the data path, can capture the URL for downloading the certificate. This URL can then be used to access the user's citizen identity number. Once the attacker has the user's mobile number and citizen identity number, they possess sufficient information to further target the user, potentially uncovering additional personal details such as the user's physical address, which could be exploited for surveillance purposes. </p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -90,7 +104,7 @@
                 } else if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p> 
-                        <span><p>Please select the correct answer, "No" to learn the reason.</p></span>
+                        <span><p>Please select the correct answer, "Inconclusive" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove previous feedback styles
@@ -98,7 +112,7 @@
                 } else {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p> 
-                        <span><p>Please select the correct answer, "No" to learn the reason.</p></span>
+                        <span><p>Please select the correct answer, "Inconclusive" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

@@ -81,8 +81,8 @@
                 if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>While it is possible for a powerful adversary (such as an ISP with a trusted certificate) to see the location coordinates in plaintext, intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server.</p> 
-                        <p>We were unable to do so in our experiments. That is why we mark this as inconclusive for now. We will update here if we get more information.</p>
+                        <span><p>While it is theoretically possible for a powerful adversary, such as an ISP with a trusted certificate, to intercept the communication, view the location coordinates in plaintext, and modify them with spoofed data before it is stored on the app's server, we were unable to replicate this in our experiments. As a result, we consider this issue inconclusive at the moment. We will provide an update if further information becomes available.</p>
+                        
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
