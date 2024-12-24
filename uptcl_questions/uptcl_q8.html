@@ -80,13 +80,13 @@
                 if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>While it is possible for a powerful adversary, such as an ISP with a trusted certificate, to intercept and spoof data, we were unable to replicate this in our experiments. Therefore, we consider this issue inconclusive for now. We will provide an update if there are any changes. </p> 
+                        <span><p>While it is possible for a powerful adversary, such as an ISP with a trusted certificate, to intercept and spoof PDF data exchanged between the app and the server via the tax certificate file, we were unable to replicate this in our experiments. As a result, we consider this issue inconclusive for now. We will provide an update if further developments occur.</p> 
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                     // Increment score
-                    score = 2;
+                    score += 1;
                 } else if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p> 
@@ -94,7 +94,7 @@
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove previous feedback styles
-                    score = 1; // Maintain score as is
+                    score = 7; // Maintain score as is
                 } else {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p> 
@@ -102,7 +102,7 @@
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
-                    score = 1;
+                    score = 7;
                 }
 
                 // Update score display and save to localStorage

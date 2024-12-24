@@ -36,7 +36,7 @@
                     <!-- Button group -->
                     <div class="button-group">
                         <a href="uptcl_q9.html" class="btn btn-dark-pink">Back</a>
-                        <a href="../continue.html" class="btn btn-dark-pink">Continue</a>
+                        <a href="congrats.html" class="btn btn-dark-pink">Continue</a>
                     </div>
                 </form>
             </div>
@@ -69,6 +69,7 @@
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+                    score += 1;
 
                 } else {
                     feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select the correct answer, "Yes" to learn the reason</p></span> 
@@ -76,11 +77,6 @@
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
                     score = 9;
-                }
-
-                // Increment score and update display
-                if (answerValue === 'no') {
-                    score += 1;
                 }
                 document.getElementById('score').textContent = `Your score is ${score} out of 10`;
                 localStorage.setItem('score', score);

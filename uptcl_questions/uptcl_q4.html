@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uptcl</title>
+    <title>UPTCL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_uptcl.css">
     <style>
         body {
 /*            background-color: #d3f9d8; /* Light green color */
         }
-        
+        .img-container {
+            display: flex;
+            flex-direction: column; /* Stack images vertically */
+            align-items: center; /* Center images horizontally */
+        }
+        .img-container img {
+            max-width: 100%; /* Responsive */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Space between images */
+        }
     </style>
 </head>
 
@@ -69,11 +78,11 @@
                 const feedback = document.getElementById('feedback');
 
                 // Provide feedback based on the selected answer
-                if (answerValue === 'yes') {
+                if (answerValue === 'no') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>Even though the UPTCL app does not store user credentials in plaintext in the root directory of the Android File System, the app lacks a user specified password. If the device is stolen and the attacker is aware of victim's phone number, the attacker can enter victim's phone number, receive a One Time Password (OTP) on the phone and log into the app. Once logged into the app, the attacker can get access to user's call history, SMS history, for specific periods of time. Moreover, the attacker may also be able to download the tax certificate that contains details such as full name, physical address, and citizen identity number.</p>
-
+                        <span><p>No, the UPTCL app cannot be installed on a rooted device because it has root detection capabilities. </p></span> 
+                        
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -82,7 +91,7 @@
                 } else {
                     feedback.innerHTML = `
                     <p class="feedback-incorrect">Incorrect!</p> 
-                    <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>
+                    <span><p> Please select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

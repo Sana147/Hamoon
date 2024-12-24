@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uptcl</title>
+    <title>UPTCL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_uptcl.css">
     <style>
@@ -76,6 +76,7 @@
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+                    score += 1;
 
                 } else {
                     feedback.innerHTML = `<p>Incorrect!</p> 
@@ -85,10 +86,6 @@
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
                 }
 
-                // Increment score and update display
-                if (answerValue === 'yes') {
-                    score += 1;
-                }
                 document.getElementById('score').textContent = `Your score is ${score} out of 10`;
                 localStorage.setItem('score', score);
                 score = 6;
