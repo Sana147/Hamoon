@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uptcl</title>
+    <title>UPTCL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_uptcl.css">
     <style>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="maybe" value="maybe">
-                        <label class="form-check-label" for="maybe">Maybe</label>
+                        <label class="form-check-label" for="maybe">With Caution!</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
@@ -91,7 +91,7 @@
                     score = 1;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>Incorrect!</p> <span><p>Please select the correct answer, "Maybe" to learn the reason.</p></span>
+                        <p class="feedback-incorrect"><p>Incorrect!</p> <span><p>Please select the correct answer, "With Caution!" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');
