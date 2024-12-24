@@ -79,7 +79,10 @@
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
                         <span>
-                            <p>The My Zong app does not collect extraneous credentials from the user. The app only requires the mobile number and a One Time Password (OTP) sent to the mobile number to log into the app. </p>
+                            <p>The My Zong app does not collect unnecessary user credentials. To log in, it only requires the mobile number and a One-Time Password (OTP) sent to that number. However, the app stores the user's full name, call history, and SMS history for the past fourteen days. Additionally, it allows users to download a tax certificate, which includes the mobile number and national identity number. The image below shows a tax certificate obtained via the My Zong app, with the user's mobile number and national identity number redacted for privacy. </p>
+                        <div class="img-container">
+                            <img src="My_Zong_Tax.png" alt="Qeemat Punjab Location Coordinates">
+                        </div>                  
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
