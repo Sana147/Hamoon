@@ -10,13 +10,13 @@
 
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
-    <img src="../pictures/reporter_blue.png" alt="Logo" class="top-left-image">
+    <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q4: Should concerns arise if you have a rooted phone, the Pak Identity app is installed on the device, and your phone is subsequently stolen?</p>
+                    <p>Q4: Should concerns arise if your phone is rooted, the Pak Identity app is installed, and the device is later stolen?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -66,8 +66,8 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>The Pak Identity app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is stolen, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, password, and location coordinates from the cd /data/data/pk.gov.nadra.pakid/databases directory.</p>
-                        <p>The following image shows redacted user credentials. </p></span> 
+                        <span><p>The Pak Identity app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is stolen, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, password, and location coordinates from the <span style="color: blue;">cd /data/data/pk.gov.nadra.pakid/databases</span> directory and use that to spy on at-risk users.</p>
+                        <p>The following image shows redacted user credentials that are stored in plaintext in the root directory of the Android File System. </p></span> 
                         <div class="img-container">
                             <img src="pak_identity_app_android_file_system.png" alt="Spoofed Location Coordinates">
                         </div>

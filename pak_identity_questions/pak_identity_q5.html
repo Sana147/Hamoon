@@ -8,16 +8,39 @@
     <link rel="stylesheet" href="style_pak_identity.css">
 </head>
 
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+        }
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+        }
+        .feedback-container img {
+            max-width: 350px; /* Adjust as needed */
+            margin-top: 10px; /* Space between text and image */
+        }
+        .top-right-image {
+            position: absolute; /* Position the image absolutely */
+            top: 10px; /* Adjust vertical position */
+            right: 10px; /* Adjust horizontal position */
+            max-width: 230px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
-    <img src="../pictures/reporter_blue.png" alt="Logo" class="top-left-image">
+    <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
 
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q5: Should you be concerned if your phone is rooted, the Pak Identity app is installed on it, and your device is confiscated?</p>
+                    <p>Q5: Should you be concerned if your phone is rooted, the Pak Identity app is installed, and your device is confiscated?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -66,8 +89,8 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct"> Correct!</p> 
-                    <span><p>The app stores user credentials in plaintext in the Android File System. These credentials include full name, password, email ID, and location coordinates. After exfiltrating the user credentials, the attacker can use them to spy on an at-risk user.</p>
-                        <p>The following image shows redacted user credentials. </p></span> 
+                    <span><p>Yes, the reason is same as for Question 4. The Pak Identity app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is confiscated, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, password, and location coordinates from the <span style="color: blue;">cd /data/data/pk.gov.nadra.pakid/databases</span> directory and use that to spy on at-risk users.</p>
+                        <p>The following image shows redacted user credentials that are stored in plaintext in the root directory of the Android File System. </p></span> 
                         <div class="img-container">
                             <img src="pak_identity_app_android_file_system.png" alt="Spoofed Location Coordinates">
                         </div>

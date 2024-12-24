@@ -8,17 +8,40 @@
     <link rel="stylesheet" href="style_pak_identity.css">
 </head>
 
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+        }
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+        }
+        .feedback-container img {
+            max-width: 100px; /* Adjust as needed */
+            margin-top: 5px; /* Space between text and image */
+        }
+        .top-right-image {
+            position: absolute; /* Position the image absolutely */
+            top: 5px; /* Adjust vertical position */
+            right: 10px; /* Adjust horizontal position */
+            max-width: 100px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+    
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
 
     <!-- Add the image at the top left corner -->
-    <img src="../pictures/reporter_blue.png" alt="Logo" class="top-left-image">
+    <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q1: Is it advisable to use the Pak Identity application while connected to a VPN?</p>
+                    <p>Q1: Is it recommended to use the Pak Identity application while connected to a VPN?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -27,6 +50,11 @@
                             No
                         </label>
                     </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="maybe" value="maybe">
+                        <label class="form-check-label" for="maybe">With Caution!</label>
+                    </div>
+
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
                         <label class="form-check-label" for="yes">
@@ -60,11 +88,10 @@
             if (selectedOption) {
                 const answerValue = selectedOption.value;
 
-                if (answerValue === 'no') {
+                if (answerValue === 'maybe') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p>
-                        <span><p>The Pak Identity app relies on location coordinates to verify user information. In Pakistan, the use of VPNs is generally discouraged unless they are officially registered. When a user employs a VPN while using the app, the Internet Service Providers (ISPs) may detect an IP address that does not match their service area, while the location coordinates indicate a position within Pakistan. This discrepancy allows ISPs to identify the use of a VPN by cross-checking the IP address with the reported location coordinates.</p> 
-                        <p>The image below shows location coordinates transmitted by the Pak Identity app to the app server along with email, password, and device OS.</p></span>
+                        <span><p>The Pak Identity app relies on location coordinates to verify user information. In Pakistan, the use of VPNs is generally discouraged unless they are officially registered. When a user employs a VPN while using the app, the Internet Service Providers (ISPs) may detect an IP  address that does not match their service area. At the same time, the location coordinates indicate a position within Pakistan. This discrepancy allows ISPs to identify the use of a VPN by cross-checking the IP address with the reported location coordinates. The image below shows location coordinates transmitted by the Pak Identity app to the app server along with email,  password, and device OS.</p></span>
                         <div class="img-container">
                             <img src="pak_identity_authentication_request.png" alt="Pak Identity Authentication Request">
                         </div>
@@ -76,7 +103,7 @@
                 } else {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p>
-                        <span>Please select the correct answer, "No" to learn the reason.</span></p>
+                        <span>Please select the correct answer, "With Caution!" to learn the reason.</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove correct feedback styling if previously applied

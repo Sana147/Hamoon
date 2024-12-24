@@ -10,7 +10,7 @@
 
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
-    <img src="../pictures/reporter_blue.png" alt="Logo" class="top-left-image">
+    <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
 
     <div class="container quiz-container">
         <div class="row">
@@ -65,8 +65,9 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>Citizens use the Pak Identity app to request, update, and modify National Identity documents. The app does not require location coordinates to provide the promised service. It is not possible to use the app without allowing location permission. The location coordinates are transmitted to the app server at every log-in. That way it is possible for a (state) attacker to monitor and track the movements of an at-risk individual.</p>
-                        <p>The following image shows the transmission of (exact) location coordinates to the app server. </p></span> 
+                        <span><p>Citizens use the Pak Identity app to request, update, and modify their National Identity documents. While location coordinates are not necessary to access these services, the app requires location permission to function. Upon every login, the app transmits the user's location coordinates to the app server. This creates a potential vulnerability, as a state actor or attacker could track the movements of at-risk individuals.</p>
+
+<p>The image below demonstrates the transmission of precise location coordinates to the app server. </p></span> 
                         <div class="img-container">
                             <img src="pak_identity_authentication_request.png" alt="Spoofed Location Coordinates">
                         </div>

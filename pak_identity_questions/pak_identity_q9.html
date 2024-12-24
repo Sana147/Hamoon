@@ -16,7 +16,7 @@
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
 
-    <img src="../pictures/reporter_blue.png" alt="Logo" class="top-left-image">
+    <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
 
     <div class="container quiz-container">
         <div class="row">
@@ -71,7 +71,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `<p>Correct!</p>
-                    <span><p> The Pak Identity app does not contain an embedded trusted certificate. So, it is not possible to do Machine in The Middle unless the ISP has a trusted certificate.</p></span>
+                    <span><p> The Pak Identity app does not include an embedded trusted certificate, making it resistant to Man-in-the-Middle (MitM) attacks unless the Internet Service Provider (ISP) possesses a trusted certificate.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

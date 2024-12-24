@@ -15,7 +15,7 @@
 </head>
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
-    <img src="../pictures/reporter_blue.png" alt="Logo" class="top-left-image">
+    <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
 
     <div class="container quiz-container">
         <div class="row">
@@ -72,9 +72,10 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct">Correct!</p> 
                     <span><p>The Pak Identity app server sends four distinct PDF files to the client device, each providing instructions for different tasks: taking and uploading photos, fingerprinting, making payments, and uploading documents. However, these PDF files could potentially be spoofed. If an at-risk user encounters a fake page—disguised as one of these instruction files—they might be prompted to re-enter their credentials, which could then be stolen.</p>
-                    <p> The following image shows the original PDF files containing guidelines for capturing fingerprints and the fuzzed PDF file.</p></span>
-                    <img src="pak_identity_fingerprint_guidelines_orig.png" alt="Police Officer" style="max-width: 150px; height: auto; vertical-align: middle; margin-left: 100px;">
-                    <img src="pak_identity_fingerprint_guidelines_fuzzed.jpg" alt="Police Officer" style="max-width: 150px; height: auto; vertical-align: middle; margin-left: 100px;">
+                    <p> The following image shows the original PDF files containing guidelines for capturing fingerprints and the fuzzed PDF file.</p>
+                    <img src="pak_identity_fingerprint_guidelines_orig.png" alt="Police Officer" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 30px;">
+                    <img src="pak_identity_fingerprint_guidelines_fuzzed.jpg" alt="Police Officer" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
+                    <p>In our experiments we replaced the original PDF  file with a spoofed one, which was successfully sent to the mobile device.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

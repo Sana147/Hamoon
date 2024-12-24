@@ -15,7 +15,7 @@
 
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
-    <img src="../pictures/reporter_blue.png" alt="Logo" class="top-left-image">
+    <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
 
     <div class="container quiz-container">
         <div class="row">
@@ -73,9 +73,7 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>It is possible for a powerful adversary (such as an ISP with a trusted certificate) to see the location coordinates in plaintext, intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server.</p> 
-                        <p>That allows a powerful adversary to plant fake evidence indicating the presence of an at-risk user at a geo-location at a time. This effect becomes pronounced in the context of recent events in Pakistan, where geo-fencing and geo-tracking technologies were used to make arbitrary arrests of protestors, journalists, and activists.</p>
-                        <p> The image below shows spoofed location data.</p></span>
+                        <span><p>A powerful adversary (such as an ISP with a trusted certificate) can see the location coordinates in plaintext,  intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server. That allows a powerful adversary to plant fake evidence indicating the presence of an at-risk user at a geo-location at a time. This effect becomes pronounced in the context of recent events in Pakistan, where local police used geo-fencing and geo-tracking technologies to make arbitrary arrests of protestors,  journalists, and activists. The image below shows spoofed location data.</p> 
                         <div class="img-container">
                             <img src="pak_identity_spoofed_location_coordinates.png" alt="Spoofed Location Coordinates">
                         </div>
