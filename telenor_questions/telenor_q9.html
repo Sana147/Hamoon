@@ -74,6 +74,7 @@
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+                    score += 1;
 
                 } else {
                     feedback.innerHTML = `<p>Incorrect!</p> 
@@ -81,13 +82,9 @@
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
-                    score = 7;
+                    score = 8;
                 }
 
-                // Increment score and update display
-                if (answerValue === 'yes') {
-                    score += 1;
-                }
                 document.getElementById('score').textContent = `Your score is ${score} out of 10`;
                 localStorage.setItem('score', score);
             } else {
