@@ -70,7 +70,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Correct!</p>
-                    <span><p> The SIMOSA app contains embedded certificates (<span style="color: blue;"> /assets/jazz_cert.crt</span> and <span style="color: blue;"> /assets/new_cert.der</span>). So, it is possible to do Machine in The Middle.</p></span>
+                    <span><p> The SIMOSA app contains embedded certificates (<span style="color: blue;"> /assets/jazz_cert.crt</span> and <span style="color: blue;"> /assets/new_cert.der</span>), which makes it susceptible to a Man-in-the-Middle (MITM) attack.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -81,7 +81,7 @@
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
-                    score = 7;
+                    score = 8;
                 }
 
                 // Increment score and update display

@@ -73,11 +73,11 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p> Yes, that is because the SIMOSA apps stores the phone number of the at-risk user in plaintext in the root directory of the Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/admob.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
+                        <span><p> Yes, that is because the SIMOSA apps stores the phone number of the at-risk user in plaintext in the root directory of the Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/admob.xml</span>). The image below shows redacted mobile number of the at-risk individual in plaintext in the root directory of the Android File System.</p></span>
                         <div class="img-container">
                             <img src="jazz_os_information2_phonenumber.png" alt="User Mobile Number">
                         </div>
-                        <span><p> A couple of user contacts to whom calls or SMS have been made is also stored in the root directory in Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/jazzB2C.prefs.xml</span>). The image below shows redacted mobile number of the at-risk individual in the root directory of the Android File System.</p></span>
+                        <span><p> A couple of user contacts to whom calls or SMS have been made is also stored in the root directory in Android File System (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/jazzB2C.prefs.xml</span>). The image below shows redacted mobile number of the at-risk individual in plaintext in the root directory of the Android File System.</p>
                         <div class="img-container">
                             <img src="jazz_androidfilesystemnumber.png" alt="Call History">
                         </div>
@@ -88,8 +88,7 @@
                         <div class="img-container">
                             <img src="jazz_os_information.png" alt="Device Details">
                         </div>
-
-
+<p>To understand the attack path, consider a scenario where an at-risk user's device is stolen. The SIMOSA app is installed on the device, but the attacker is unaware of the user's phone number. However, the attacker can extract the phone number from the root directory of the Android file system. Once the phone number is obtained, the attacker can use it to log into the app. Since the app does not require a user-specified password and only asks for a One-Time Password (OTP) sent to the mobile device, the attacker can gain access to the app simply by knowing the phone number. Once logged in, the attacker can access sensitive information, including the user's full name, call history (from the last thirty days), SMS history (from the last thirty days), and national identity number (via the tax certificate). </p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
