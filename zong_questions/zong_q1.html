@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="maybe" value="maybe">
-                        <label class="form-check-label" for="maybe">Maybe</label>
+                        <label class="form-check-label" for="maybe">With Caution!</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
@@ -95,14 +95,14 @@
                     score = 1;
                 } else if (answerValue === 'no') {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>Incorrect!</p> <span><p>Please select the correct answer, "Maybe" to learn the reason.</span></p>
+                        <p class="feedback-incorrect"><p>Incorrect!</p> <span><p>Please select the correct answer, "With Caution!" to learn the reason.</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');
                     score = 0;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>Incorrect!</p> <span><p>Please select the correct answer, "Maybe" to learn the reason.</span></p>
+                        <p class="feedback-incorrect"><p>Incorrect!</p> <span><p>Please select the correct answer, "With Caution!" to learn the reason.</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');
