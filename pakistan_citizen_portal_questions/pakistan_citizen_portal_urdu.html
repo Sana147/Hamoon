@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pakistan Citizen Portal App</title>
-    <meta name="author" content="Hamoon"/>
+    <title>پاکستان سیٹیزن پورٹل ایپ</title>
+    <meta name="author" content="حمون"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
@@ -14,57 +14,56 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="shortcut icon" href="/assets/img/favicon.png"/>
     <style>
-        h3 {
-            text-align: justify;
-        }
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9; /* Soft background color */
-            color: #333; /* Standard text color */
+            background-color: #f9f9f9;
+            color: #333;
             position: relative;
+            direction: rtl; /* Set text direction to right-to-left */
+            text-align: justify; /* Justify the text */
         }
         .navbar {
-            background-color: #ffffff; /* White navbar */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .navbar-nav .nav-link {
-            font-size: 1rem; /* Increased font size */
+            font-size: 1rem;
         }
         .main-content {
-            margin-top: 70px; /* Space below navbar */
+            margin-top: 70px;
             padding: 20px;
         }
         .post-title, .large-bold-heading {
-            font-weight: bold; /* Make all headings bold */
+            font-weight: bold;
         }
         .post-title {
-            font-size: 4rem; /* Increased title size */
-            color: #3399FF; /* Blue color */
+            font-size: 4rem;
+            color: #3399FF;
         }
         .post-subtitle {
-            font-size: 3rem; /* Adjusted subtitle size */
-            color: #2C8E6D; /* Darker green for contrast */
-            margin-top: 0.5rem; /* Space above the subtitle */
+            font-size: 3rem;
+            color: #2C8E6D;
+            margin-top: 0.5rem;
         }
         .quote {
-            font-size: 1.5rem; /* Quote font size */
-            color: #555; /* Dark grey color */
-            margin-top: 2rem; /* Space above the quote */
-            font-style: italic; /* Italicize quote */
-            border-left: 4px solid #006400; /* Emphasis left border */
-            padding-left: 1rem; /* Space between border and text */
+            font-size: 1.5rem;
+            color: #555;
+            margin-top: 2rem;
+            font-style: italic;
+            border-left: 4px solid #006400;
+            padding-left: 1rem;
         }
         .button-container {
             display: flex;
-            justify-content: space-between; /* Align buttons */
-            margin-top: 30px; /* Space above buttons */
+            justify-content: space-between;
+            margin-top: 30px;
         }
         .continue-button, .back-button {
             width: 200px;
             padding: 12px;
             text-align: center;
-            font-size: 1.25rem; /* Unified font size */
-            background-color: #2C8E6D; /* Button color */
+            font-size: 1.25rem;
+            background-color: #2C8E6D;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -72,42 +71,42 @@
             transition: background-color 0.3s;
         }
         .continue-button:hover, .back-button:hover {
-            background-color: #005C99; /* Darker on hover */
+            background-color: #005C99;
         }
         .large-bold-heading {
-            font-size: 2.5rem; /* Adjusted size */
-            color: #3399FF; /* Consistent color */
-            margin-top: 1.5rem; /* Space above */
+            font-size: 2.5rem;
+            color: #3399FF;
+            margin-top: 1.5rem;
         }
         .header-container {
             display: flex;
-            justify-content: space-between; /* Space between items */
-            align-items: center; /* Align items vertically */
-            margin-bottom: 1rem; /* Space below header */
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
         }
         .header-image {
-            max-width: 150px; /* Set a max width for the image */
-            height: auto; /* Maintain aspect ratio */
-            margin-left: 20px; /* Space between text and image */
+            max-width: 150px;
+            height: auto;
+            margin-left: 20px;
         }
         .email {
-            color: blue; /* Email color */
+            color: blue;
         }
         .package {
-            color: purple; /* Package color */
+            color: purple;
         }
         footer {
-            background-color: #2C8E6D; /* Updated footer color */
-            color: white; /* Footer text color */
+            background-color: #2C8E6D;
+            color: white;
             text-align: center;
-            padding: 15px 0; /* Footer padding */
+            padding: 15px 0;
             position: relative;
-            margin-top: 20px; /* Space above footer */
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="watermark">Hamoon</div>
+    <div class="watermark">حمون</div>
     <header>
         <nav class="navbar navbar-expand-sm fixed-top">
             <div class="container">
@@ -129,34 +128,34 @@
         <div class="post">
             <header class="post-header">
                 <div class="header-container">
-                    <h1 class="post-title">Pakistan Citizen Portal App</h1>
-                    <img src="../pictures/pakistan_citizen_portal.png" alt="Pakistan Citizen Portal" class="header-image">
+                    <h1 class="post-title">پاکستان سیٹیزن پورٹل ایپ</h1>
+                    <img src="../pictures/pakistan_citizen_portal.png" alt="پاکستان شہری پورٹل" class="header-image">
                 </div>
-                <h2 class="post-subtitle">(State-sponsored App)</h2>
+                <h2 class="post-subtitle">(ریاستی ایپ)</h2>
                 <h3 class="spacing-between-headings">
-                    <p>The Pakistan Citizen Portal app is a grievance redressal system that allows citizens to put their complaints against government officials or private citizens. The app has 5M+ downloads and a rating of 3.5 stars out of 5 on Google Play Store.</p>
-                    <p>The developer email ID is: <span class="email">pmdu@pmo.gov.pk</span> and the app package is <span class="package">com.govpk.citizensportal.</span></p>
-                    <p>Are you ready to take the quiz and test your understanding of how to use the Pakistan Citizen Portal app securely? If yes, please select start quiz.</p>
+                    <p>پاکستان سیٹیزن پورٹل ایپ ایک شکایت حل کرنے کا نظام ہے جس کے ذریعے شہری حکومتی افسران یا نجی افراد کے خلاف شکایات درج کر سکتے ہیں۔ اس ایپ کو 5 ملین سے زائد بار ڈاؤن لوڈ کیا گیا ہے اور اس کی گوگل پلے اسٹور پر 3.5 ستاروں کی درجہ بندی ہے۔</p>
+                    <p>ایپ کے ڈویلپر کا ای میل آئی ڈی: <span class="email">pmdu@pmo.gov.pk</span> اور ایپ کا پیکیج ہے <span class="package">com.govpk.citizensportal.</span></p>
+                    <p>کیا آپ تیار ہیں کہ آپ پاکستان شہری پورٹل ایپ کو محفوظ طریقے سے استعمال کرنے کے بارے میں اپنے علم کا امتحان لیں؟ اگر ہاں، تو براہ کرم "شروعات کریں" پر کلک کریں۔</p>
                 </h3>
-                <h2 class="large-bold-heading">How the quiz works?</h2>
+                <h2 class="large-bold-heading">کیا ہے یہ کوئز؟</h2>
                 <h3 class="spacing-between-headings">
-                    <p>This quiz consists of ten questions, and there is no time limit. If you select an incorrect answer, the option to choose the correct answer will appear. Please ensure you select the correct answer for each question to understand the rationale behind it.</p>
+                    <p>یہ کوئز دس سوالات پر مشتمل ہے، اور اس کا کوئی وقت کا پابند نہیں ہے۔ اگر آپ نے غلط جواب دیا تو درست جواب کا انتخاب کرنے کا آپشن آئے گا۔ براہ کرم ہر سوال کا صحیح جواب منتخب کریں تاکہ آپ اس کے پیچھے کی منطق کو سمجھ سکیں۔</p>
                 </h3>
             </header>
             <article>
-                <!-- Add your article content here -->
+                <!-- Your article content -->
             </article>
         </div>
 
         <div class="button-container">
-            <button class="back-button" onclick="window.location.href='../continue.html'">Back</button>
-            <button class="continue-button" onclick="window.location.href='pakistan_citizen_portal_q1.html'">Start Quiz</button>
+            <button class="back-button" onclick="window.location.href='../continue.html'">واپس</button>
+            <button class="continue-button" onclick="window.location.href='pakistan_citizen_portal_q1.html'">شروعات کریں</button>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            © Copyright 2024 Anonymous Author. All Rights Reserved. Last updated: Sept 14, 2024.
+            © Copyright 2024 گمنام مصنف. تمام حقوق محفوظ ہیں۔ آخری اپ ڈیٹ: 14 ستمبر 2024۔
         </div>
     </footer>
 

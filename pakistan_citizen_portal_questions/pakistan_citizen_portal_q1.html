@@ -8,17 +8,39 @@
     <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
 </head>
 
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+        }
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+        }
+        .feedback-container img {
+            max-width: 350px; /* Adjust as needed */
+            margin-top: 5px; /* Space between text and image */
+        }
+        .top-right-image {
+            position: absolute; /* Position the image absolutely */
+            top: 5px; /* Adjust vertical position */
+            right: 10px; /* Adjust horizontal position */
+            max-width: 350px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
 
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
-    <img src="../pictures/blue_green_female_reporter.png" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top right -->
+    <img src="../pictures/blue_green_female_reporter.jpeg" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top right -->
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question-container">
                     <div class="question">
-                        <p>Q1: Is it advisable to use the Pakistan Citizen Portal app while connected to a VPN?</p>
+                        <p>Q1: Is it recommended to use the Pakistan Citizen Portal app while connected to a VPN?</p>
                     </div>
                 </div>
                 <form id="quizForm">
