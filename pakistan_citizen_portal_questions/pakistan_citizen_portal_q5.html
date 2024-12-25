@@ -10,7 +10,7 @@
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
 
-    <img src="../pictures/blue_green_female_reporter.png" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top left -->
+    <img src="../pictures/blue_green_female_reporter.jpeg" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top left -->
 
     <div class="container quiz-container">
         <div class="row">
@@ -65,15 +65,14 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct"> Correct!</p> 
-                    <span><p>That is because the app stores user credentials in plaintext in the Android File System. These credentials include full name, mobile number, address, blook group, and religion. The attacker after exfiltrating the user credentials can spy on an at-risk user.</p>
-                        <p>The following image shows redacted user credentials. </p></span> 
+                        <span><p>Yes, the reason is the same as for Question 4. The Pakistan Citizen  Portal app stores user credentials in plaintext in the root directory of the Android File System. If an attacker confiscates the rooted device, an attacker can exfiltrate user credentials, including full name, email,  mobile number, citizen number, blood group, address, profession, and many more from the <span style="color: blue;">cd /data/data/com.govpk. citizensportal/shared_prefs/userPref.xml</span>cd /data/data/com.govpk. citizensportal/shared_prefs/userPref.xml</span> directory and use that to spy on at-risk users. The following images show redacted user credentials stored in plaintext in the root directory of the Android File System. </p></span> 
                         <div class="img-container">
                             <img src="pakistan_citizen_portal_android_file_system.png" alt="Spoofed Location Coordinates">
                         </div>
-                        <span><p>The image below is a continuation of the above image.</p></span>
                         <div class="img-container">
                             <img src="pakistan_citizen_portal_android_file_system1_marked.png" alt="Spoofed Location Coordinates">
                         </div>
+
                         `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

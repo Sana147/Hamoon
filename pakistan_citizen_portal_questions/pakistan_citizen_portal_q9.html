@@ -10,7 +10,7 @@
 </head>
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
-    <img src="../pictures/blue_green_female_reporter.png" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top left -->
+    <img src="../pictures/blue_green_female_reporter.jpeg" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top left -->
 
     <div class="container quiz-container">
         <div class="row">
@@ -63,20 +63,20 @@
                 const feedback = document.getElementById('feedback');
 
                 // Provide feedback based on the selected answer
-                if (answerValue === 'no') {
+                if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Correct!</p>
-                    <span><p> The Pakistan Citizen Portal app contains an embedded trusted certificate pmdu_gov_pk.crt in the folder:res/raw/. So, it is possible to do Machine in The Middle using a trusted certificate.</p></span>
+                    <span><p> The Pakistan Citizen Portal app contains an embedded trusted certificate, <span style="color:blue;">pmdu_gov_pk.crt</span>, located in the folder <span style="color:blue;">res/raw/</span>. This means that a Machine in the Middle (MitM) attack is possible, as the app relies on this trusted certificate for communication.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
                     feedback.innerHTML = `<p>Incorrect!</p> 
-                    <span><p> Please select the correct answer, "No" to learn the reason.</p></span>
+                    <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
-                    score = 7;
+                    score = 8;
                 }
 
                 // Increment score and update display

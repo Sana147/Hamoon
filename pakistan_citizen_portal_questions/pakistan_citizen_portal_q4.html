@@ -11,7 +11,7 @@
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
 
-    <img src="../pictures/blue_green_female_reporter.png" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top right -->
+    <img src="../pictures/blue_green_female_reporter.jpeg" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top right -->
 
     <div class="container quiz-container">
         <div class="row">
@@ -67,12 +67,10 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Correct!</p> 
-                        <span><p>The Pakistan Citizen Portal app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is stolen, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, blood group, address, and profession from the cd /data/data/com.govpk. citizensportal/shared_prefs/userPref.xml directory.</p>
-                        <p>The following image shows redacted user credentials. </p></span> 
+                        <span><p>The Pakistan Citizen Portal app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is stolen, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, blood group, address, profession, and many more from the <span style="color: blue;">cd /data/data/com.govpk. citizensportal/shared_prefs/userPref.xml</span> directory and use that to spy on at-risk users. The following images show redacted user credentials that are stored in plaintext in the root directory of the Android File System. </p></span> 
                         <div class="img-container">
                             <img src="pakistan_citizen_portal_android_file_system.png" alt="Spoofed Location Coordinates">
                         </div>
-                        <span><p>The image below is a continuation of the above image.</p></span>
                         <div class="img-container">
                             <img src="pakistan_citizen_portal_android_file_system1_marked.png" alt="Spoofed Location Coordinates">
                         </div>
