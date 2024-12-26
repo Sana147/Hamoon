@@ -6,11 +6,6 @@
     <title>simosa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_simosa.css">
-    <style>
-        body {
-/*            background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
 </head>
 
 <body class="fixed-top-nav">
@@ -71,14 +66,14 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
-                    feedback.innerHTML = `<p class="feedback-correct">Correct!</p> 
+                    feedback.innerHTML = `<p class="feedback-correct">Awesome! You nailed it.</p> 
                     <span><p>Root detection means the users cannot install the app on a rooted phone. A rooted phone is an Android device modified to gain superuser access, also known as root access. This process of root detection allows users to bypass the limitations imposed by the device manufacturer and the OS, granting them complete control over the phone’s software and settings.</p>
-<p>The SIMOSA app can be installed on a rooted phone, as the device does not have root detection. That is not a security issue per se. However, suppose a user has installed the app on a rooted phone, and the rooted phone is stolen or confiscated (by state actors). In that case, the attackers can exfiltrate user credentials stored in plaintext in the root directory of the Android File  System to monitor an at-risk user. </p></span>
+<p>The SIMOSA app can be installed on a rooted phone, as the app does not have root detection. That is not a security issue per se. However, suppose a user has installed the app on a rooted phone, and the rooted phone is stolen or confiscated (by state actors). In that case, the attackers can exfiltrate user credentials stored in plaintext in the root directory of the Android File  System to monitor an at-risk user. </p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
                 } else {
-                    feedback.innerHTML = `<p class="feedback-incorrect">Incorrect!</p>
+                    feedback.innerHTML = `<p class="feedback-incorrect">Oops, that's not quite right. Try again!</p>
                     <span><p> Please select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
