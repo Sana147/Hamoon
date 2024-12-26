@@ -64,7 +64,7 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p class="feedback-correct"> Correct!</p> 
+                    feedback.innerHTML = `<p class="feedback-correct"> Awesome! You nailed it.</p> 
                         <span><p>Yes, the reason is the same as for Question 4. The Pakistan Citizen  Portal app stores user credentials in plaintext in the root directory of the Android File System. If an attacker confiscates the rooted device, an attacker can exfiltrate user credentials, including full name, email,  mobile number, citizen number, blood group, address, profession, and many more from the <span style="color: blue;">cd /data/data/com.govpk. citizensportal/shared_prefs/userPref.xml</span>cd /data/data/com.govpk. citizensportal/shared_prefs/userPref.xml</span> directory and use that to spy on at-risk users. The following images show redacted user credentials stored in plaintext in the root directory of the Android File System. </p></span> 
                         <div class="img-container">
                             <img src="pakistan_citizen_portal_android_file_system.png" alt="Spoofed Location Coordinates">
@@ -80,7 +80,7 @@
                     // Increment score
                     score = 5;
                 } else {
-                    feedback.innerHTML = `<p class="feedback-incorrect">Incorrect!</p> 
+                    feedback.innerHTML = `<p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                     <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>`;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

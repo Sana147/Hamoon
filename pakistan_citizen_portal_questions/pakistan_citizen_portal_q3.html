@@ -61,7 +61,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">Correct!</p> 
+                        <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span>
                             <p>The Pakistan Citizen Portal app is a grievance redressal system designed to allow users to submit suggestions or file complaints against corrupt government officials. To submit a complaint, users must register on the app, a process that asks for excessive personal information, including full name, mobile number, date of birth, profession, religion, blood type, and other details. Many of these data points are unnecessary for providing the core service of filing complaints or suggestions. The image below shows the redacted user credentials collected by the app. </p>
                         <div class="img-container">
@@ -87,7 +87,7 @@
                     score = 3;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                         <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

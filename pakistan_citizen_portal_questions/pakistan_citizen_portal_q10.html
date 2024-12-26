@@ -63,7 +63,7 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p>Correct!</p>
+                    feedback.innerHTML = `<p>Awesome! You nailed it.</p>
                     <span><p> The Pakistan Citizen Portal app cannot detect login activity from unknown devices, which presents a significant security risk. If an attacker gains access to an at-risk user's account, they could perform malicious actions without the user's knowledge or warning, such as manipulating location coordinates.</p>
 <p>One way to mitigate this risk would be for users to change their passwords frequently, which can enhance security. However, a more robust solution would be implementing stronger authentication measures within the app, such as multi-factor authentication. This would provide a more vigorous defense against unauthorized access and protect users from potential security breaches.</p></span>
                     `;
@@ -71,7 +71,7 @@
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select the correct answer "Yes" to learn the reason.</p></span> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> <span><p>Please select the correct answer "Yes" to learn the reason.</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

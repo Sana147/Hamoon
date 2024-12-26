@@ -63,14 +63,14 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
-                    feedback.innerHTML = `<p class="feedback-correct">Correct!</p> 
+                    feedback.innerHTML = `<p class="feedback-correct">Awesome! You nailed it.</p> 
                     <span><p>The Pakistan Citizen Portal app does not provide information to users through PDF files. Instead, it utilizes JSON files to deliver data. Therefore, spoofing PDF data is not possible, as the app does not use PDFs for this purpose.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> 
                     <span><p>Please select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

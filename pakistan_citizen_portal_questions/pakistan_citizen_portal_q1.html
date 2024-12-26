@@ -61,7 +61,7 @@
                 if (answerValue === 'maybe') {
                     feedback.innerHTML = `
                         <div class="feedback-container">
-                            <p class="feedback-correct">Correct!</p>
+                            <p class="feedback-correct">Awesome! You nailed it.</p>
                             <span>
                                 <p>The Pakistan Citizen Portal app does not require location coordinates upon login. However, when submitting a complaint, the app mandates that location permissions be enabled; otherwise, the complaint cannot be submitted. Additionally, there is an option to <span style="color:blue";>"hide my identity"</span>, but if selected, a warning appears that says <span style="color:blue";>"Do not unnecessarily hide your identity"</span>, preventing the complaint from being submitted unless the user provides their identification. The image below shows the app's transmission of exact location coordinates with the device's IP address for complaint/suggestion submission.<p>
                         <div class="img-container">
@@ -75,7 +75,7 @@
                     score = 1;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>Incorrect!</p> <p><span>Please select the correct answer, "With Caution!" to learn the reason.</span></p>
+                        <p class="feedback-incorrect"><p>Oops, that's not quite right. Try again!</p> <p><span>Please select the correct answer, "With Caution!" to learn the reason.</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');
