@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ur"> <!-- Set language to Urdu -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاک آئیڈنٹیٹی ایپ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_pak_identity.css">
+    <style>
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif; /* Font that supports Urdu */
+            direction: rtl; /* Right to left direction */
+            text-align: right; /* Align text to the right */
+        }    
+    .form-check label {
+        margin-right: 50px; /* Adds space between the radio button and text */
+    }     
+    </style>
+</head>
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+    <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>سوال  نمبر 8: کیا پاک آئیڈنٹیٹی ایپ کے ذریعے پی ڈی ایف ڈیٹا کو جعلی بنایا جا سکتا ہے؟</p> <!-- Question translated to Urdu -->
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">
+                            ہاں <!-- "Yes" in Urdu -->
+                        </label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">
+                            نہیں <!-- "No" in Urdu -->
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button> <!-- Submit button in Urdu -->
+                    <!-- Feedback and Score will appear here -->
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <!-- Button group -->
+                    <div class="button-group">
+                        <a href="pak_identity_q7_u.html" class="btn btn-dark-blue">واپس  جائیں</a> <!-- "Back" in Urdu -->
+                        <a href="pak_identity_q9_u.html" class="btn btn-dark-blue">جاری رکھیں</a> <!-- "Continue" in Urdu -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve score from localStorage or initialize to 0
+        let score = 7 || 0;
+
+        // Display initial score in Urdu
+        document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+
+        function checkAnswer() {
+            // Get the selected answer
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            
+            // Check if an option is selected
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+                const feedback = document.getElementById('feedback');
+
+                // Provide feedback based on the selected answer
+                if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-correct">صحیح!</p> <!-- "Correct!" in Urdu -->
+                        <span>
+                            <p>پاک آئیڈنٹیٹی ایپ سرور کلائنٹ ڈیوائس کو چار مختلف پی ڈی ایف فائلیں بھیجتا ہے، جو مختلف کاموں کے لیے ہدایات فراہم کرتی ہیں: تصاویر لینا اور اپ لوڈ کرنا، فنگر پرنٹ لینا، ادائیگیاں کرنا، اور دستاویزات اپ لوڈ کرنا۔ تاہم، یہ پی ڈی ایف فائلیں جعلی بنائی جا سکتی ہیں۔ اگر کسی خطرے کا سامنا کرنے والے صارف کو جعلی صفحہ ملے جو ان ہدایات والی فائلوں میں سے کسی ایک کی طرح دکھ رہا ہو، تو وہ اپنے اسناد دوبارہ داخل کرنے کے لیے کہا جا سکتا ہے، جو پھر چوری ہو سکتی ہیں۔</p>
+                            <p>نیچے کی تصویر میں اصلی پی ڈی ایف فائلیں دکھائی گئی ہیں جو فنگر پرنٹس حاصل کرنے کی رہنمائی فراہم کرتی ہیں اور جعلی پی ڈی ایف فائل دکھائی گئی ہے۔</p>
+                            <img src="pak_identity_fingerprint_guidelines_orig.png" alt="Police Officer" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 30px;">
+                            <img src="pak_identity_fingerprint_guidelines_fuzzed.jpg" alt="Police Officer" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
+                            <p>ہمارے تجربات میں ہم نے اصلی پی ڈی ایف فائل کو جعلی کے ساتھ تبدیل کیا، جسے کامیابی کے ساتھ موبائل ڈیوائس کو بھیجا گیا۔</p>
+                        </span>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+
+                } else {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">غلط!</p> <!-- "Incorrect!" in Urdu -->
+                        <span><p> براہ کرم صحیح جواب "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                    score = 7;
+                }
+
+                // Increment score and update display
+                if (answerValue === 'yes') {
+                    score = 8;
+                }
+                document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+                localStorage.setItem('score', score);
+            } else {
+                // No option selected
+                alert('براہ کرم جواب منتخب کریں۔'); <!-- "Please select an answer" in Urdu -->
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
