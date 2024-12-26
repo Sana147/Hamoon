@@ -1,6 +1,6 @@
     <style>
        body {
-            background-color: #d3f9d8; /* Light green color */
+            background-color: #ffffff; /* Light green color */
         }
         
        body {
@@ -17,9 +17,9 @@
             margin-top: 10px; /* Space between text and image */
         }
         .top-right-image {
-/*            position: absolute; /* Positioning the image */
+            position: absolute; /* Positioning the image */
             top: 20px; /* Adjust as needed */
-            right: 20px; /* Adjust as needed */
+            left: 20px; /* Adjust as needed */
             max-width: 180px; /* Set a max width */
             height: auto; /* Maintain aspect ratio */       
         }
