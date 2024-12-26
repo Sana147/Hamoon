@@ -64,7 +64,7 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p>Correct!</p>
+                    feedback.innerHTML = `<p>Awesome! You nailed it.</p>
                     <span><p> This is a significant issue. One way to mitigate the risk is to be cautious if you receive an OTP that you did not request, as it could indicate a potential compromise of your account.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
@@ -72,7 +72,7 @@
                     score += 1;
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select the correct answer, "Yes" to learn the reason</p></span> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> <span><p>Please select the correct answer, "Yes" to learn the reason</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
