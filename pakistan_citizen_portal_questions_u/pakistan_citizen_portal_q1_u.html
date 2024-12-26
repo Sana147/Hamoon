@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاکستان سیٹیزن پورٹل ایپ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
+    <style>
+        /* Adding RTL (Right-to-Left) support */
+        body {
+        position: relative; /* Ensure the body is positioned for absolute elements */
+        font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
+        direction: rtl; /* Right to Left text direction */
+        text-align: right; /* Align text to the right */
+        }
+        
+        .watermark {
+            /* Optional styling for the watermark */
+            text-align: center;
+        }
+
+        .quiz-container .question-container .question {
+            text-align: right; /* Right-align the question text */
+        }
+
+        .form-check {
+            text-align: right; /* Right-align the answer choices */
+            margin-bottom: 10px; /* Space between radio buttons */
+        }
+
+        /* Adjust space between radio button and label */
+        .form-check-label {
+            margin-right: 50px; /* Adds space between the radio button and text */
+        }
+
+        .btn {
+            /* Optional button styling for RTL languages */
+            text-align: right;
+        }
+
+        /* Optional: Adjust the buttons for better spacing */
+        .btn-group {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+    <img src="../pictures/blue_green_female_reporter.jpeg" alt="پاکستان سٹیزن پورٹل لوگو" class="top-right-image"> <!-- Image at the top right -->
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question-container">
+                    <div class="question">
+                        <p>سوال نمبر 1 : کیا وی پی این سے منسلک رہتے ہوئے پاکستان سٹیزن پورٹل ایپ کو استعمال کرنے کا مشورہ دیا جاتا ہے؟</p>
+                    </div>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">نہیں</label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="maybe" value="maybe">
+                        <label class="form-check-label" for="maybe">احتیاط کے ساتھ!</label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">جی ہاں</label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کریں</button>
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <div class="button-group">
+                        <a href="pakistan_citizen_portal_u.html" class="btn btn-cool-green">واپس جائیں</a>
+                        <a href="pakistan_citizen_portal_q2_u.html" class="btn btn-cool-green">جاری رکھیں</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let score = 0;
+
+        function checkAnswer() {
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            const feedback = document.getElementById('feedback');
+            const scoreElement = document.getElementById('score');
+
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+
+                if (answerValue === 'maybe') {
+                    feedback.innerHTML = `
+                        <div class="feedback-container">
+                            <p class="feedback-correct">صحیح!</p>
+                            <span>
+                                <p>پاکستان سٹیزن پورٹل ایپ کو لاگ ان کرتے وقت مقام کے کوآرڈینیٹس کی ضرورت نہیں ہے۔ تاہم، جب شکایت درج کی جاتی ہے، تو ایپ یہ یقینی بنانے کے لئے مقام کی اجازتوں کو فعال کرنے کا تقاضا کرتی ہے، ورنہ شکایت درج نہیں کی جا سکتی۔ اس کے علاوہ، ایک آپشن ہے جس میں صارف اپنی شناخت چھپانے کا انتخاب کر سکتا ہے، لیکن اگر یہ منتخب کیا جائے تو ایک انتباہ ظاہر ہوتا ہے جس میں کہا جاتا ہے "اپنی شناخت غیر ضروری طور پر نہ چھپائیں"، جس سے شکایت جمع نہیں ہو سکتی جب تک صارف اپنی شناخت فراہم نہ کرے۔ نیچے کی تصویر ایپ کے ذریعہ شکایت یا تجویز کی سبمیشن کے لیے درست مقام کے کوآرڈینیٹس اور ڈیوائس کے آئی پی ایڈریس کی منتقلی کو دکھاتی ہے۔
+                                </p>
+                            <div class="img-container">
+                                <img src="pakistan_citizen_portal_suggestion_req1.png" alt="پاک شناخت کی تصدیق کی درخواست">
+                            </div>
+                            <p>اگر ایپ کو عمومی براؤزنگ یا شکایت کے علاوہ کسی اور مقصد کے لیے استعمال کیا جائے تو صارفین بغیر کسی مسئلے کے وی پی این استعمال کر سکتے ہیں۔ تاہم، اگر شکایت درج کرنے کے لیے وی پی این استعمال کیا جائے تو یہ صارف کے اصل مقام کو ظاہر کر سکتا ہے۔ آئی ایس پیز یہ پتہ لگا سکتے ہیں کہ درخواست ایک ایسے آئی پی ایڈریس سے آئی ہے جو ان کے نیٹ ورک سے باہر ہے، حالانکہ مقام کے کوآرڈینیٹس یہ ظاہر کرتے ہیں کہ صارف پاکستان میں ہے۔ چونکہ صارفین کو وی پی این کے استعمال کا اندراج کرنا ضروری ہے، اس لیے جو خطرے میں ہیں اور جنہوں نے ایسا نہیں کیا وہ زیادہ حساس ہو سکتے ہیں، کیونکہ آئی ایس پیز اس کا فائدہ اٹھا کر انہیں نشانہ بنا سکتے ہیں۔
+                            </p>
+                        </div>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect');
+
+                    score = 1;
+                } else {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect"><p>غلط!</p> <p><span>صحیح جواب منتخب کریں، "احتیاط کے ساتھ!" تاکہ آپ کو وجہ بتا سکیں۔</span></p>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct');
+                    score = 0;
+                }
+
+                document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+                localStorage.setItem('score', score);
+
+            } else {
+                alert('براہ کرم جواب منتخب کریں۔');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

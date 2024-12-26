@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاکستان سیٹیزن پورٹل ایپ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
+    <style>
+        /* Adding RTL (Right-to-Left) support */
+    body {
+        position: relative; /* Ensure the body is positioned for absolute elements */
+        font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
+        direction: rtl; /* Right to Left text direction */
+        text-align: right; /* Align text to the right */
+        }        
+        
+        .watermark {
+            /* Optional styling for the watermark */
+            text-align: center;
+        }
+
+        .quiz-container .question-container .question {
+            text-align: right; /* Right-align the question text */
+        }
+
+        .form-check {
+            text-align: right; /* Right-align the answer choices */
+            margin-bottom: 10px; /* Space between radio buttons */
+        }
+
+        /* Adjust space between radio button and label */
+        .form-check-label {
+            margin-right: 50px; /* Adds space between the radio button and text */
+        }
+
+        .btn {
+            /* Optional button styling for RTL languages */
+            text-align: right;
+        }
+
+        /* Optional: Adjust the buttons for better spacing */
+        .btn-group {
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+
+    <img src="../pictures/blue_green_female_reporter.jpeg" alt="پاکستان سیٹیزن پورٹل لوگو" class="top-right-image"> <!-- Image at the top right -->
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>سوال نمبر 2: کیا پاکستان سیٹیزن پورٹل ایپ کے ذریعے مقام کے کوآرڈینیٹس کو جعلی بنایا جا سکتا ہے؟</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">
+                            جی ہاں
+                        </label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">
+                            نہیں
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کریں</button>
+                    <!-- Feedback and Score will appear here -->
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <!-- Button group -->
+                    <div class="button-group">
+                        <a href="pakistan_citizen_portal_q1_u.html" class="btn btn-cool-green">واپس جائیں</a>
+                        <a href="pakistan_citizen_portal_q3_u.html" class="btn btn-cool-green">جاری رکھیں</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve score from localStorage or initialize to 0
+        let score = 1 || 0;
+
+        // Display initial score
+        document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+
+        function checkAnswer() {
+            // Get the selected answer
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            
+            // Get feedback element
+            const feedback = document.getElementById('feedback');
+
+            // Check if an option is selected
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+
+                // Provide feedback based on the selected answer
+                if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-correct">صحیح!</p> 
+                        <span><p>ایک طاقتور دشمن (جیسے کہ ایک ISP جس کے پاس اعتماد شدہ سرٹیفکیٹ ہے) مقام کے کوآرڈینیٹس کو صاف طور پر دیکھ سکتا ہے، مواصلات کو روک سکتا ہے، اور اسے جعلی مقام کے کوآرڈینیٹس سے تبدیل کر سکتا ہے اس سے پہلے کہ وہ ایپ سرور پر محفوظ ہو جائیں۔ اس سے ایک طاقتور دشمن کو جعلی ثبوت لگانے کی اجازت ملتی ہے جو کسی خطرے میں مبتلا صارف کو ایک مخصوص جغرافیائی مقام پر دکھاتا ہے۔ یہ اثر پاکستان میں حالیہ واقعات کے تناظر میں نمایاں ہو جاتا ہے جہاں مقامی پولیس نے جیو فینسنگ اور جیو ٹریکنگ ٹیکنالوجیز کا استعمال کیا تاکہ مظاہرین کو من مانی گرفتاریاں کی جا سکیں۔</p>
+                        <p>نیچے کی تصویر میں جعلی مقام کے ڈیٹا کو دکھایا گیا ہے جس میں <span style="color: green;">gps longitude</span>:<span style="color: red;">"0"</span> اور <span style="color: green;">gps_latitude</span>:<span style ="color: red;">"0"</span> ہے۔</p></span>
+                        <div class="img-container">
+                            <img src="pakistan_citizen_portal_spoofed_location_coordinates.png" alt="جعلی مقام کے کوآرڈینیٹس">
+                        </div>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+
+                    // Increment score
+                    score = 2;
+                } else {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">غلط!</p> 
+                        <span><p>براہ کرم صحیح جواب منتخب کریں، "جی ہاں" تاکہ آپ وجہ سمجھ سکیں۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                    score = 1;
+                }
+
+                // Update score display and save to localStorage
+                document.getElementById('score').textContent = `آپ کا سکور ${score} میں سے 10 ہے۔`;
+                localStorage.setItem('score', score);
+            } else {
+                // No option selected
+                alert('براہ کرم جواب منتخب کریں۔');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

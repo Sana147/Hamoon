@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاکستان سیٹیزن پورٹل ایپ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
+    <style>
+     body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+            font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
+            direction: rtl; /* Right to Left text direction */
+            text-align: right; /* Align text to the right */
+        }
+
+        .watermark {
+            text-align: center;
+        }
+
+        .quiz-container .question-container .question {
+            text-align: right; /* Right-align the question text */
+        }
+
+        .form-check {
+            text-align: right; /* Right-align the answer choices */
+            margin-bottom: 10px; /* Space between radio buttons */
+        }
+
+        .form-check-label {
+            margin-right: 50px; /* Adds space between the radio button and text */
+        }
+
+        .btn {
+            text-align: right;
+        }
+
+        .btn-group {
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+    <img src="../pictures/blue_green_female_reporter.jpeg" alt="پاکستان سیٹیزن پورٹل لوگو" class="top-right-image"> <!-- Image at the top left -->
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>سوال نمبر 8: کیا پاکستان سیٹیزن پورٹل ایپ کے ذریعے PDF ڈیٹا کو سپوف کیا جا سکتا ہے؟</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">
+                            جی ہاں
+                        </label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">
+                            نہیں
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کریں</button>
+                    <!-- Feedback and Score will appear here -->
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <!-- Button group -->
+                    <div class="button-group">
+                        <a href="pakistan_citizen_portal_q7_u.html" class="btn btn-cool-green">واپس جائیں</a>
+                        <a href="pakistan_citizen_portal_q9_u.html" class="btn btn-cool-green">جاری رکھیں</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve score from localStorage or initialize to 0
+        let score = 7 || 0;
+
+        // Display initial score
+        document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+
+        function checkAnswer() {
+            // Get the selected answer
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            
+            // Check if an option is selected
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+                const feedback = document.getElementById('feedback');
+
+                // Provide feedback based on the selected answer
+                if (answerValue === 'no') {
+                    feedback.innerHTML = `
+                        <p class="feedback-correct">صحیح!</p> 
+                        <span><p>پاکستان سیٹیزن پورٹل ایپ صارفین کو PDF فائلز کے ذریعے معلومات فراہم نہیں کرتی۔ اس کے بجائے یہ ڈیٹا فراہم کرنے کے لیے JSON فائلز کا استعمال کرتی ہے۔ اس لیے PDF ڈیٹا کو سپوف کرنا ممکن نہیں ہے کیونکہ ایپ اس مقصد کے لیے PDFs استعمال نہیں کرتی۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+
+                } else {
+                    feedback.innerHTML = `
+                    <p class="feedback-incorrect">غلط!</p>
+                    <span><p>براہ کرم صحیح جواب منتخب کریں، "نہیں" تاکہ آپ وجہ جان سکیں۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                }
+
+                // Increment score and update display
+                if (answerValue === 'yes') {
+                    score += 1;
+                }
+                document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+                localStorage.setItem('score', score);
+            } else {
+                // No option selected
+                alert('براہ کرم جواب منتخب کریں۔');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
