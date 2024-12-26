@@ -76,7 +76,7 @@
             margin-top: 20px; /* Space above the score */
         }
         
-       .top-left-image {
+       .top-right-image {
             position: absolute; /* Positioning it absolutely */
             top: 10px; /* Adjust as needed */
             right: 10px; /* Adjust as needed */
