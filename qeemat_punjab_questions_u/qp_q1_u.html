@@ -56,8 +56,8 @@
                     </div>                    
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">ہاں</label>
-                    </div>
+                        <label class="form-check-label" for="yes">جی ہاں</label>
+                    </div>                    
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کروائیں</button>
                     <div id="feedback" class="feedback"></div>
                     <div id="score" class="feedback"></div>
@@ -88,7 +88,7 @@
                 if (answerValue === 'maybe') {
                     feedback.innerHTML = `
                         <div class="feedback-container">
-                            <p class="feedback-correct">صحیح!</p>
+                        <p class="feedback-correct">صحیح جواب!</p>
                             <span>
                                 <p>قیمت پنجاب ایپ صارفین کو زرعی مصنوعات کی قیمتیں دیکھنے کی اجازت دیتی ہے بغیر مقام کی اجازت کے۔ تاہم، اگر صارفین کوئی تجویز دینا چاہتے ہیں یا بدعنوانی کی اطلاع دینا چاہتے ہیں، تو انہیں مقام کی اجازت دینے کی ضرورت ہوگی۔ اس اجازت کے بغیر، صارفین اپنی تجاویز یا شکایات درج نہیں کر سکتے۔ ایک بار اجازت دینے کے بعد، ایپ درست مقام کے کوآرڈینیٹ بھیجتی ہے۔</p>
                                 <p>ذیل میں وہ تصویر دکھائی گئی ہے جس میں ایپ کی جانب سے بھیجے گئے مقام کے کوآرڈینیٹ چھپے ہوئے ہیں۔</p>
@@ -113,7 +113,8 @@
                     score = 0;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>غلط!</p> <span><p>براہ کرم "احتیاط کے ساتھ!" منتخب کریں تاکہ وجہ سمجھ سکیں۔</span></p>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p>براہ کرم "احتیاط کے ساتھ!" منتخب کریں تاکہ وجہ سمجھ سکیں۔</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');

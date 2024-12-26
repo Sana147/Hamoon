@@ -3,9 +3,6 @@
             background-color: #d3f9d8; /* Light green color */
         }
         
-       body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
-        }
         .feedback-container {
             display: flex;
             flex-direction: column; /* Stack text and image vertically */
@@ -16,7 +13,7 @@
             max-width: 350px; /* Adjust as needed */
             margin-top: 10px; /* Space between text and image */
         }
-        .top-left-image {
+        .top-right-image {
             position: absolute; /* Position the image absolutely */
             top: 5px; /* Adjust vertical position */
             left: 70px; /* Adjust horizontal position */
@@ -74,6 +71,8 @@
         .btn-submit {
             background-color: #8B0000;
             border-color:   #8B0000;
+            display: flex;
+            justify-content: flex-end; 
         }
 
         .btn-dark-pink {
