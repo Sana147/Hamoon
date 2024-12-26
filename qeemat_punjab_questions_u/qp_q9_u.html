@@ -74,6 +74,7 @@
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+                    score += 1;
 
                 } else {
                     feedback.innerHTML = `<p class="feedback-incorrect">غلط جواب!</p>
@@ -83,10 +84,6 @@
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
                     score = 8;
                 }
-
-                // Increment score and update display
-                if (answerValue === 'yes') {
-                    score += 1;
                 }
                 document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
                 localStorage.setItem('score', score);
