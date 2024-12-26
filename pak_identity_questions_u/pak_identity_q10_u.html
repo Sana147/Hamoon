@@ -30,15 +30,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں، اور اس مسئلے کا ایک حل یہ ہو سکتا ہے کہ پاس ورڈ کو بار بار تبدیل کیا جائے۔
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں، اور اس مسئلے کا ایک حل یہ ہو سکتا ہے کہ پاس ورڈ کو بار بار تبدیل کیا جائے۔ </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں، یہ کوئی مسئلہ نہیں ہے۔
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں، یہ کوئی مسئلہ نہیں ہے۔ </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -74,7 +70,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p>
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span>
                             <p>پاک آئیڈنٹیٹی ایپ انجان ڈیوائسز سے لاگ ان کی سرگرمی کو نہیں پہچان سکتی، جو کہ ایک اہم سیکیورٹی رسک ہے۔ اگر ایک حملہ آور کسی خطرے میں مبتلا صارف کے اکاؤنٹ تک رسائی حاصل کر لے تو وہ صارف کے علم یا انتباہ کے بغیر بدنیتی پر مبنی کارروائیاں کر سکتا ہے، جیسے کہ مقام کی معلومات میں تبدیلی یا غیر مجاز لین دین۔
                             <br><br>
@@ -87,8 +83,8 @@
 
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p>
-                        <span><p>براہ کرم صحیح جواب "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p>براہ کرم صحیح جواب " جی ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

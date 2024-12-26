@@ -30,15 +30,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں <!-- "Yes" in Urdu -->
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں <!-- "No" in Urdu -->
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button> <!-- Submit button in Urdu -->
                     <!-- Feedback and Score will appear here -->
@@ -74,7 +70,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> <!-- "Correct!" in Urdu -->
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span>
                             <p>پاک آئیڈنٹیٹی ایپ سرور کلائنٹ ڈیوائس کو چار مختلف پی ڈی ایف فائلیں بھیجتا ہے، جو مختلف کاموں کے لیے ہدایات فراہم کرتی ہیں: تصاویر لینا اور اپ لوڈ کرنا، فنگر پرنٹ لینا، ادائیگیاں کرنا، اور دستاویزات اپ لوڈ کرنا۔ تاہم، یہ پی ڈی ایف فائلیں جعلی بنائی جا سکتی ہیں۔ اگر کسی خطرے کا سامنا کرنے والے صارف کو جعلی صفحہ ملے جو ان ہدایات والی فائلوں میں سے کسی ایک کی طرح دکھ رہا ہو، تو وہ اپنے اسناد دوبارہ داخل کرنے کے لیے کہا جا سکتا ہے، جو پھر چوری ہو سکتی ہیں۔</p>
                             <p>نیچے کی تصویر میں اصلی پی ڈی ایف فائلیں دکھائی گئی ہیں جو فنگر پرنٹس حاصل کرنے کی رہنمائی فراہم کرتی ہیں اور جعلی پی ڈی ایف فائل دکھائی گئی ہے۔</p>
@@ -88,8 +84,8 @@
 
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> <!-- "Incorrect!" in Urdu -->
-                        <span><p> براہ کرم صحیح جواب "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p> براہ کرم صحیح جواب " جی ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

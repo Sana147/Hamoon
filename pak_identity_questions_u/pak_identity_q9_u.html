@@ -31,15 +31,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں <!-- "No" in Urdu -->
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں <!-- "Yes" in Urdu -->
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button> <!-- Submit button in Urdu -->
                     <!-- Feedback and Score will appear here -->
@@ -75,7 +71,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> <!-- "Correct!" in Urdu -->
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span>
                             <p>پاک آئیڈنٹیٹی ایپ میں انبیڈڈ ٹرسٹڈ سرٹیفکیٹ شامل نہیں ہے، جس کی وجہ سے یہ مین ان دی مڈل (MitM) حملوں کے خلاف محفوظ ہے، جب تک کہ انٹرنیٹ سروس پرووائیڈر (ISP) کے پاس ٹرسٹڈ سرٹیفکیٹ نہ ہو۔</p>
                         </span>
@@ -85,7 +81,7 @@
 
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> <!-- "Incorrect!" in Urdu -->
+                        <p class="feedback-incorrect">غلط جواب!</p>
                         <span><p> براہ کرم صحیح جواب "نہیں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

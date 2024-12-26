@@ -30,15 +30,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں <!-- "Yes" in Urdu -->
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں <!-- "No" in Urdu -->
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button> <!-- Submit in Urdu -->
                     <!-- Feedback and Score will appear here -->
@@ -74,7 +70,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> <!-- "Correct!" in Urdu -->
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span>
                             <p>ایس ایس ایل پننگ ایک تکنیک ہے جو من ان دی مڈل (MITM) حملوں کو روکنے میں مدد دیتی ہے، جس میں ایپ یا ڈیوائس میں ایس ایس ایل/ٹی ایل ایس سرٹیفکیٹ کے پبلک کی کو ہارڈ کوڈ کیا جاتا ہے۔ اس کا مطلب یہ ہے کہ جب ایپ یا ڈیوائس سرور کے ساتھ بات چیت کرتی ہے، تو وہ سرور کے ایس ایس ایل/ٹی ایل ایس سرٹیفکیٹ کے پبلک کی کو ایپ یا ڈیوائس میں ہارڈ کوڈ کیے گئے کی کے ساتھ موازنہ کرے گی۔</p>
                             <p>نیچے کی تصویر میں ایپ کے سورس کوڈ (پیکیج کا نام: pk.gov.nadra.pakid) میں ایس ایس ایل پننگ کے نفاذ کے لیے okhttp3 لائبریری کا استعمال دکھایا گیا ہے۔</p>
@@ -88,8 +84,8 @@
 
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> <!-- "Incorrect!" in Urdu -->
-                        <span><p> براہ کرم صحیح جواب "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p> براہ کرم صحیح جواب " جی ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
