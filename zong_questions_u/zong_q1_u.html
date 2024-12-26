@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_zong.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -21,13 +20,6 @@
         .feedback-container img {
             max-width: 350px; /* Adjust as needed */
             margin-top: 10px; /* Space between text and image */
-        }
-        .top-right-image {
-            position: absolute; /* Position the image absolutely */
-            top: 10px; /* Adjust vertical position */
-            right: 10px; /* Adjust horizontal position */
-            max-width: 230px; /* Adjust as needed */
-            height: auto; /* Maintain aspect ratio */
         }
         .form-check label {
             margin-right: 50px; /* Adds space between the radio button and text */
@@ -58,7 +50,7 @@
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
                         <label class="form-check-label" for="yes">جی ہاں</label>
                     </div>
-                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کروائیں</button>
                     <div id="feedback" class="feedback"></div>
                     <div id="score" class="feedback"></div>
                     <div class="button-group">

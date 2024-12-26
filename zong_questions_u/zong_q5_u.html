@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_zong.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -30,17 +29,13 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                       جی      ہاں
-                        </label>
+                        <label class="form-check-label" for="yes">جی      ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں</label>
                     </div>
-                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کریں</button>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کروائیں</button>
                     <!-- Feedback and Score will appear here -->
                     <div id="feedback" class="feedback"></div>
                     <div id="score" class="feedback"></div>
