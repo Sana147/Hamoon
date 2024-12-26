@@ -20,7 +20,7 @@
             position: absolute; /* Position the image absolutely */
             top: 10px; /* Adjust vertical position */
             right: 10px; /* Adjust horizontal position */
-            max-width: 230px; /* Adjust as needed */
+            max-width: 180px; /* Adjust as needed */
             height: auto; /* Maintain aspect ratio */
         }
         .quiz-container {
