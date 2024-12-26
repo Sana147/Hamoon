@@ -71,6 +71,8 @@
         .btn-submit {
             background-color: #39FF14;
             border-color:   #39FF14;
+            display: flex;
+            justify-content: flex-end;             
         }
 
         .btn-dark-pink {
