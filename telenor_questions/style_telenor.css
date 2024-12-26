@@ -18,9 +18,9 @@
         }
         .top-right-image {
             position: absolute; /* Position the image absolutely */
-            top: 10px; /* Adjust vertical position */
-            right: 10px; /* Adjust horizontal position */
-            max-width: 230px; /* Adjust as needed */
+            top: 0px; /* Adjust vertical position */
+            right: 60px; /* Adjust horizontal position */
+            max-width: 200px; /* Adjust as needed */
             height: auto; /* Maintain aspect ratio */
         }
         .quiz-container {
