@@ -2,7 +2,7 @@
         body {
             background-color: #d3f9d8; /* Light green color */
         }
-
+        
         .quiz-container {
             margin-top: 20px;
         }
@@ -79,7 +79,7 @@
        .top-right-image {
             position: absolute; /* Positioning it absolutely */
             top: 10px; /* Adjust as needed */
-            right: 50px; /* Adjust as needed */
+            left: 50px; /* Adjust as needed */
             max-width: 250px; /* Adjust size as needed */
         }
 
