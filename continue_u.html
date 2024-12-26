@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ur"> <!-- Set the language to Urdu -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>حمون</title> <!-- Title in Urdu -->
+    <meta name="author" content="Hamoon"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+    <style>
+        body {
+            position: relative;
+            overflow: hidden; /* Prevent scrollbars caused by the watermark */
+            font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu */
+            background-color: #f9f9f9;
+            direction: rtl; /* Right to Left text direction */
+            text-align: right; /* Right-align text */
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem; /* Adjust size as needed */
+            color: rgba(0, 100, 0, 0.1); /* Light green color with transparency */
+            white-space: nowrap;
+            pointer-events: none; /* Prevent interaction */
+            user-select: none; /* Prevent selection */
+            z-index: -1; /* Send it to the background */
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .post-title span.font-weight-bold {
+            color: #006400; /* Dark green color */
+            font-size: 4rem; /* Decreased font size */
+        }
+        .post-subtitle {
+            font-size: 2.5rem; /* Adjusted subtitle size */
+            color: #004d00; /* Darker green for contrast */
+            margin-top: 0.5rem; /* Space above the subheading */
+        }
+
+        .navbar {
+            background-color: #ffffff; /* White navbar for contrast */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-nav .nav-link {
+            font-size: 1.5rem; 
+            color: #004d00; /* Dark green color */
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #006400;
+        }
+        .navbar-nav.ml-auto {
+            margin-left: auto !important; /* Align navbar to the right */
+        }
+
+        .main-content {
+            margin-top: 100px; 
+            padding: 20px;
+        }
+        
+        .text-right { text-align: right; } /* Added class for right alignment */
+        footer {
+            background-color: #006400; /* Footer background */
+            color: white;
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px 0; /* Increased padding */
+            position: relative;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 40px; /* Added bottom margin */
+        }
+        .image-container img {
+            max-width: 45%; /* Adjust size as needed */
+            margin: 0 20px; /* Spacing between images */
+        }
+        .square-buttons-container {
+            display: flex;
+            flex-direction: column; /* Arrange buttons in columns */
+            align-items: center; /* Center align the buttons horizontally */
+        }
+        .square-button-row {
+            display: flex;
+            justify-content: center; /* Center align buttons within each row */
+            gap: 20px; /* Space between buttons */
+            margin-bottom: 10px; /* Space between rows */
+        }
+        .square-button {
+            width: 200px; /* Increased width */
+            height: 200px; /* Increased height */
+            font-size: 2rem; /* Increased font size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #006400; /* Dark green background */
+            color: #fff;
+            border: none;
+            border-radius: 15px; /* Slightly rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background-size: cover; /* Ensure the image covers the button */
+            background-position: center; /* Center the image */
+            position: relative; /* Make sure content can be positioned absolutely */
+        }
+        .square-button:hover {
+            background-color: #004d00; /* Darker green for hover effect */
+        }
+        /* Specific style for button 1 */
+        .square-button-1 {
+            background-image: url('pictures/pak_identity.png'); /* Set image URL here */
+        }
+        /* Specific style for button 2 */
+        .square-button-2 {
+            background-image: url('pictures/pakistan_citizen_portal.png'); /* Set image URL here */
+        }
+        /* Specific style for button 3 */
+        .square-button-3 {
+            background-image: url('pictures/qeematpunjab.png'); /* Set image URL here */
+        }
+
+        /* Specific style for button 4 */
+        .square-button-4 {
+            background-image: url('pictures/simosa.png'); /* Set image URL here */
+        }
+         /* Specific style for button 5 */
+        .square-button-5 {
+            background-image: url('pictures/zong1.png'); /* Set image URL here */
+        }
+         /* Specific style for button 6 */
+        .square-button-6 {
+            background-image: url('pictures/telenor.png'); /* Set image URL here */
+        }
+        /* Specific style for button 7 */
+        .square-button-7 {
+            background-image: url('pictures/uptcl.png'); /* Set image URL here */
+        }
+        .square-button span {
+            display: none; /* Hide text content inside the button */
+        }
+    </style>
+</head>
+<body class="fixed-top-nav">
+    <header>
+        <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse text-right" id="navbarNav">
+                    <ul class="navbar-nav ml-auto flex-nowrap">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="homepage_urdu.html" data-en="Home" data-ur="گھر">گھر<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="background.html" data-en="Background" data-ur="پس منظر">پس منظر</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-en="About" data-ur="بارے میں">بارے میں</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="disclaimer.html" data-en="Disclaimer" data-ur="اعلان">اعلان</a>
+                        </li>
+                        <div class="toggle-container">
+                            <a id="light-toggle"></a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="particles-js"></div>
+    <div class="container main-content mt-5">
+        <div class="post">
+            <header class="post-header">
+                <h1 class="post-title">
+                    <span class="font-weight-bold">حمون: پاکستانی ایپس کی کہانی</span>
+                    <h2 class="post-subtitle">آپ کس ایپ کی سکیورٹی اور پرائیویسی کے بارے میں سب سے زیادہ جاننا چاہتے ہیں؟</h2>
+                </h1>
+            </header>
+        </div>
+    </div>
+    
+    <div class="square-buttons-container">
+        <div class="square-button-row">
+            <button class="square-button square-button-1" onclick="window.location.href='pak_identity_questions_u/pak_identity_u.html'"><span>1</span></button>
+            <button class="square-button square-button-2" onclick="window.location.href='pakistan_citizen_portal_questions_u/pakistan_citizen_portal_u.html'"><span>2</span></button>
+            <button class="square-button square-button-3" onclick="window.location.href='qeemat_punjab_questions_u/qp_u.html'"><span>3</span></button>
+            <button class="square-button square-button-4" onclick="window.location.href='simosa_questions_u/simosa_u.html'"><span>4</span></button>
+        </div>
+        <div class="square-button-row">
+            <button class="square-button square-button-5" onclick="window.location.href='zong_questions_u/zong_u.html'"><span>5</span></button>
+            <button class="square-button square-button-6" onclick="window.location.href='telenor_questions_u/telenor_u.html'"><span>6</span></button>
+            <button class="square-button square-button-7" onclick="window.location.href='uptcl_questions_u/uptcl_u.html'"><span>7</span></button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container mt-0">
+            © Copyright 2024 Anonymous Author. All Rights Reserved. Last updated: Dec 24, 2024.
+        </div>
+    </footer>
+
+    <!-- Include JS libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-DfXdz2htPH0lsSSs5nCTpuj/zy1z/2nN4R0CB5t8g3I=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha256-ZfQ7f0P1p2p/9JvQuDlbwn61A5qf1LpT5cVvWcC7Ylg=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-TX8tD8gR0ljA9OmNdIr14B8h8WIR7O3KzpVuIA0Jd8M=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
+
