@@ -6,11 +6,6 @@
     <title>Qeemat Punjab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_qp.css">
-    <style>
-        body {
-            /* background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
 </head>
 
 <body class="fixed-top-nav">
@@ -74,7 +69,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">Correct!</p> 
+                        <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span><p>It is indeed possible for a powerful adversary, like an Internet Service Provider (ISP) with access to a trusted certificate, to intercept and manipulate location coordinates. To illustrate this vulnerability, consider the snapshots below, which show the original location coordinates transmitted through the app along with the suggestion or complaint submitted by the user. These snapshots highlight how easily the location data can be tampered with by someone with malicious intent.</p> 
                         <div class="img-container">
                             <img src="qeemat_punjab_orig_loc.png" alt="Qeemat Punjab Location Coordinates">
@@ -99,7 +94,7 @@
                     score = 1; // Maintain score as is
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                         <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

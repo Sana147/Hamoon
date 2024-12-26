@@ -69,14 +69,14 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
-                    feedback.innerHTML = `<p>Correct!</p>
+                    feedback.innerHTML = `<p>Awesome! You nailed it.</p>
                     <span><p> The Qeemat Punjab app does not contain an embedded certificate. So, unless the attackers posses a valid TLS certificate, it is not possible to do MitM attack using this app.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> 
                     <span><p> Plesae select "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
@@ -85,7 +85,7 @@
                 }
 
                 // Increment score and update display
-                if (answerValue === 'yes') {
+                if (answerValue === 'no') {
                     score += 1;
                 }
                 document.getElementById('score').textContent = `Your score is ${score} out of 10`;

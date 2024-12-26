@@ -64,14 +64,14 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p>Correct!</p>
+                    feedback.innerHTML = `<p>Awesome! You nailed it.</p>
                     <span><p> This is a significant issue. One effective way to mitigate the risk is by changing the password regularly to enhance security.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select "Yes" to learn the reason</p></span> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> <span><p>Please select "Yes" to learn the reason</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
@@ -79,7 +79,7 @@
                 }
 
                 // Increment score and update display
-                if (answerValue === 'no') {
+                if (answerValue === 'yes') {
                     score += 1;
                 }
                 document.getElementById('score').textContent = `Your score is ${score} out of 10`;

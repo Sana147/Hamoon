@@ -3,9 +3,6 @@
             background-color: #d3f9d8; /* Light green color */
         }
         
-       body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
-        }
         .feedback-container {
             display: flex;
             flex-direction: column; /* Stack text and image vertically */
@@ -18,7 +15,7 @@
         }
         .top-right-image {
             position: absolute; /* Position the image absolutely */
-            top: 5px; /* Adjust vertical position */
+            top: 50px; /* Adjust vertical position */
             right: 70px; /* Adjust horizontal position */
             max-width: 130px; /* Adjust as needed */
             height: auto; /* Maintain aspect ratio */

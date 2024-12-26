@@ -79,7 +79,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">Correct!</p> 
+                        <p class="feedback-correct">CAwesome! You nailed it.</p> 
                         <span><p>The Qeemat Punjab app does not use PDF files for data storage or transmission, which removes the risk of spoofing PDF data. However, there is a potential vulnerability in the app related to JSON data, where attackers can spoof and tamper with the prices of agri-poultry products. The images below illustrate this, showing the original prices (left) and the spoofed prices (right). </p> 
                     <img src="qeemat_punjab_orig_prices.png" alt="original" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
                     <img src="qeemat_punjab_fuzzed_prices.png" alt="fuzzed" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
@@ -89,7 +89,7 @@
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                     // Increment score
-                    score = 2;
+                    score += 1;
                 } else if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Incorrect!</p> 
@@ -97,15 +97,15 @@
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove previous feedback styles
-                    score = 1; // Maintain score as is
+                    score = 7; // Maintain score as is
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                         <span><p>Please select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
-                    score = 1;
+                    score = 7;
                 }
 
                 // Update score display and save to localStorage

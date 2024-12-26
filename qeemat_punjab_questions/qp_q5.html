@@ -6,11 +6,6 @@
     <title>Qeemat Punjab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_qp.css">
-    <style>
-        body {
-/*            background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
 </head>
 
 <body class="fixed-top-nav">
@@ -70,7 +65,7 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p class="feedback-correct"> Correct!</p> 
+                    feedback.innerHTML = `<p class="feedback-correct"> Awesome! You nailed it.</p> 
                         <span><p> Yes, the reason is the same as for Question 4: the Qeemat Punjab app stores user credentials in plaintext within the root directory of the Android File System. Specifically, these credentials are located at: <span style="color: blue;">cd data/data/com.pitb.qeematpunjab/shared_prefs/focial-session.xml</span>. The image below shows redacted details, including the mobile number, email ID, national identity number, and other personal information, all stored in plaintext in the root directory of the Android File System.</p>
                        <div class="img-container">
                             <img src="qeemat_punjab_android_file_system.png" alt="User Mobile Number">
@@ -86,7 +81,7 @@
                     // Increment score
                     score = 5;
                 } else {
-                    feedback.innerHTML = `<p class="feedback-incorrect">Incorrect!</p> 
+                    feedback.innerHTML = `<p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                     <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>`;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
