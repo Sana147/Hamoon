@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیموساایپ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_simosa.css">
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+            direction: rtl; /* Set right to left direction for the text */
+            font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
+        }
+        .form-check label {
+            margin-right: 50px; /* Adds space between the radio button and text */
+        }
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>سوال نمبر 5: کیا آپ کو تشویش ہونی چاہیے اگر آپ کا فون روٹڈ ہو، سیموسا ایپ فون پر انسٹال ہو، اور آپ کا فون ضبط کر لیا جائے؟</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">
+                            ہاں
+                        </label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">
+                            نہیں
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
+                    <!-- Feedback and Score will appear here -->
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <!-- Button group -->
+                    <div class="button-group">
+                        <a href="simosa_q4_u.html" class="btn btn-dark-pink">واپس جائیں</a>
+                        <a href="simosa_q6_u.html" class="btn btn-dark-pink">جاری رکھیں</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <img src="../pictures/reporter.jpg" alt="Pakistani Female" class="top-right-image">
+
+    <script>
+        // Retrieve score from localStorage or initialize to 0
+        let score = 4 || 0;
+
+        // Display initial score
+        document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+
+        function checkAnswer() {
+            // Get the selected answer
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            
+            // Check if an option is selected
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+                const feedback = document.getElementById('feedback');
+
+                // Provide feedback based on the selected answer
+                if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-correct">صحیح!</p> 
+                        <span><p> جی ہاں، اس کی وجہ وہی ہے جو سوال 4 میں تھی۔ سیموسا ایپ صارف کا فون نمبر اینڈرائیڈ فائل سسٹم کی روٹ ڈائریکٹری میں صاف طور پر محفوظ کرتی ہے (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/admob.xml</span>)۔ نیچے کی تصویر میں اس فرد کا موبائل نمبر سرخ رنگ سے چھپایا گیا ہے جو خطرے میں ہے۔</p></span>
+                        <div class="img-container">
+                            <img src="jazz_os_information2_phonenumber.png" alt="User Mobile Number">
+                        </div>
+                        <span><p> اس کے علاوہ، صارف کے رابطوں کی ایک جوڑی بھی محفوظ کی جاتی ہے جنہیں کالز یا ایس ایم ایس کیے گئے ہوں، اینڈرائیڈ فائل سسٹم کی روٹ ڈائریکٹری میں (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/shared_prefs/jazzB2C.prefs.xml</span>)۔ نیچے کی تصویر میں خطرے میں پڑے فرد کا موبائل نمبر سرخ رنگ سے چھپایا گیا ہے۔</p>
+                        <div class="img-container">
+                            <img src="jazz_androidfilesystemnumber.png" alt="Call History">
+                        </div>
+                        <div class="img-container">
+                            <img src="jazz_androidfilesystemnumber1.png" alt="SMS History">
+                        </div>
+                        <span><p> مزید یہ کہ ایپ آلہ کی تفصیلات بھی محفوظ کرتی ہے (<span style="color: blue;">cd /data/data/com.jazz.jazzworld/databases/mixpanel-journal</span>).</p></span>
+                        <div class="img-container">
+                            <img src="jazz_os_information.png" alt="Device Details">
+                        </div>                 
+                        <p> حملے کے راستے کو سمجھنے کے لئے ایک منظرنامہ تصور کریں جہاں ایک خطرے میں پڑا صارف کا آلہ ضبط کر لیا جائے۔ سیموسا ایپ آلے پر نصب ہے، لیکن حملہ آور صارف کے فون نمبر سے آگاہ نہیں ہے۔ تاہم، حملہ آور روٹ ڈائریکٹری سے فون نمبر نکال سکتا ہے۔ ایک بار فون نمبر حاصل کرنے کے بعد، حملہ آور اس کا استعمال ایپ میں لاگ ان کرنے کے لئے کر سکتا ہے۔ چونکہ ایپ صارف سے مخصوص پاسورڈ کی درخواست نہیں کرتی اور صرف موبائل ڈیوائس پر بھیجا گیا ون ٹائم پاسورڈ (OTP) پوچھتی ہے، اس لیے حملہ آور صرف فون نمبر جان کر ایپ میں لاگ ان ہو سکتا ہے۔ لاگ ان ہونے کے بعد، حملہ آور حساس معلومات تک رسائی حاصل کر سکتا ہے، جن میں صارف کا مکمل نام، کال کی تاریخ (پچھلے تیس دنوں کی)، ایس ایم ایس کی تاریخ (پچھلے تیس دنوں کی)، اور قومی شناختی نمبر (ٹیکس سرٹیفکیٹ کے ذریعے) شامل ہیں۔</p>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+
+                    // Increment score
+                    score = 5;
+                } else {
+                    feedback.innerHTML = `
+                    <p class="feedback-incorrect">غلط!</p> 
+                    <span><p> براہ کرم صحیح جواب، "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>`;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                    score = 4;
+                }
+
+                // Update score display and save to localStorage
+                document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+                localStorage.setItem('score', score);
+
+            } else {
+                // No option selected
+                alert('براہ کرم کوئی جواب منتخب کریں۔');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
