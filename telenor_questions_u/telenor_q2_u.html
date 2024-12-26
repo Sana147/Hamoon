@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میری ٹیلی نار ایپ</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_telenor.css">
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+            font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
+            direction: rtl; /* Right to Left text direction */
+            text-align: right; /* Align text to the right */
+            background-color: #ffffff; /* Set background color to white */            
+        }
+        .form-check label {
+            margin-right: 50px; /* Adds space between the radio button and text */
+        }
+
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>سوال نمبر 2: کیا میری ٹیلی نار ایپ کا استعمال کرتے ہوئے مقام کے کوآرڈینیٹس میں جعل سازی ممکن ہے؟</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">
+                     جی       ہاں
+                        </label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="inconclusive" value="inconclusive">
+                        <label class="form-check-label" for="inconclusive">
+                            غیر حتمی
+                        </label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">
+                            نہیں
+                        </label>
+                    </div>
+
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کروائیں</button>
+                    <!-- Feedback and Score will appear here -->
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <!-- Button group -->
+                    <div class="button-group">
+                        <a href="telenor_q1_u.html" class="btn btn-dark-pink">واپس جائیں</a>
+                        <a href="telenor_q3_u.html" class="btn btn-dark-pink">جاری رکھیں</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <img src="../pictures/telenor.jpg" alt="Pakistani Female" class="top-right-image">
+
+    <script>
+        // Retrieve score from localStorage or initialize to 0
+        let score = 1 || 0;
+
+        // Display initial score
+        document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+
+        function checkAnswer() {
+            // Get the selected answer
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            
+            // Get feedback element
+            const feedback = document.getElementById('feedback');
+
+            // Check if an option is selected
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+
+                // Provide feedback based on the selected answer
+                if (answerValue === 'inconclusive') {
+                    feedback.innerHTML = `
+                        <p class="feedback-correct">صحیح جواب!</p> 
+                        <span><p>اگرچہ ایک طاقتور دشمن، جیسے کہ ایک آئی ایس پی جو ایک قابل اعتماد سرٹیفکیٹ رکھتا ہو، مواصلات کو روکتا، مقام کے کوآرڈینیٹس کو صاف متن میں دیکھ سکتا ہے اور انہیں ایپ کے سرور پر ذخیرہ ہونے سے پہلے جعلی ڈیٹا سے تبدیل کرسکتا ہے، ہم اپنے تجربات میں اسے نقل کرنے میں کامیاب نہیں ہوئے۔ اس کے نتیجے میں، ہم اس مسئلے کو اس وقت غیر حتمی سمجھتے ہیں۔ اگر مزید معلومات دستیاب ہوئیں تو ہم اس پر اپ ڈیٹ فراہم کریں گے۔</p>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+
+                    // Increment score
+                    score = 2;
+                } else if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">غلط جواب!</p> 
+                        <span><p>براہ کرم صحیح جواب منتخب کریں، "غیر حتمی" تاکہ آپ اس کا سبب سمجھ سکیں۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove previous feedback styles
+                    score = 1; // Maintain score as is
+                } else {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">غلط جواب!</p> 
+                        <span><p>براہ کرم صحیح جواب منتخب کریں، "غیر حتمی" تاکہ آپ اس کا سبب سمجھ سکیں۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                    score = 1;
+                }
+
+                // Update score display and save to localStorage
+                document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+                localStorage.setItem('score', score);
+            } else {
+                // No option selected
+                alert('براہ کرم ایک جواب منتخب کریں۔');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

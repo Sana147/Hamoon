@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میری ٹیلی نار ایپ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_telenor.css">
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+            font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
+            direction: rtl; /* Right to Left text direction */
+            text-align: right; /* Align text to the right */
+            background-color: #ffffff; /* Set background color to white */            
+        }
+        .form-check label {
+            margin-right: 50px; /* Adds space between the radio button and text */
+        }
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>سوال نمبر 6: کیا میری ٹیلی نار ایپ میں روٹڈ فون کو شناخت کرنے کی صلاحیت ہے؟</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">
+                            جی ہاں
+                        </label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">
+                            نہیں
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کروائیں</button>
+                    <!-- Feedback and Score will appear here -->
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <!-- Button group -->
+                    <div class="button-group">
+                        <a href="telenor_q5_u.html" class="btn btn-dark-pink">واپس جائیں</a>
+                        <a href="telenor_q7_u.html" class="btn btn-dark-pink">جاری رکھیں</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <img src="../pictures/telenor.jpg" alt="Reporter" class="top-right-image">
+
+    <script>
+        // Retrieve score from localStorage or initialize to 0
+        let score = 5 || 0;
+
+        // Display initial score
+        document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+
+        function checkAnswer() {
+            // Get the selected answer
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            
+            // Check if an option is selected
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+                const feedback = document.getElementById('feedback');
+
+                // Provide feedback based on the selected answer
+                if (answerValue === 'no') {
+                    feedback.innerHTML = `<p class="feedback-correct">صحیح جواب!</p> 
+                    <span><p>روٹ ڈیٹیکشن کا مطلب یہ ہے کہ صارفین روٹڈ فون پر ایپ کو انسٹال نہیں کر سکتے۔ روٹڈ فون وہ اینڈرائیڈ ڈیوائس ہوتا ہے جو سپر یوزر رسائی حاصل کرنے کے لئے ترمیم شدہ ہوتا ہے، جسے روٹ ایکسیس بھی کہا جاتا ہے۔ روٹ ڈیٹیکشن کے اس عمل سے صارفین کو ڈیوائس کے مینوفیکچرر اور آپریٹنگ سسٹم کی طرف سے عائد کردہ پابندیوں کو بائی پاس کرنے کی اجازت ملتی ہے، جو انہیں فون کے سافٹ ویئر اور سیٹنگز پر مکمل کنٹرول فراہم کرتا ہے۔</p>
+                    <p>میری ٹیلی نار ایپ کو روٹڈ فون پر انسٹال کیا جا سکتا ہے کیونکہ ایپ میں روٹ ڈیٹیکشن کی صلاحیت نہیں ہے۔ یہ بذات خود کوئی سیکیورٹی مسئلہ نہیں ہے۔ تاہم، فرض کریں کہ کسی صارف نے ایپ کو روٹڈ فون پر انسٹال کیا ہے، اور اگر یہ روٹڈ فون چوری ہو جاتا ہے یا ضبط کر لیا جاتا ہے (ریاستی اداکاروں کے ذریعے)، تو حملہ آور ایپ کے صارف کے کریڈینشلز جو صاف ٹیکسٹ میں اینڈرائیڈ فائل سسٹم کی روٹ ڈائریکٹری میں محفوظ ہیں، کو نکال سکتے ہیں اور ایک رسک پر موجود صارف کی نگرانی کر سکتے ہیں۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+                } else {
+                    feedback.innerHTML = `<p class="feedback-incorrect">غلط جواب!</p>
+                    <span><p> براہ کرم درست جواب "نہیں" منتخب کریں تاکہ وجہ معلوم کی جا سکے۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                    score = 5;
+                }
+
+                // Increment score and update display
+                if (answerValue === 'no') {
+                    score += 1;
+                }
+                document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+                localStorage.setItem('score', score);
+            } else {
+                // No option selected
+                alert('براہ کرم جواب منتخب کریں.');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
