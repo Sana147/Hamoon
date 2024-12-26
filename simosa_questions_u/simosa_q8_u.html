@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_simosa.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -29,22 +28,16 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                         جی    ہاں
-                        </label>
+                        <label class="form-check-label" for="yes">جی    ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="inconclusive" value="inconclusive">
-                        <label class="form-check-label" for="inconclusive">
-                            غیر قطعی
-                        </label>
+                        <label class="form-check-label" for="inconclusive"> غیر قطعی</label>
                     </div>
 
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no">نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -84,7 +77,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>اگرچہ ایک طاقتور مخالف، جیسے کہ ایک ISP جس کے پاس ایک قابل اعتماد سرٹیفکیٹ ہو، ڈیٹا کو مداخلت اور جعلی بنا سکتا ہے، ہم اپنے تجربات میں اس بات کو دوبارہ نہیں کر سکے۔ لہذا ہم اس مسئلے کو فی الحال غیر قطعی سمجھتے ہیں۔ اگر کوئی تبدیلیاں آئیں گی تو ہم اپ ڈیٹ فراہم کریں گے۔</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
@@ -94,7 +87,7 @@
                     score += 1;
                 } else if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
+                        <p class="feedback-incorrect">غلط جواب!</p>
                         <span><p>براہ کرم صحیح جواب "غیر قطعی" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
@@ -102,7 +95,7 @@
                     score = 7; // Maintain score as is
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
+                        <p class="feedback-incorrect">غلط جواب!</p>
                         <span><p>براہ کرم صحیح جواب "غیر قطعی" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

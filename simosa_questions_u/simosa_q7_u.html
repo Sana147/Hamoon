@@ -30,15 +30,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                          جی   ہاں
-                        </label>
+                        <label class="form-check-label" for="yes"> جی   ہاں</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -77,7 +73,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                    <p class="feedback-correct">صحیح!</p> 
+                    <p class="feedback-correct">صحیح جواب!</p>
                     <span><p>ایس ایس ایل پننگ ایک تکنیک ہے جو ایم آئی ٹی ایم حملوں کو روکنے میں مدد دیتی ہے، جس میں ایپ یا ڈیوائس کے اندر ایس ایس ایل/ٹی ایل ایس سرٹیفکیٹ کی پبلک کی کو ہارڈ کوڈ کیا جاتا ہے۔ اس کا مطلب یہ ہے کہ جب ایپ یا ڈیوائس سرور کے ساتھ بات چیت کرتی ہے، تو یہ سرور کے ایس ایس ایل/ٹی ایل ایس سرٹیفکیٹ کی پبلک کی کو ایپ یا ڈیوائس میں ہارڈ کوڈ کی گئی پبلک کی سے موازنہ کرے گا۔ سیموسا ایپ ایس ایس ایل پننگ استعمال کرتی ہے، جو ایک اچھی بات ہے۔</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
@@ -85,8 +81,8 @@
 
                 } else {
                     feedback.innerHTML = `
-                    <p class="feedback-incorrect">غلط!</p> 
-                    <span><p>براہ کرم صحیح جواب "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                    <p class="feedback-incorrect">غلط جواب!</p>
+                    <span><p>براہ کرم صحیح جواب "جی  ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

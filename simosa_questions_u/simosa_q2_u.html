@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_simosa.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -26,13 +25,6 @@
             max-width: 350px; /* Adjust as needed */
             margin-top: 10px; /* Space between text and image */
         }
-        .top-right-image {
-            position: absolute; /* Position the image absolutely */
-            top: 10px; /* Adjust vertical position */
-            right: 10px; /* Adjust horizontal position */
-            max-width: 230px; /* Adjust as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
     </style>
 </head>
 
@@ -48,7 +40,7 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">ہاں</label>
+                        <label class="form-check-label" for="yes">جی ہاں</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="inconclusive" value="inconclusive">
@@ -97,7 +89,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>اگرچہ یہ ممکن ہے کہ ایک طاقتور حریف، جیسے کہ آئی ایس پی کے پاس ایک معتبر سرٹیفکیٹ ہو، مواصلات کو روک سکے، مقام کے کوآرڈینیٹس کو صاف متن میں دیکھ سکے، اور انہیں جعل سازی کے ڈیٹا سے تبدیل کرسکے اس سے پہلے کہ وہ ایپ کے سرور پر اسٹور ہو، ہم اس کا پتہ نہیں چلا سکے۔ ہماری تجربات میں اس کا کوئی نتیجہ نہیں نکلا۔ اس لیے ہم اسے اس وقت غیر حتمی سمجھتے ہیں۔ اگر مزید معلومات دستیاب ہوں تو ہم اپ ڈیٹ فراہم کریں گے۔</p>
                     `;
                     feedback.classList.add('feedback-correct');
@@ -107,7 +99,7 @@
                     score = 2;
                 } else if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
+                        <p class="feedback-incorrect">غلط جواب!</p>
                         <span><p>براہ کرم صحیح جواب منتخب کریں، "غیر حتمی" تاکہ آپ اس کے پیچھے کی وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
@@ -115,7 +107,7 @@
                     score = 1; // Maintain score as is
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
+                        <p class="feedback-incorrect">غلط جواب!</p>
                         <span><p>براہ کرم صحیح جواب منتخب کریں، "غیر حتمی" تاکہ آپ اس کے پیچھے کی وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

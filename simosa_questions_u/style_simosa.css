@@ -1,11 +1,8 @@
     <style>
        body {
-            background-color: #d3f9d8; /* Light green color */
+            background-color: #ffffff; /* Light green color */
         }
         
-       body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
-        }
         .feedback-container {
             display: flex;
             flex-direction: column; /* Stack text and image vertically */
@@ -18,7 +15,7 @@
         }
         .top-right-image {
             position: absolute; /* Position the image absolutely */
-            top: 10px; /* Adjust vertical position */
+            top: 50px; /* Adjust vertical position */
             right: 10px; /* Adjust horizontal position */
             max-width: 230px; /* Adjust as needed */
             height: auto; /* Maintain aspect ratio */
@@ -74,6 +71,9 @@
         .btn-submit {
             background-color: #654321;/* #E91E63;*/
             border-color:  #654321; /*#E91E63;*/
+            display: flex;
+            justify-content: flex-end; 
+            
         }
 
         .btn-dark-pink {

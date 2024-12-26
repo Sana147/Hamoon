@@ -30,15 +30,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                           جی  ہاں
-                        </label>
+                        <label class="form-check-label" for="yes">جی  ہاں</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no">نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -77,7 +73,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
-                    <p class="feedback-correct">صحیح!</p> 
+                    <p class="feedback-correct">صحیح جواب!</p> 
                     <span><p>روٹ ڈٹیکشن کا مطلب یہ ہے کہ صارف روٹڈ فون پر ایپ انسٹال نہیں کر سکتے۔ روٹڈ فون ایک اینڈرائیڈ ڈیوائس ہے جسے سپر یوزر رسائی حاصل کرنے کے لیے تبدیل کیا گیا ہے، جسے روٹ ایکسیس بھی کہا جاتا ہے۔ روٹ ڈٹیکشن کا یہ عمل صارفین کو ڈیوائس کے سازندہ اور آپریٹنگ سسٹم کی طرف سے عائد پابندیوں کو بائی پاس کرنے کی اجازت دیتا ہے، اور فون کے سافٹ ویئر اور سیٹنگز پر مکمل کنٹرول فراہم کرتا ہے۔</p>
                     <p>سیموسا ایپ روٹڈ فون پر انسٹال کی جا سکتی ہے، کیونکہ ایپ میں روٹ ڈٹیکشن کی خصوصیت نہیں ہے۔ یہ بذات خود کوئی سیکیورٹی مسئلہ نہیں ہے۔ تاہم، فرض کریں کہ صارف نے ایپ کو روٹڈ فون پر انسٹال کیا ہے، اور وہ روٹڈ فون چوری ہو جائے یا ضبط کر لیا جائے (ریاستی اداروں کی طرف سے)۔ اس صورت میں، حملہ آور اینڈرائیڈ فائل سسٹم کی روٹ ڈائریکٹری میں محفوظ کردہ صارف کی اسناد کو صاف طور پر نکال سکتے ہیں تاکہ وہ خطرے میں پڑے ہوئے صارف کی نگرانی کر سکیں۔</p></span>
                     `;
@@ -85,7 +81,7 @@
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
                 } else {
                     feedback.innerHTML = `
-                    <p class="feedback-incorrect">غلط!</p>
+                        <p class="feedback-incorrect">غلط جواب!</p>
                     <span><p>براہ کرم صحیح جواب "نہیں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

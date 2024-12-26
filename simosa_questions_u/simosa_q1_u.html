@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_simosa.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -21,13 +20,6 @@
         .feedback-container img {
             max-width: 350px; /* Adjust as needed */
             margin-top: 10px; /* Space between text and image */
-        }
-        .top-right-image {
-            position: absolute; /* Position the image absolutely */
-            top: 10px; /* Adjust vertical position */
-            right: 10px; /* Adjust horizontal position */
-            max-width: 230px; /* Adjust as needed */
-            height: auto; /* Maintain aspect ratio */
         }
         .form-check label {
             margin-right: 50px; /* Adds space between the radio button and text */
@@ -55,7 +47,7 @@
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">ہاں</label>
+                        <label class="form-check-label" for="yes">جی ہاں</label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کریں</button>
                     <div id="feedback" class="feedback"></div>
@@ -86,8 +78,8 @@
                 if (answerValue === 'maybe') {
                     feedback.innerHTML = `
                         <div class="feedback-container">
-                            <p class="feedback-correct">صحیح!</p>
-                            <span>
+                       <p class="feedback-correct">صحیح جواب!</p>
+                       <span>
                                 <p>سیموسا ایپ کو کام کرنے کے لیے لوکیشن کے کوآرڈینیٹس کی ضرورت نہیں ہے۔ تاہم، اگر صارفین اپنے علاقے میں دستیاب پروموشنل آفرز دیکھنا چاہتے ہیں تو انہیں لوکیشن پرمیشنز فعال کرنی ہوںگی۔ جب صارفین لوکیشن پرمیشنز فراہم کرتے ہیں تو ایپ درست لوکیشن کوآرڈینیٹس منتقل کرتی ہے۔</p>
                                 <p>یہ بات اہم ہے کہ اگرچہ وی پی این صارف کے آئی پی ایڈریس کو ماسک کرسکتا ہے، اس سے ایسا لگتا ہے جیسے صارف مختلف مقام سے جڑ رہا ہو، لیکن یہ مکمل گمنامی فراہم نہیں کرتا۔ جب ٹریفک وی پی این سرنگ سے باہر نکلتی ہے تو درست لوکیشن کوآرڈینیٹس صارف کے مقام کو ظاہر کرسکتی ہیں۔ نتیجے کے طور پر، انٹرنیٹ سروس پرووائیڈرز (ISPs) وی پی این کے استعمال کا پتہ لگاسکتے ہیں اور صارفین کے خلاف کارروائی کرسکتے ہیں جو خطرے میں ہیں۔ کیونکہ پاکستان میں صارفین کو وی پی این کے استعمال کے لیے رجسٹر کرنا پڑتا ہے یا وہ کٹ آف کا سامنا کرسکتے ہیں۔</p>
                             </span>
@@ -98,14 +90,16 @@
                     score = 1;
                 } else if (answerValue === 'no') {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>غلط!</p> <span><p>براہ کرم صحیح جواب منتخب کریں، "احتیاط کے ساتھ!" تاکہ آپ اس کے پیچھے کی وجہ جان سکیں۔</span></p>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p>براہ کرم صحیح جواب منتخب کریں، "احتیاط کے ساتھ!" تاکہ آپ اس کے پیچھے کی وجہ جان سکیں۔</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');
                     score = 0;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>غلط!</p> <span><p>براہ کرم صحیح جواب منتخب کریں، "احتیاط کے ساتھ!" تاکہ آپ اس کے پیچھے کی وجہ جان سکیں۔</span></p>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p>براہ کرم صحیح جواب منتخب کریں، "احتیاط کے ساتھ!" تاکہ آپ اس کے پیچھے کی وجہ جان سکیں۔</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');
