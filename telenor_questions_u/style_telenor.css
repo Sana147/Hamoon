@@ -19,8 +19,8 @@
         .top-right-image {
             position: absolute; /* Position the image absolutely */
             top: 0px; /* Adjust vertical position */
-            right: 60px; /* Adjust horizontal position */
-            max-width: 200px; /* Adjust as needed */
+            left: 60px; /* Adjust horizontal position */
+            max-width: 180px; /* Adjust as needed */
             height: auto; /* Maintain aspect ratio */
         }
         .quiz-container {
