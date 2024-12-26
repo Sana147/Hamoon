@@ -72,8 +72,8 @@
         .top-left-image {
             position: absolute; /* Positioning the image */
             top: 50px; /* Adjust as needed */
-            left: 50px; /* Adjust as needed */
-            max-width: 250px; /* Set a max width */
+            right: 50px; /* Adjust as needed */
+            max-width: 200px; /* Set a max width */
             height: auto; /* Maintain aspect ratio */
         }
         
