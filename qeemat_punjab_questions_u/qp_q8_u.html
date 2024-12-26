@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_qp.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -28,22 +27,16 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="inconclusive" value="inconclusive">
-                        <label class="form-check-label" for="inconclusive">
-                            نتیجہ غیر واضح
-                        </label>
+                        <label class="form-check-label" for="inconclusive"> نتیجہ غیر واضح</label>
                     </div>
 
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں</label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -83,7 +76,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                    <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>قیمت پنجاب ایپ پی ڈی ایف فائلوں کو ڈیٹا کی ذخیرہ اندوزی یا منتقلی کے لئے استعمال نہیں کرتی، جس سے پی ڈی ایف ڈیٹا کو جعلی بنانے کا خطرہ ختم ہو جاتا ہے۔ تاہم، ایپ میں جے ایس او این ڈیٹا سے متعلق ایک ممکنہ خامی موجود ہے جس میں حملہ آوروں کے لئے ایگریکلچر اور پولٹری کی قیمتوں کو جعلی بنانے اور ان کے ساتھ چھیڑ چھاڑ کرنے کا امکان ہوتا ہے۔ نیچے کی تصاویر میں اصل قیمتیں (بائیں) اور جعلی قیمتیں (دائیں) دکھائی گئی ہیں۔ </p> 
                     <img src="qeemat_punjab_orig_prices.png" alt="original" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
                     <img src="qeemat_punjab_fuzzed_prices.png" alt="fuzzed" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
@@ -104,7 +97,7 @@
                     score = 1; // Maintain score as is
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
+                        <p class="feedback-incorrect">غلط جواب!</p>
                         <span><p>براہ کرم صحیح جواب، "نہیں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

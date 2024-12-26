@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_qp.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -18,11 +17,11 @@
             align-items: center; /* Center images horizontally */
         }
 
-    .form-check label {
+       .form-check label {
         margin-right: 50px; /* Adds space between the radio button and text */
         }
         
-        .img-container img {
+       .img-container img {
             max-width: 100%; /* Responsive */
             height: auto; /* Maintain aspect ratio */
             margin-bottom: 10px; /* Space between images */
@@ -42,7 +41,7 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">ہاں</label>
+                        <label class="form-check-label" for="yes">جی ہاں</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
@@ -84,7 +83,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span>
                             <p>قیمت پنجاب ایپ صارفین کو بغیر کسی رجسٹریشن کے زرعی مصنوعات کی قیمتوں کے بارے میں معلومات فراہم کرتی ہے۔ تاہم، ایپ کے ذریعے تجاویز یا شکایات درج کرنے کے لیے صارفین کو رجسٹریشن کرنی ہوتی ہے جس میں ان کی ذاتی معلومات شامل ہوتی ہیں۔</p>
                         <div class="img-container">
@@ -99,8 +98,8 @@
                     score = 3;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
-                        <span><p>صحیح جواب "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p>صحیح جواب "جی ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_qp.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -29,15 +28,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں
-                        </label>
+                        <label class="form-check-label" for="yes">جی ہاں</label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -74,14 +69,14 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
-                    feedback.innerHTML = `<p class="feedback-correct">صحیح!</p>
+                    feedback.innerHTML = `<p class="feedback-correct">صحیح جواب!</p>
                     <span><p>قیمت پنجاب ایپ میں کوئی سرٹیفکیٹ موجود نہیں ہے۔ اس لیے، جب تک حملہ آوروں کے پاس درست TLS سرٹیفکیٹ نہ ہو، اس ایپ کے ذریعے مشین ان دی مڈل حملہ ممکن نہیں ہے۔</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p class="feedback-incorrect">غلط!</p> 
+                    feedback.innerHTML = `<p class="feedback-incorrect">غلط جواب!</p>
                     <span><p>براہ کرم "نہیں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

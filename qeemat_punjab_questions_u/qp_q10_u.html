@@ -9,7 +9,6 @@
 
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -30,15 +29,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں
-                        </label>
+                        <label class="form-check-label" for="yes">جی ہاں</label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -75,15 +70,15 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p class="feedback-correct">صحیح!</p>
+                    feedback.innerHTML = `<p class="feedback-correct">صحیح جواب!</p>
                     <span><p>یہ ایک اہم مسئلہ ہے۔ اس خطرے کو کم کرنے کے لئے ایک مؤثر طریقہ یہ ہے کہ پاس ورڈ کو باقاعدگی سے تبدیل کیا جائے تاکہ سیکیورٹی کو مزید بہتر بنایا جا سکے۔</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p class="feedback-incorrect">غلط!</p> 
-                    <span><p>براہ کرم "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                    feedback.innerHTML = `<p class="feedback-incorrect">غلط جواب!</p>
+                    <span><p>براہ کرم "جی ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

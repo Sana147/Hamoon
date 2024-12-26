@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_qp.css">
     <style>
         body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -32,15 +31,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
 
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کروائیں</button>
@@ -81,7 +76,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>یہ حقیقت ہے کہ ایک طاقتور مخالف، جیسے کہ انٹرنیٹ سروس پرووائڈر (ISP) جس کے پاس ایک قابل اعتماد سرٹیفکیٹ ہو، مقام کے کوآرڈینیٹس کو روکنے اور ان میں جعل سازی کر سکتا ہے۔ اس خطرے کو ظاہر کرنے کے لیے، نیچے دی گئی تصاویر پر غور کریں جو ایپ کے ذریعے بھیجے گئے اصل مقام کے کوآرڈینیٹس کو دکھاتی ہیں، جن میں صارف کی جانب سے پیش کی گئی تجویز یا شکایت بھی شامل ہے۔ یہ تصاویر یہ دکھاتی ہیں کہ کس طرح کسی بد نیتی والے شخص کے ذریعے مقام کے ڈیٹا کو آسانی سے تبدیل کیا جا سکتا ہے۔</p> 
                         <div class="img-container">
                             <img src="qeemat_punjab_orig_loc.png" alt="Qeemat Punjab Location Coordinates">
@@ -98,8 +93,8 @@
                     score = 2;
                 } else if (answerValue === 'no') {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
-                        <span><p>براہ کرم "ہاں" منتخب کریں تاکہ وجہ سمجھ سکیں۔</p></span>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p>براہ کرم "جی ہاں" منتخب کریں تاکہ وجہ سمجھ سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove previous feedback styles
