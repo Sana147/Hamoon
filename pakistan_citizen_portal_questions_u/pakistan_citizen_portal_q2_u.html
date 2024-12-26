@@ -9,17 +9,11 @@
     <style>
         /* Adding RTL (Right-to-Left) support */
     body {
-        position: relative; /* Ensure the body is positioned for absolute elements */
         font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         direction: rtl; /* Right to Left text direction */
         text-align: right; /* Align text to the right */
         }        
         
-        .watermark {
-            /* Optional styling for the watermark */
-            text-align: center;
-        }
-
         .quiz-container .question-container .question {
             text-align: right; /* Right-align the question text */
         }
@@ -34,15 +28,6 @@
             margin-right: 50px; /* Adds space between the radio button and text */
         }
 
-        .btn {
-            /* Optional button styling for RTL languages */
-            text-align: right;
-        }
-
-        /* Optional: Adjust the buttons for better spacing */
-        .btn-group {
-            text-align: right;
-        }
     </style>
 </head>
 <body class="fixed-top-nav">
@@ -59,15 +44,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            جی ہاں
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کریں</button>
                     <!-- Feedback and Score will appear here -->
@@ -105,7 +86,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>ایک طاقتور دشمن (جیسے کہ ایک ISP جس کے پاس اعتماد شدہ سرٹیفکیٹ ہے) مقام کے کوآرڈینیٹس کو صاف طور پر دیکھ سکتا ہے، مواصلات کو روک سکتا ہے، اور اسے جعلی مقام کے کوآرڈینیٹس سے تبدیل کر سکتا ہے اس سے پہلے کہ وہ ایپ سرور پر محفوظ ہو جائیں۔ اس سے ایک طاقتور دشمن کو جعلی ثبوت لگانے کی اجازت ملتی ہے جو کسی خطرے میں مبتلا صارف کو ایک مخصوص جغرافیائی مقام پر دکھاتا ہے۔ یہ اثر پاکستان میں حالیہ واقعات کے تناظر میں نمایاں ہو جاتا ہے جہاں مقامی پولیس نے جیو فینسنگ اور جیو ٹریکنگ ٹیکنالوجیز کا استعمال کیا تاکہ مظاہرین کو من مانی گرفتاریاں کی جا سکیں۔</p>
                         <p>نیچے کی تصویر میں جعلی مقام کے ڈیٹا کو دکھایا گیا ہے جس میں <span style="color: green;">gps longitude</span>:<span style="color: red;">"0"</span> اور <span style="color: green;">gps_latitude</span>:<span style ="color: red;">"0"</span> ہے۔</p></span>
                         <div class="img-container">
@@ -119,7 +100,7 @@
                     score = 2;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
+                        <p class="feedback-incorrect">غلط جواب!</p>
                         <span><p>براہ کرم صحیح جواب منتخب کریں، "جی ہاں" تاکہ آپ وجہ سمجھ سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

@@ -8,16 +8,11 @@
     <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
     <style>
      body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
             direction: rtl; /* Right to Left text direction */
             text-align: right; /* Align text to the right */
         }
     
-        .watermark {
-            text-align: center;
-        }
-
         .quiz-container .question-container .question {
             text-align: right; /* Right-align the question text */
         }
@@ -29,15 +24,6 @@
 
         .form-check-label {
             margin-right: 50px; /* Adds space between the radio button and text */
-        }
-
-        .btn {
-            /* Optional button styling for RTL languages */
-            text-align: right;
-        }
-
-        .btn-group {
-            text-align: right;
         }
     </style>
 </head>
@@ -56,15 +42,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            جی ہاں
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کریں</button>
                     <!-- Feedback and Score will appear here -->
@@ -100,7 +82,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>پاکستان سیٹیزن پورٹل ایپ صارف کے اسناد کو اینڈرائیڈ فائل سسٹم کی روٹ ڈائرکٹری میں غیر مرموز (plaintext) اسٹور کرتی ہے۔ اگر کوئی روٹڈ ڈیوائس چوری ہو جائے، تو ایک حملہ آور صارف کی اسناد کو چوری کر سکتا ہے جس میں مکمل نام، ای میل، موبائل نمبر، شہری نمبر، خون کا گروپ، پتہ، پیشہ، اور بہت سی دیگر معلومات شامل ہیں۔ یہ معلومات <span style="color: blue;">cd /data/data/com.govpk.citizensportal/shared_prefs/userPref.xml</span> ڈائرکٹری سے نکالی جا سکتی ہیں اور اس کا استعمال خطرے میں پڑے ہوئے صارفین کی جاسوسی کے لئے کیا جا سکتا ہے۔ نیچے کی تصاویر میں دکھایا گیا ہے کہ یہ صارف کی اسناد غیر مرموز (plaintext) حالت میں روٹ ڈائرکٹری میں اسٹور کی جاتی ہیں۔</p></span> 
                         <div class="img-container">
                             <img src="pakistan_citizen_portal_android_file_system.png" alt="Spoofed Location Coordinates">
@@ -115,7 +97,7 @@
                     score = 4;
                 } else {
                     feedback.innerHTML = `
-                    <p class="feedback-incorrect">غلط!</p> 
+                    <p class="feedback-incorrect">غلط جواب!</p>
                     <span><p>براہ کرم صحیح جواب منتخب کریں، "جی ہاں" تاکہ آپ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

@@ -9,7 +9,6 @@
     <style>
         /* Adding RTL (Right-to-Left) support */
         body {
-        position: relative; /* Ensure the body is positioned for absolute elements */
         font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         direction: rtl; /* Right to Left text direction */
         text-align: right; /* Align text to the right */
@@ -98,8 +97,8 @@
                 if (answerValue === 'maybe') {
                     feedback.innerHTML = `
                         <div class="feedback-container">
-                            <p class="feedback-correct">صحیح!</p>
-                            <span>
+                        <p class="feedback-correct">صحیح جواب!</p>
+                        <span>
                                 <p>پاکستان سٹیزن پورٹل ایپ کو لاگ ان کرتے وقت مقام کے کوآرڈینیٹس کی ضرورت نہیں ہے۔ تاہم، جب شکایت درج کی جاتی ہے، تو ایپ یہ یقینی بنانے کے لئے مقام کی اجازتوں کو فعال کرنے کا تقاضا کرتی ہے، ورنہ شکایت درج نہیں کی جا سکتی۔ اس کے علاوہ، ایک آپشن ہے جس میں صارف اپنی شناخت چھپانے کا انتخاب کر سکتا ہے، لیکن اگر یہ منتخب کیا جائے تو ایک انتباہ ظاہر ہوتا ہے جس میں کہا جاتا ہے "اپنی شناخت غیر ضروری طور پر نہ چھپائیں"، جس سے شکایت جمع نہیں ہو سکتی جب تک صارف اپنی شناخت فراہم نہ کرے۔ نیچے کی تصویر ایپ کے ذریعہ شکایت یا تجویز کی سبمیشن کے لیے درست مقام کے کوآرڈینیٹس اور ڈیوائس کے آئی پی ایڈریس کی منتقلی کو دکھاتی ہے۔
                                 </p>
                             <div class="img-container">
@@ -115,7 +114,8 @@
                     score = 1;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>غلط!</p> <p><span>صحیح جواب منتخب کریں، "احتیاط کے ساتھ!" تاکہ آپ کو وجہ بتا سکیں۔</span></p>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <p><span>صحیح جواب منتخب کریں، "احتیاط کے ساتھ!" تاکہ آپ کو وجہ بتا سکیں۔</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');
