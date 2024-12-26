@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قیمت پنجاب ایپ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_qp.css">
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+            direction: rtl; /* Set right to left direction for the text */
+            font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
+        }
+   
+        .form-check label {
+            margin-right: 50px; /* Adds space between the radio button and text */
+        }
+
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>سوال نمبر 2 : کیا قیمت پنجاب ایپ کا استعمال کرتے ہوئے مقام کے کوآرڈینیٹس میں جعل سازی ممکن ہے؟</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">
+                            ہاں
+                        </label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">
+                            نہیں
+                        </label>
+                    </div>
+
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کروائیں</button>
+                    <!-- Feedback and Score will appear here -->
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <!-- Button group -->
+                    <div class="button-group">
+                        <a href="qp_q1_u.html" class="btn btn-dark-pink">واپس جائیں</a>
+                        <a href="qp_q3_u.html" class="btn btn-dark-pink">جاری رکھیں</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <img src="../pictures/qp.jpg" alt="Pakistani Female" class="top-right-image">
+
+    <script>
+        // Retrieve score from localStorage or initialize to 0
+        let score = 1 || 0;
+
+        // Display initial score
+        document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+
+        function checkAnswer() {
+            // Get the selected answer
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            
+            // Get feedback element
+            const feedback = document.getElementById('feedback');
+
+            // Check if an option is selected
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+
+                // Provide feedback based on the selected answer
+                if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-correct">صحیح!</p> 
+                        <span><p>یہ حقیقت ہے کہ ایک طاقتور مخالف، جیسے کہ انٹرنیٹ سروس پرووائڈر (ISP) جس کے پاس ایک قابل اعتماد سرٹیفکیٹ ہو، مقام کے کوآرڈینیٹس کو روکنے اور ان میں جعل سازی کر سکتا ہے۔ اس خطرے کو ظاہر کرنے کے لیے، نیچے دی گئی تصاویر پر غور کریں جو ایپ کے ذریعے بھیجے گئے اصل مقام کے کوآرڈینیٹس کو دکھاتی ہیں، جن میں صارف کی جانب سے پیش کی گئی تجویز یا شکایت بھی شامل ہے۔ یہ تصاویر یہ دکھاتی ہیں کہ کس طرح کسی بد نیتی والے شخص کے ذریعے مقام کے ڈیٹا کو آسانی سے تبدیل کیا جا سکتا ہے۔</p> 
+                        <div class="img-container">
+                            <img src="qeemat_punjab_orig_loc.png" alt="Qeemat Punjab Location Coordinates">
+                        </div>
+                        <p>نیچے جعل سازی کی گئی مقام کے کوآرڈینیٹس کی تصویر ہے۔ </p>
+                        <div class="img-container">
+                            <img src="qeemat_punjab_spoof_location.png" alt="Qeemat Punjab Spoofed Location Coordinates">
+                        </div>                                                
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+
+                    // Increment score
+                    score = 2;
+                } else if (answerValue === 'no') {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">غلط!</p> 
+                        <span><p>براہ کرم "ہاں" منتخب کریں تاکہ وجہ سمجھ سکیں۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove previous feedback styles
+                    score = 1; // Maintain score as is
+                } else {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect">غلط!</p> 
+                        <span><p>براہ کرم صحیح جواب، "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                    score = 1;
+                }
+
+                // Update score display and save to localStorage
+                document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+                localStorage.setItem('score', score);
+            } else {
+                // No option selected
+                alert('براہ کرم کوئی جواب منتخب کریں۔');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

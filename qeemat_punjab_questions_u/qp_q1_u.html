@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قیمت پنجاب ایپ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_qp.css">
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned for absolute elements */
+            direction: rtl; /* Set right to left direction for the text */
+            font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
+        }
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+            margin-bottom: 20px; /* Add some space at the bottom for the next content */
+        }
+
+        /* Adjusting the image size and alignment */
+        .feedback-container img {
+            width: 100%; /* Take up the full width of the container */
+            max-width: 1000px; /* Set a maximum width for the image */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 2px; /* Space between text and image */
+            align-self: center; /* Center the image horizontally */
+        }
+
+    .form-check label {
+        margin-right: 50px; /* Adds space between the radio button and text */
+        }
+        
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <div class="watermark">حمون</div>
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>سوال نمبر 1 : کیا وی پی این سے منسلک رہتے ہوئے قیمت پنجاب ایپ کو استعمال کرنے کا مشورہ دیا جاتا ہے؟</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">نہیں</label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="maybe" value="maybe">
+                        <label class="form-check-label" for="maybe">احتیاط کے ساتھ!</label>
+                    </div>                    
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">ہاں</label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کروائیں</button>
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <div class="button-group">
+                        <a href="qp_u.html" class="btn btn-dark-pink">واپس  جائیں</a>
+                        <a href="qp_q2_u.html" class="btn btn-dark-pink">جاری رکھیں</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image fixed on top-right of the page -->
+    <img src="../pictures/qp.jpg" alt="پاکستانی خاتون" class="top-right-image">
+
+    <script>
+        let score = 0;
+
+        function checkAnswer() {
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            const feedback = document.getElementById('feedback');
+            const scoreElement = document.getElementById('score');
+
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+
+                if (answerValue === 'maybe') {
+                    feedback.innerHTML = `
+                        <div class="feedback-container">
+                            <p class="feedback-correct">صحیح!</p>
+                            <span>
+                                <p>قیمت پنجاب ایپ صارفین کو زرعی مصنوعات کی قیمتیں دیکھنے کی اجازت دیتی ہے بغیر مقام کی اجازت کے۔ تاہم، اگر صارفین کوئی تجویز دینا چاہتے ہیں یا بدعنوانی کی اطلاع دینا چاہتے ہیں، تو انہیں مقام کی اجازت دینے کی ضرورت ہوگی۔ اس اجازت کے بغیر، صارفین اپنی تجاویز یا شکایات درج نہیں کر سکتے۔ ایک بار اجازت دینے کے بعد، ایپ درست مقام کے کوآرڈینیٹ بھیجتی ہے۔</p>
+                                <p>ذیل میں وہ تصویر دکھائی گئی ہے جس میں ایپ کی جانب سے بھیجے گئے مقام کے کوآرڈینیٹ چھپے ہوئے ہیں۔</p>
+                                <div class="img-container">
+                                    <img src="qeemat_punjab_suggestion_location_coordinates.png" alt="قیمت پنجاب مقام کے کوآرڈینیٹس">
+                                </div>
+                                <p>یہ ضرورت ایک سنگین مسئلہ پیدا کرتی ہے کیونکہ صارفین کو بغیر مقام کے اشتراک کے شکایات درج کرنے کی اجازت ہونی چاہیے۔ مثال کے طور پر، ایک رپورٹر جو حکومت کے محکموں میں بدعنوانی کی تحقیقات کر رہا ہے، وہ اپنی جگہ کی معلومات حکام کو نہیں دینا چاہے گا۔ اگر وہ اس ایپ کا استعمال کرکے کرپشن کی اطلاع دینا چاہتا ہے، تو ایپ کی طرف سے مقام کا اشتراک اس کے خطرے میں ڈال سکتا ہے۔</p>
+                                <p>اس کے علاوہ، یہ بھی یاد رکھنا ضروری ہے کہ VPN صارف کا IP ایڈریس ماسک کر سکتا ہے، مگر یہ مکمل گمنامی فراہم نہیں کرتا۔ جب ٹریفک VPN ٹنل سے باہر نکلتی ہے، تو درست مقام کے کوآرڈینیٹس ابھی بھی صارف کے مقام کو ظاہر کر سکتے ہیں۔</p>
+                            </span>
+                        </div>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect');
+
+                    score = 1;
+                } else if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect"><p>غلط!</p> <span><p>براہ کرم "احتیاط کے ساتھ!" منتخب کریں تاکہ وجہ سمجھ سکیں۔</span></p>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct');
+                    score = 0;
+                } else {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect"><p>غلط!</p> <span><p>براہ کرم "احتیاط کے ساتھ!" منتخب کریں تاکہ وجہ سمجھ سکیں۔</span></p>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct');
+                    score = 0;
+                }
+
+                document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
+                localStorage.setItem('score', score);
+
+            } else {
+                alert('براہ کرم جواب منتخب کریں۔');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
