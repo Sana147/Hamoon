@@ -1,0 +1,130 @@
+    <style>
+       body {
+            background-color: #d3f9d8; /* Light green color */
+        }
+        
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: left; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+        }
+        .feedback-container img {
+            max-width: 350px; /* Adjust as needed */
+            margin-top: 10px; /* Space between text and image */
+        }
+        .top-right-image {
+            position: absolute; /* Position the image absolutely */
+            top: 20px; /* Adjust vertical position */
+            left: 70px; /* Adjust horizontal position */
+            max-width: 130px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .question {
+            font-size: 1.5rem;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+        .answer {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: justify;
+            display: flex;
+            align-items: center;
+        }
+        .form-check-input {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+            vertical-align: middle;
+        }
+        .form-check-label {
+            margin-left: 2rem;
+        }
+        .feedback {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            text-align: justify; /* Justify text alignment */
+        }
+        .btn {
+            font-size: 1.3rem;
+            padding: 10px 20px;
+            color: white;
+            background-color:  #2E8B57;
+            border-color:  #2E8B57;
+        }
+
+        .btn:hover {
+            background-color: #2E8B57;
+            border-color: #2E8B57;
+        }
+
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-submit {
+            background-color: #8B0000;
+            border-color:   #8B0000;
+            display: flex;
+            justify-content: flex-end; 
+        }
+
+        .btn-dark-pink {
+            background-color: #2E8B57;
+            border-color:  #2E8B57;
+        }
+
+        .img-container {
+            margin-top: 20px;
+            text-align: center; /* Center the image */
+        }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem; /* Adjust size as needed */
+            color: rgba(0, 100, 0, 0.1); /* Light green color with transparency */
+            white-space: nowrap;
+            pointer-events: none; /* Prevent interaction */
+            user-select: none; /* Prevent selection */
+            z-index: -1; /* Send it to the background */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* New class for score styling */
+        .score-display {
+            font-size: 1rem; /* Adjust font size here */
+            font-weight: bold; /* Make text bold */
+            color: #004d00; /* Set text color */
+            margin-top: 20px; /* Space above the score */
+        }
+
+        .feedback-correct {
+            color: #004d00; /* Dark green for the correct feedback */
+        }
+
+        .feedback-correct span {
+            color: black; /* Black color for text after "Correct!" */
+        }
+        
+        .feedback-incorrect {
+            color: red; /* Red color for the incorrect feedback */
+        }
+        .feedback-incorrect span {
+            color: black; /* Black color for text after "Incorrect" */
+        }
+    </style>
+
