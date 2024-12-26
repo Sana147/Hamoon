@@ -65,7 +65,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">Correct!</p> 
+                        <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span><p>The Pak Identity app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is stolen, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, password, and location coordinates from the <span style="color: blue;">cd /data/data/pk.gov.nadra.pakid/databases</span> directory and use that to spy on at-risk users.</p>
                         <p>The following image shows redacted user credentials that are stored in plaintext in the root directory of the Android File System. </p></span> 
                         <div class="img-container">
@@ -78,7 +78,7 @@
                     score = 4;
                 } else {
                     feedback.innerHTML = `
-                    <p class="feedback-incorrect">Incorrect!</p> 
+                    <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                     <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

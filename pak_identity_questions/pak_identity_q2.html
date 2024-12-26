@@ -6,11 +6,7 @@
     <title>Pak Identity</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pak_identity.css">
-    <style>
-        body {
-/*            background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
+
 </head>
 
 <body class="fixed-top-nav">
@@ -72,7 +68,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">Correct!</p> 
+                        <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span><p>A powerful adversary (such as an ISP with a trusted certificate) can see the location coordinates in plaintext,  intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server. That allows a powerful adversary to plant fake evidence indicating the presence of an at-risk user at a geo-location at a time. This effect becomes pronounced in the context of recent events in Pakistan, where local police used geo-fencing and geo-tracking technologies to make arbitrary arrests of protestors,  journalists, and activists. The image below shows spoofed location data.</p> 
                         <div class="img-container">
                             <img src="pak_identity_spoofed_location_coordinates.png" alt="Spoofed Location Coordinates">
@@ -85,7 +81,7 @@
                     score = 2;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                         <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

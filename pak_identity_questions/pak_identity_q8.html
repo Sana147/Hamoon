@@ -6,11 +6,6 @@
     <title>Pak Identity</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pak_identity.css">
-    <style>
-        body {
-/*            background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
 
 </head>
 <body class="fixed-top-nav">
@@ -70,7 +65,7 @@
                 // Provide feedback based on the selected answer
                 
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p class="feedback-correct">Correct!</p> 
+                    feedback.innerHTML = `<p class="feedback-correct">Awesome! You nailed it.</p> 
                     <span><p>The Pak Identity app server sends four distinct PDF files to the client device, each providing instructions for different tasks: taking and uploading photos, fingerprinting, making payments, and uploading documents. However, these PDF files could potentially be spoofed. If an at-risk user encounters a fake page—disguised as one of these instruction files—they might be prompted to re-enter their credentials, which could then be stolen.</p>
                     <p> The following image shows the original PDF files containing guidelines for capturing fingerprints and the fuzzed PDF file.</p>
                     <img src="pak_identity_fingerprint_guidelines_orig.png" alt="Police Officer" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 30px;">
@@ -81,7 +76,7 @@
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> 
                     <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

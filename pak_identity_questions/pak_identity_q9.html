@@ -6,11 +6,6 @@
     <title>Pak Identity</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pak_identity.css">
-    <style>
-        body {
-/*            background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
 
 </head>
 <body class="fixed-top-nav">
@@ -70,14 +65,14 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
-                    feedback.innerHTML = `<p>Correct!</p>
+                    feedback.innerHTML = `p>Awesome! You nailed it.</p>
                     <span><p> The Pak Identity app does not include an embedded trusted certificate, making it resistant to Man-in-the-Middle (MitM) attacks unless the Internet Service Provider (ISP) possesses a trusted certificate.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> 
                     <span><p> Please select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

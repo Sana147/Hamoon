@@ -9,9 +9,6 @@
 </head>
 
     <style>
-        body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
-        }
         .feedback-container {
             display: flex;
             flex-direction: column; /* Stack text and image vertically */
@@ -84,7 +81,7 @@
 
                 if (answerValue === 'maybe') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">Correct!</p>
+                        <p class="feedback-correct">Awesome! You nailed it.</p>
                         <span><p>The Pak Identity app relies on location coordinates to verify user information. In Pakistan, the use of VPNs is generally discouraged unless they are officially registered. When a user employs a VPN while using the app, the Internet Service Providers (ISPs) may detect an IP  address that does not match their service area. At the same time, the location coordinates indicate a position within Pakistan. This discrepancy allows ISPs to identify the use of a VPN by cross-checking the IP address with the reported location coordinates. The image below shows location coordinates transmitted by the Pak Identity app to the app server along with email,  password, and device OS.</p></span>
                         <div class="img-container">
                             <img src="pak_identity_authentication_request.png" alt="Pak Identity Authentication Request">
@@ -96,7 +93,7 @@
                     score = 1; // Increment score
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">Incorrect!</p>
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p>
                         <span>Please select the correct answer, "With Caution!" to learn the reason.</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');

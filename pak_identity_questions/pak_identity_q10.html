@@ -6,11 +6,7 @@
     <title>Pak Identity</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pak_identity.css">
-    <style>
-        body {
-/*            background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
+
 </head>
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
@@ -68,7 +64,7 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p>Correct!</p>
+                    feedback.innerHTML = `<p>Awesome! You nailed it.</p>
                     <span><p> The Pak Identity app cannot detect login activity from unknown devices, which poses a significant security risk. If an attacker gains access to an at-risk user's account, they could carry out malicious actions without the user's knowledge or warning. For example, they could manipulate location coordinates or perform unauthorized transactions.</p>
 <p>One potential solution to mitigate this issue is for users to change their passwords frequently. While this practice can enhance security,  implementing stronger authentication measures within the app would provide a more robust defense against unauthorized access. The Pak Identity app cannot detect login activity from an unknown device. That is a problem because an attacker, once getting hold of an at-risk user's account, could do all bad things using the at-risk user's account, e.g., plant fake location coordinates without the user knowing about it or receiving any warning. One way to solve this problem would be for users to change their passwords frequently. </p></span>
                     `;
@@ -76,7 +72,7 @@
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
