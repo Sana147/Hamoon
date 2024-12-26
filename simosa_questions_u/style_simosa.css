@@ -16,7 +16,7 @@
         .top-right-image {
             position: absolute; /* Position the image absolutely */
             top: 50px; /* Adjust vertical position */
-            left: 10px; /* Adjust horizontal position */
+            left: 50px; /* Adjust horizontal position */
             max-width: 230px; /* Adjust as needed */
             height: auto; /* Maintain aspect ratio */
         }
