@@ -34,15 +34,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no"> نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -80,7 +76,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>شہری پاک آئیڈنٹیٹی ایپ کا استعمال اپنے قومی شناختی دستاویزات کی درخواست کرنے، اپ ڈیٹ کرنے اور ترمیم کرنے کے لیے کرتے ہیں۔ جبکہ مقام کے کوآرڈینیٹس ان خدمات کو تک رسائی کے لیے ضروری نہیں ہیں، ایپ کو کام کرنے کے لیے مقام کی اجازت درکار ہوتی ہے۔ ہر لاگ ان کے دوران ایپ صارف کے مقام کے کوآرڈینیٹس ایپ سرور کو بھیجتی ہے۔ یہ ایک ممکنہ خطرہ پیدا کرتا ہے، کیونکہ ریاستی اداکار یا حملہ آور خطرے میں موجود افراد کی نقل و حرکت کو ٹریک کر سکتے ہیں۔</p>
 
                         <p>نیچے دی گئی تصویر ایپ سرور کو درست مقام کے کوآرڈینیٹس کی ترسیل کو ظاہر کرتی ہے۔</p> 
@@ -95,8 +91,8 @@
                     score = 3;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p> 
-                        <span><p> براہ کرم صحیح جواب "ہاں" منتخب کریں تاکہ وجہ سمجھ سکیں۔</p></span>
+                        <p class="feedback-incorrect">غلط جواب!</p>
+                        <span><p> براہ کرم صحیح جواب "جی ہاں" منتخب کریں تاکہ وجہ سمجھ سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove correct feedback styling if previously applied

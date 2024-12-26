@@ -31,14 +31,6 @@
         margin-top: 5px; /* Space between text and image */
     }
 
-    .top-left-image {
-        position: absolute; /* Position the image absolutely */
-        top: 5px; /* Adjust vertical position */
-        left: 10px; /* Adjust horizontal position */
-        max-width: 300px; /* Increased max-width for larger image */
-        height: auto; /* Maintain aspect ratio */
-    }
-
     .quiz-container {
         padding: 20px;
     }
@@ -85,9 +77,7 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no">نہیں  </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="maybe" value="maybe">
@@ -96,9 +86,7 @@
 
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            جی ہاں
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <div id="feedback" class="feedback">
@@ -129,7 +117,7 @@
 
                 if (answerValue === 'maybe') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p>
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>پاک آئیڈنٹیٹی ایپ صارف کی معلومات کی تصدیق کے لیے لوکیشن کوآرڈینیٹس پر انحصار کرتی ہے۔ پاکستان میں، VPNs کے استعمال کی عام طور پر حوصلہ شکنی کی جاتی ہے جب تک کہ وہ سرکاری طور پر رجسٹرڈ نہ ہوں۔ جب کوئی صارف ایپ کا استعمال کرتے ہوئے VPN استعمال کرتا ہے، تو انٹرنیٹ سروس پرووائیڈرز (ISPs) ایسے IP ایڈریس کا پتہ لگا سکتے ہیں جو ان کے سروس ایریا سے مماثل نہیں ہے۔ ایک ہی وقت میں، مقام کے نقاط پاکستان کے اندر ایک پوزیشن کی نشاندہی کرتے ہیں۔ یہ تضاد ISPs کو اطلاع شدہ مقام کے نقاط کے ساتھ IP ایڈریس کو کراس چیک کرکے VPN کے استعمال کی شناخت کرنے کی اجازت دیتا ہے۔ نیچے دی گئی تصویر میں پاک آئیڈینٹی ایپ کے ذریعے ای میل، پاس ورڈ اور ڈیوائس OS کے ساتھ ایپ سرور پر منتقل کیے گئے لوکیشن کوآرڈینیٹ دکھائے گئے ہیں۔</p></span>
                         <div class="img-container">
                             <img src="pak_identity_authentication_request.png" alt="Pak Identity Authentication Request">
@@ -141,7 +129,7 @@
                     score = 1; // Increment score
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">غلط!</p>
+                        <p class="feedback-incorrect">غلط جواب!</p>
                         <span>صحیح جواب منتخب کریں، "احتیاط کے ساتھ!" تاکہ وجہ سیکھ سکیں۔</span></p>
                     `;
                     feedback.classList.add('feedback-incorrect');

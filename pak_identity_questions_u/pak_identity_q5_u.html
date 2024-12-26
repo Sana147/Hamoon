@@ -53,15 +53,11 @@
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
-                        <label class="form-check-label" for="yes">
-                            ہاں
-                        </label>
+                        <label class="form-check-label" for="yes"> جی ہاں </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
-                        <label class="form-check-label" for="no">
-                            نہیں
-                        </label>
+                        <label class="form-check-label" for="no">نہیں </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">جمع کرائیں</button>
                     <!-- Feedback and Score will appear here -->
@@ -99,7 +95,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">صحیح!</p> 
+                        <p class="feedback-correct">صحیح جواب!</p>
                         <span><p>جی ہاں، وجہ وہی ہے جو سوال 4 میں تھی۔ پاک آئیڈنٹیٹی ایپ صارف کی اسناد کو اینڈرائیڈ فائل سسٹم کی روٹ ڈائریکٹری میں plaintext میں محفوظ کرتی ہے۔ اگر روٹڈ ڈیوائس ضبط کر لی جائے، تو حملہ آور صارف کی اسناد جیسے پورا نام، ای میل، موبائل نمبر، شہریت نمبر، پاسورڈ، اور مقام کے کوآرڈینیٹس کو <span style="color: blue;">cd /data/data/pk.gov.nadra.pakid/databases</span> ڈائریکٹری سے نکال کر اس کا استعمال کر سکتا ہے تاکہ خطرے میں موجود صارفین کی نگرانی کی جا سکے۔</p>
                         <p>نیچے دی گئی تصویر میں ان اسناد کو دکھایا گیا ہے جو اینڈرائیڈ فائل سسٹم کی روٹ ڈائریکٹری میں plaintext میں محفوظ کی جاتی ہیں۔</p></span> 
                         <div class="img-container">
@@ -113,8 +109,8 @@
                     score = 5;
                 } else {
                     feedback.innerHTML = `
-                    <p class="feedback-incorrect">غلط!</p> 
-                    <span><p> براہ کرم صحیح جواب "ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
+                    <p class="feedback-incorrect">غلط جواب!</p>
+                    <span><p> براہ کرم صحیح جواب "جی ہاں" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
