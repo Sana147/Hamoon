@@ -86,19 +86,12 @@
             max-width: 350px; /* Adjust as needed */
             margin-top: 10px; /* Space between text and image */
         }
-        .top-right-image {
-            position: absolute; /* Position the image absolutely */
-            top: 10px; /* Adjust vertical position */
-            right: 10px; /* Adjust horizontal position */
-            max-width: 230px; /* Adjust as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
 
         .top-right-image {
             position: fixed;
-            top: 10px;
-            left: 20px;
-            max-width: 130px; /* Adjust size as needed */
+            top: 50px;
+            left: 50px;
+            max-width: 150px; /* Adjust size as needed */
             z-index: 1000; /* Ensure it appears above other content */
         }
         
