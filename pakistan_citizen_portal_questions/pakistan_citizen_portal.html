@@ -19,7 +19,7 @@
         }
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9; /* Soft background color */
+            background-color: #ffffff; /* Soft background color */
             color: #333; /* Standard text color */
             position: relative;
         }
@@ -27,6 +27,22 @@
             background-color: #ffffff; /* White navbar */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         }
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem;
+            color: rgba(0, 100, 0, 0.1);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            z-index: -1;
+            font-weight: bold;
+            text-align: center;
+        }        
+        
         .navbar-nav .nav-link {
             font-size: 1rem; /* Increased font size */
         }
@@ -134,9 +150,8 @@
                 </div>
                 <h2 class="post-subtitle">(State-sponsored App)</h2>
                 <h3 class="spacing-between-headings">
-                    <p>The Pakistan Citizen Portal app is a grievance redressal system that allows citizens to put their complaints against government officials or private citizens. The app has 5M+ downloads and a rating of 3.5 stars out of 5 on Google Play Store.</p>
-                    <p>The developer email ID is: <span class="email">pmdu@pmo.gov.pk</span> and the app package is <span class="package">com.govpk.citizensportal.</span></p>
-                    <p>Are you ready to take the quiz and test your understanding of how to use the Pakistan Citizen Portal app securely? If yes, please select start quiz.</p>
+                    <p>The Pakistan Citizen Portal app is a grievance redressal system that allows citizens to put their complaints against government officials or private citizens. The app has 5M+ downloads and a rating of 3.5 stars out of 5 on Google Play Store. The developer email ID is: <span class="email">pmdu@pmo.gov.pk</span> and the app package is <span class="package">com.govpk.citizensportal.</span></p>
+                    <p>Are you ready to take the quiz and test your understanding of how to use the Pakistan Citizen Portal app securely? If yes, please select "Start Quiz".</p>
                 </h3>
                 <h2 class="large-bold-heading">How the quiz works?</h2>
                 <h3 class="spacing-between-headings">
@@ -156,7 +171,7 @@
 
     <footer>
         <div class="container">
-            © Copyright 2024 Anonymous Author. All Rights Reserved. Last updated: Sept 14, 2024.
+            © Copyright 2024 Anonymous Author. All Rights Reserved. Last updated: December 31, 2024.
         </div>
     </footer>
 
