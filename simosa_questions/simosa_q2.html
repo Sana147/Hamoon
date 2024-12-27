@@ -17,13 +17,6 @@
             max-width: 350px; /* Adjust as needed */
             margin-top: 10px; /* Space between text and image */
         }
-        .top-right-image {
-            position: absolute; /* Position the image absolutely */
-            top: 10px; /* Adjust vertical position */
-            right: 10px; /* Adjust horizontal position */
-            max-width: 230px; /* Adjust as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
     </style>
 </head>
 
@@ -112,7 +105,7 @@
                     score = 1; // Maintain score as is
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                         <span><p>Please select the correct answer, "Inconclusive" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
