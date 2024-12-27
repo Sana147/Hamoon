@@ -1,11 +1,8 @@
     <style>
        body {
-            background-color: #d3f9d8; /* Light green color */
+            background-color: #ffffff; /* Light green color */
         }
         
-       body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
-        }
         .feedback-container {
             display: flex;
             flex-direction: column; /* Stack text and image vertically */
