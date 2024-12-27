@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+
     <style>
         body {
             overflow: hidden; /* Prevent scrollbars caused by the watermark */
@@ -125,7 +126,21 @@
             position: relative;
         }
     </style>
+
+    <!-- Include the CanvasConfetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
     <script>
+        // Always trigger confetti on page load
+        window.onload = function() {
+            confetti({
+                particleCount: 200,
+                spread: 70,
+                origin: { x: 0.5, y: 0.5 },
+                colors: ['#ff0', '#ff0', '#ff0000', '#0000ff', '#00ff00']
+            });
+        }
+
         function toggleLanguage(lang) {
             document.querySelectorAll('.language').forEach(function (element) {
                 element.classList.remove('active');
@@ -193,7 +208,7 @@
                     <h1 class="post-title">
                         <span class="font-weight-bold">Welcome to Hamoon</span>
                     </h1>
-                    <h2>The Wizard Unveiling Digital Risks in Pakistan’s Most Popular Apps</h2>
+                    <h2>(A Wizard Unveiling Digital Risks in Pakistan’s Most Popular Apps)</h2>
                     <h3 class="post-subtitle">Learn to protect yourself from App-based Surveillance!</h3>
             </div>
             <div class="text-center">
