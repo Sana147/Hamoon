@@ -1,40 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Threads of Trust: A Tale of Digital Security in Pakistani Apps</title>
+    <title>اعتماد کے موضوعات: پاکستانی ایپس میں ڈیجیٹل سیکیورٹی کے خطرات کی کہانی</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Jameel Noori Nastaleeq', 'Urdu Typesetting', Arial, sans-serif; /* Use Urdu-friendly font */
             margin: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+            direction: rtl; /* Right to Left text */
             flex-direction: column;
             height: 100vh; /* Full height for vertical centering */
             position: relative; /* Required for positioning the back button */
         }
+
         h1 {
             margin-bottom: 20px;
+            text-align: center; /* Center align heading */
         }
+
         iframe {
-            width: 90%; /* Increased width */
-            height: 800px; /* Increased height */
+            width: 90%;
+            height: 800px;
             border: none;
+            max-width: 100%; /* Ensures responsiveness */
         }
+
         /* Optional: Add styles for the embed element */
         embed {
-            width: 90%; /* Increased width */
-            height: 800px; /* Increased height */
+            width: 90%;
+            height: 800px;
+            max-width: 100%; /* Ensures responsiveness */
         }
         
         .back-button {
             position: absolute;
-            top: 20px;
-            left: 100px;
-            width: 220px;
-            padding: 10px 15px;
+            top: 10px;
+            left: 20px;
+            width: auto;
+            padding: 10px 20px;
             text-align: center;
             font-size: 1.25rem;
             background-color: #006400;
@@ -44,21 +51,21 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .back-button:hover {
             background-color: #004d00;
         }
     </style>
 </head>
 <body>
-    <button class="back-button" onclick="homepage_english.html">Back</button>
-    <h1>Threads of Trust: A Tale of Digital Security in Pakistani Apps</h1>
+    <button class="back-button" onclick="window.location.href='homepage_urdu.html';">واپس جائیں</button> <!-- Redirects to index.html -->
+    <h1>اعتماد کے موضوعات: پاکستانی ایپس میں ڈیجیٹل سیکیورٹی کے خطرات کی کہانی</h1>
 
     <!-- Using iframe to display the PDF -->
-    <iframe src="cartoon_story_e.pdf" title="PDF Document"></iframe>
+    <iframe src="cartoon_story_u.pdf" title="PDF Document"></iframe>
 
     <!-- Alternatively, using embed to display the PDF -->
-    <!-- <embed src="path/to/your/document.pdf" type="application/pdf"> -->
-
+    <!-- <embed src="cartoon_story_u.pdf" type="application/pdf"> -->
 </body>
 </html>
 
