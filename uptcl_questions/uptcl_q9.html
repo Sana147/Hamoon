@@ -72,7 +72,7 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
-                    feedback.innerHTML = `<p>Correct!</p>
+                    feedback.innerHTML = `<p>Awesome! You nailed it.</p>
                     <span><p> The UPTCL app does not an embedded trusted certificate. So, it is not possible to do Machine in The Middle unless the ISP has a trusted certificate.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
@@ -80,7 +80,7 @@
                     score += 1;
 
                 } else {
-                    feedback.innerHTML = `<p>Incorrect!</p> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> 
                     <span><p> Plesae select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

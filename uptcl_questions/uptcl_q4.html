@@ -80,7 +80,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">Correct!</p> 
+                        <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span><p>No, the UPTCL app cannot be installed on a rooted device because it has root detection capabilities. </p></span> 
                         
                     `;
@@ -90,7 +90,7 @@
                     score = 4;
                 } else {
                     feedback.innerHTML = `
-                    <p class="feedback-incorrect">Incorrect!</p> 
+                    <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                     <span><p> Please select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

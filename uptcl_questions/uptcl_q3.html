@@ -77,7 +77,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
-                        <p class="feedback-correct">Correct!</p> 
+                        <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span>
                             <p>The UPTCL app does not collect unnecessary user credentials. Logging in only requires the mobile number and a One-Time Password (OTP) sent to that number. However, the app stores the user's full name, call history, and SMS history for the past fourteen days. Additionally, it allows users to download a tax certificate, which includes the mobile number, full name, national identity number, and physical address of the user. The image below shows a tax certificate downloaded via the UPTCL app, with the user's mobile number, full name, national identity number, and physical address redacted for privacy. </p>
                         <div class="img-container">
@@ -92,7 +92,7 @@
                     score = 3;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">Incorrect!</p> 
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                         <span><p>Please select the correct answer, "No" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

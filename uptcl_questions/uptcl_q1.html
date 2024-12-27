@@ -68,7 +68,7 @@
                 if (answerValue === 'maybe') {
                     feedback.innerHTML = `
                         <div class="feedback-container">
-                            <p class="feedback-correct">Correct!</p>
+                            <p class="feedback-correct">Awesome! You nailed it.</p>
                             <span>
                                 <p> The UPTCL app does not require location coordinates to function. However, users must enable location permissions to view promotional offers in their area. When these permissions are granted, the app transmits precise location coordinates.</p>
 
@@ -83,7 +83,8 @@
                     score = 1;
                 } else {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect"><p>Incorrect!</p> <span><p>Please select the correct answer, "With Caution!" to learn the reason.</p></span>
+                        <p class="feedback-incorrect"><p>Oops, that's not quite right. Try again!</p> 
+                        <span><p>Please select the correct answer, "With Caution!" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct');
