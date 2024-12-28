@@ -9,13 +9,16 @@
 </head>
 
 <body class="fixed-top-nav">
+    <!-- Magic Dust Container -->
+    <div id="magic-dust" class="magic-dust"></div>
+
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q4: Should concerns arise if you have a rooted phone, the SIMOSA app is installed on the device, and your phone is subsequently stolen?</p>
+                    <p>Question 4: Should concerns arise if you have a rooted phone, the SIMOSA app is installed on the device, and your phone is subsequently stolen?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -109,6 +112,39 @@
         }
     </script>
 
+    <script>
+        // Function to generate random particles of dust
+        function createMagicDust() {
+            const magicDustContainer = document.getElementById('magic-dust');
+            const colors = ['#FFD700', '#8B0000', '#2E8B57', '#654321', '#E91E63']; // Golden, Brown, Pink colors for particles
+
+            // Create a particle every 50ms
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
+                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
+                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
+
+                // Random size for particles
+                const size = Math.random() * 6 + 4; // size between 4px and 10px
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                magicDustContainer.appendChild(particle);
+
+                // Remove particle after animation ends (5 seconds)
+                setTimeout(() => {
+                    particle.remove();
+                }, 5000); // Remove after 5 seconds
+            }, 50); // Create new particle every 50ms
+        }
+
+        // Initialize the magic dust effect
+        createMagicDust();
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
