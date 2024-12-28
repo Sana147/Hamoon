@@ -21,6 +21,7 @@
             font-family: 'Roboto', sans-serif;
             background-color: #ffffff; /* Soft background color */
             color: #333; /* Standard text color */
+            position: relative; /* To allow positioning of the magic dust particles */
         }
 
         .watermark {
@@ -130,9 +131,45 @@
             position: relative;
             margin-top: 20px; /* Space above footer */
         }
+
+        /* Magic Dust Particle Container */
+        .magic-dust {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999; /* Ensure it is on top of other elements */
+            overflow: hidden;
+        }
+
+        .magic-dust .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: float 5s infinite;
+            opacity: 0;
+        }
+
+        /* Particle animation to simulate floating */
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) scale(1.5);
+                opacity: 0;
+            }
+        }        
     </style>
 </head>
 <body class="fixed-top-nav">
+    <!-- Magic Dust Container -->
+    <div id="magic-dust" class="magic-dust"></div>
+
     <div class="watermark">Hamoon</div>
     <header>
         <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
@@ -152,7 +189,7 @@
             </div>
         </nav>
     </header>
-    <div id="particles-js"></div>
+
     <div class="container main-content mt-5">
         <div class="post">
             <header class="post-header">
@@ -162,19 +199,14 @@
                 </div>
                 <h2 class="post-subtitle">(State-sponsored App)</h2>
                 <h3 class="spacing-between-headings">
-                
                     <p>The Pak Identity App allows Pakistani citizens to request, update, or modify their national identity documents. The app has 1M+ downloads and a rating of 2.3 stars out of 5 on Google Play Store. The developer email ID is: <span class="email">mobile.android@nadra.gov.pk</span> and the app package is <span class="package">pk.gov.nadra.pakid.</span></p>
-                <p> Are you ready to take the quiz and test your understanding of how to use the Pak Identity app securely? If yes, please select the "Start Quiz" button.</p>
+                    <p> Are you ready to take the quiz and test your understanding of how to use the Pak Identity app securely? If yes, please select the "Start Quiz" button.</p>
                 </h3> 
-
                 <h2 class="large-bold-heading">How the quiz works?</h2> 
                 <h3 class="spacing-between-headings">
                     <p>This quiz consists of ten questions, and there is no time limit. If you select an incorrect answer, the option to choose the correct answer will appear. Please ensure you select the correct answer for each question to understand the rationale behind it.</p>
                 </h3> 
             </header>
-            <article>
-                <!-- Add your article content here -->
-            </article>
         </div>
     </div>
 
@@ -189,12 +221,43 @@
         </div>
     </footer>
     
+    <script>
+        // Function to generate random particles of dust
+        function createMagicDust() {
+            const magicDustContainer = document.getElementById('magic-dust');
+            const colors = ['#FFD700', '#005C99', '#3A9D5B']; // Golden, Green, Red colors for particles
+
+            // Create a particle every 50ms
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
+                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
+                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
+
+                // Random size for particles
+                const size = Math.random() * 6 + 4; // size between 4px and 10px
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                magicDustContainer.appendChild(particle);
+
+                // Remove particle after animation ends (5 seconds)
+                setTimeout(() => {
+                    particle.remove();
+                }, 5000); // Remove after 5 seconds
+            }, 50); // Create new particle every 50ms
+        }
+
+        // Initialize the magic dust effect
+        createMagicDust();
+    </script>    
+    
     <!-- Include JS libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="/assets/js/main.js"></script>
 </body>
 </html>
 
