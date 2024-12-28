@@ -1,8 +1,8 @@
     <style>
         body {
-            background-color: #d3f9d8; /* Light green color */
+            background-color: #ffffff; /* Light green color */
         }
-
+        
         .quiz-container {
             margin-top: 20px;
         }
@@ -60,6 +60,14 @@
             border-color: #2C8E6D;
         }
 
+        .img-container {
+            margin-top: 20px;
+            text-align: center; /* Center the image */
+        }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+        }
         /* New class for score styling */
         .score-display {
             font-size: 1rem; /* Adjust font size here */
@@ -71,7 +79,7 @@
        .top-right-image {
             position: absolute; /* Positioning it absolutely */
             top: 10px; /* Adjust as needed */
-            right: 50px; /* Adjust as needed */
+            left: 50px; /* Adjust as needed */
             max-width: 250px; /* Adjust size as needed */
         }
 
@@ -104,40 +112,7 @@
         .feedback-incorrect span {
             color: black; /* Black color for text after "Incorrect" */
         }
-
-        /* Magic Dust Particle Container */
-        .magic-dust {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999; /* Ensure it is on top of other elements */
-            overflow: hidden;
-        }
-
-        .magic-dust .particle {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            animation: float 5s infinite;
-            opacity: 0;
-        }
-
-        /* Particle animation to simulate floating */
-        @keyframes float {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-1000px) scale(1.5);
-                opacity: 0;
-            }
-        }  
-
+        
         /* Magic Dust Particle Container */
         .magic-dust {
             position: absolute;
@@ -170,6 +145,7 @@
                 opacity: 0;
             }
         }                
-                                      
+                
     </style>
+
 
