@@ -9,6 +9,9 @@
 
 </head>
 <body class="fixed-top-nav">
+    <!-- Magic Dust Container -->
+    <div id="magic-dust" class="magic-dust"></div>
+
     <div class="watermark">Hamoon</div>
 
     <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
@@ -17,7 +20,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Q9: Is it possible to do Machine in the Middle due to trusted certificate for the Pak Identity app?</p>
+                    <p>Question 9: Is it possible to do Machine in the Middle due to trusted certificate for the Pak Identity app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -65,7 +68,7 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
-                    feedback.innerHTML = `p>Awesome! You nailed it.</p>
+                    feedback.innerHTML = `<p>Awesome! You nailed it.</p>
                     <span><p> The Pak Identity app does not include an embedded trusted certificate, making it resistant to Man-in-the-Middle (MitM) attacks unless the Internet Service Provider (ISP) possesses a trusted certificate.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
@@ -92,6 +95,39 @@
             }
         }
     </script>
+    
+    <script>
+        // Function to generate random particles of dust
+        function createMagicDust() {
+            const magicDustContainer = document.getElementById('magic-dust');
+            const colors = ['#FFD700', '#005C99', '#3A9D5B']; // Golden, Green, Red colors for particles
+
+            // Create a particle every 50ms
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
+                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
+                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
+
+                // Random size for particles
+                const size = Math.random() * 6 + 4; // size between 4px and 10px
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                magicDustContainer.appendChild(particle);
+
+                // Remove particle after animation ends (5 seconds)
+                setTimeout(() => {
+                    particle.remove();
+                }, 5000); // Remove after 5 seconds
+            }, 50); // Create new particle every 50ms
+        }
+
+        // Initialize the magic dust effect
+        createMagicDust();
+    </script>     
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
