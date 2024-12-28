@@ -114,5 +114,27 @@
         .feedback-incorrect span {
             color: black; /* Black color for text after "Incorrect" */
         }
+
+        .magic-dust .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: float 5s infinite;
+            opacity: 0;
+        }
+
+        /* Particle animation to simulate floating */
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) scale(1.5);
+                opacity: 0;
+            }
+        }             
+                
     </style>
 
