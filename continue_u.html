@@ -151,6 +151,47 @@
             display: none; /* Hide text content inside the button */
         }
     </style>
+
+    <!-- Include the CanvasConfetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // Always trigger confetti on page load
+        window.onload = function() {
+            confetti({
+                particleCount: 200,
+                spread: 70,
+                origin: { x: 0.5, y: 0.5 },
+                colors: ['#ff0', '#ff0', '#ff0000', '#0000ff', '#00ff00']
+            });
+        }
+
+        function toggleLanguage(lang) {
+            document.querySelectorAll('.language').forEach(function (element) {
+                element.classList.remove('active');
+            });
+            document.getElementById(lang).classList.add('active');
+
+            // Update navbar links based on selected language
+            const navbarLinks = document.querySelectorAll('.nav-link');
+            navbarLinks.forEach(link => {
+                if (lang === 'english') {
+                    link.textContent = link.dataset.en; // English text
+                } else {
+                    link.textContent = link.dataset.ur; // Urdu text
+                }
+            });
+
+            // Right-align text for Urdu
+            const urduContent = document.getElementById('urdu');
+            if (lang === 'urdu') {
+                urduContent.classList.add('text-right');
+            } else {
+                urduContent.classList.remove('text-right');
+            }
+        }
+    </script>        
+    
 </head>
 <body class="fixed-top-nav">
     <header>
@@ -210,7 +251,7 @@
     </div>
 
     <footer>
-        <div class="container mt-0">© کاپی رائٹ 2024 گمنام مصنف۔ جملہ حقوق محفوظ ہیں۔ آخری بار 31 دسمبر، 2024کو اپ ڈیٹ کیا گیا۔</div>
+        <div class="container mt-0"><p>&copy; کاپی رائٹ 2024 ثناء حبیب۔ جملہ حقوق محفوظ ہیں۔ آخری بار 31 دسمبر، 2024کو اپ ڈیٹ کیا گیا۔</p></div>
     </footer>
 
     <!-- Include JS libraries -->
