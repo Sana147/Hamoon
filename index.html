@@ -13,12 +13,25 @@
             color: #004d00;
             text-align: center;
             padding: 50px;
+            overflow: hidden; /* Ensures particles stay within the body */
         }
 
         h1 {
             color: #006400;
             font-size: 3rem;
             margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #004d00;
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #006400;
+            font-size: 1.5rem;
+            margin-top: 15px;
         }
 
         .btn {
@@ -59,12 +72,61 @@
             color: white;
             padding: 15px;
         }
+
+        .image-container {
+            margin: 30px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Magic Dust Particle Style */
+        .magic-dust {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .magic-dust .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: float 5s infinite;
+            opacity: 0;
+        }
+
+        /* Particle animation to simulate floating */
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) scale(1.5);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to the Hamoon Framework</h1>
-    <h2>Select your preferred language:</h2>
+    <h1><span class="font-weight-bold">Welcome to the Hamoon Framework!</span></h1>
+    
+    <!-- Inserted image here -->
+    <div class="image-container">
+        <img src="pictures/wizard4.jpg" alt="Hamoon Framework Image">
+    </div>
+    
+    <h2><span style="color: #B8860B;">A Wizard Unveiling Digital Risks in Pakistan’s Most Popular Apps</span></h2>
     
     <button class="btn btn-english" onclick="window.location.href='homepage_english.html'">English</button>
     <button class="btn btn-urdu" onclick="window.location.href='homepage_urdu.html'">اردو</button>
@@ -72,6 +134,42 @@
     <footer>
         <p>&copy;Copyright 2024 Anonymous Author. All Rights Reserved. Last updated: December 31, 2024.</p>
     </footer>
+
+    <!-- Magic Dust Container -->
+    <div class="magic-dust" id="magic-dust"></div>
+
+    <script>
+        // Function to generate random particles of dust
+        function createMagicDust() {
+            const magicDustContainer = document.getElementById('magic-dust');
+            const colors = ['#FFD700', '#32CD32', '#FF4500']; // Golden, Green, Red colors for particles
+
+            // Create a particle every 50ms
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
+                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
+                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
+
+                // Random size for particles
+                const size = Math.random() * 6 + 4; // size between 4px and 10px
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                magicDustContainer.appendChild(particle);
+
+                // Remove particle after animation ends (5 seconds)
+                setTimeout(() => {
+                    particle.remove();
+                }, 5000); // Remove after 5 seconds
+            }, 50); // Create new particle every 50ms
+        }
+
+        // Initialize the magic dust effect
+        createMagicDust();
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-DfXdz2htPH0lsSSs5nCTpuj/zy1z/2nN4R0CB5t8g3I=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha256-ZfQ7f0P1p2p/9JvQuDlbwn61A5qf1LpT5cVvWcC7Ylg=" crossorigin="anonymous"></script>
