@@ -115,9 +115,46 @@
             position: relative;
             margin-top: 20px; /* Space above footer */
         }
+
+        /* Magic Dust Particle Container */
+        .magic-dust {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999; /* Ensure it is on top of other elements */
+            overflow: hidden;
+        }
+
+        .magic-dust .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: float 5s infinite;
+            opacity: 0;
+        }
+
+        /* Particle animation to simulate floating */
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) scale(1.5);
+                opacity: 0;
+            }
+        }                        
+        
     </style>
 </head>
 <body class="fixed-top-nav">
+    <!-- Magic Dust Container -->
+    <div id="magic-dust" class="magic-dust"></div>
+
     <div class="watermark">Hamoon</div>
     <header>
         <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
@@ -169,9 +206,42 @@
 
     <footer>
         <div class="container mt-0">
-            © Copyright 2024 Anonymous Author. All Rights Reserved. Last updated: December 31, 2024.
+            <p> &copy; 2024 Sana Habib. All Rights Reserved. Last updated: December 31, 2024.</p>
         </div>
     </footer>
+    
+    <script>
+        // Function to generate random particles of dust
+        function createMagicDust() {
+            const magicDustContainer = document.getElementById('magic-dust');
+            const colors = ['#FFD700', '#8B0000', '#2E8B57']; // Golden, Brown, Pink colors for particles
+
+            // Create a particle every 50ms
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
+                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
+                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
+
+                // Random size for particles
+                const size = Math.random() * 6 + 4; // size between 4px and 10px
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                magicDustContainer.appendChild(particle);
+
+                // Remove particle after animation ends (5 seconds)
+                setTimeout(() => {
+                    particle.remove();
+                }, 5000); // Remove after 5 seconds
+            }, 50); // Create new particle every 50ms
+        }
+
+        // Initialize the magic dust effect
+        createMagicDust();
+    </script>
     
     <!-- Include JS libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
