@@ -6,6 +6,18 @@
     <title>Pakistan Citizen Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
+    <style>
+                /* CSS for responsive image */
+        .responsive-image {
+            width: 100%;         /* Full width on mobile devices */
+            max-width: 750px;    /* Limits width to 500px on larger screens */
+            height: auto;        /* Maintains aspect ratio */
+            display: block;      /* Block-level element */
+            margin: 0 auto;      /* Center the image horizontally */
+        }
+    </style>
+    
+    
 </head>
 <body class="fixed-top-nav">
     <!-- Magic Dust Container -->
@@ -69,7 +81,7 @@
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p> 
                     <span><p>SSL pinning is a technique that helps to prevent Machine in the Middle (MitM) attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app. The image below shows the use of okhttp3 library in the source code of the Pakistan Citizen Portal app (<span style="color:blue;">package name: com.govpk.citizensportal</span>).</p>
                     </span>
-                    <img src="pakistan_citizen_portal_ssl_pinning_marked.png" alt="Pak Identity Authentication Request">
+                    <img src="pakistan_citizen_portal_ssl_pinning_marked.png" alt="Pak Identity Authentication Request" class="responsive-image">
 
                     `;
                     feedback.classList.add('feedback-correct');
