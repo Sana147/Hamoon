@@ -51,6 +51,8 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
+            align-items: center; /* Added */
+            justify-content: center; /* Added */                                                
         }
 
         .home-button:hover {
@@ -76,6 +78,16 @@
             animation: confettiFall 3s infinite;
         }
 
+        .recommendations_text {
+            font-size: 1.5em;
+            color: #000000;
+            opacity: 0;
+            text-align: center;
+            margin-top: 10px;
+            transform: translateY(-50px);
+            animation: fadeInSlideUp 5s forwards;
+        }
+
         @keyframes confettiFall {
             0% {
                 transform: translateY(-100px) rotate(0deg);
@@ -97,6 +109,9 @@
 </head>
 <body>
     <div class="congratulations">مبارک ہو! آپ نے پاکستان سیٹیزن پورٹل ایپ کے تعلیمی ماڈیول کو مکمل کر لیا ہے۔</div>
+    <div class="recommendations_text">
+    صارفین کو مشورہ دیا جاتا ہے کہ وہ ایپ کو صرف اس وقت استعمال کریں جب ضروری ہو اور بعد میں اسے ان انسٹال کریں تاکہ حساس اسناد کو ان کے آلات پر محفوظ ہونے سے روکا جا سکے۔ وی پی این (VPN) استعمال کرتے وقت، صارفین کو محتاط رہنا چاہیے، کیونکہ ایپ مقام کا ڈیٹا منتقل کرتی ہے۔ مزید برآں، پاس ورڈز کو باقاعدگی سے اپ ڈیٹ کرنے سے اکاؤنٹس کی حفاظت میں مدد مل سکتی ہے۔
+    </div>      
     <a href="../index.html" class="home-button">ہوم پیج پر واپس جائیں</a>
 
     <!-- Confetti container -->
