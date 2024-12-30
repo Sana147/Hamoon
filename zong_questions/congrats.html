@@ -48,11 +48,23 @@
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
+            align-items: center; /* Added */
+            justify-content: center; /* Added */                                                
         }
 
         .home-button:hover {
             background-color: #E91E63;
         }
+        
+        .recommendations_text {
+            font-size: 1.5em;
+            color: #000000;
+            opacity: 0;
+            text-align: center;
+            margin-top: 10px;
+            transform: translateY(-50px);
+            animation: fadeInSlideUp 5s forwards;
+        }                
 
         /* Confetti styles */
         .confetti {
@@ -94,6 +106,7 @@
 </head>
 <body>
     <div class="congratulations">Congratulations! You have completed the learning module for the My Zong app.</div>
+    <div class="recommendations_text">We recommend users use the "panic button" if their phone is stolen or confiscated. This feature will lock the phone and erase all data. Additionally, if users receive an OTP (One-Time Password) on their phone without requesting it, this may indicate unauthorized access to their account.</div>    
     <a href="../index.html" class="home-button">Back to Home Page</a>
 
     <!-- Confetti container -->
