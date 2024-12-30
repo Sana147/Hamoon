@@ -68,8 +68,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The Pak Identity app cannot detect login activity from unknown devices, which poses a significant security risk. If an attacker gains access to an at-risk user's account, they could carry out malicious actions without the user's knowledge or warning. For example, they could manipulate location coordinates or perform unauthorized transactions.</p>
-<p>One potential solution to mitigate this issue is for users to change their passwords frequently. While this practice can enhance security,  implementing stronger authentication measures within the app would provide a more robust defense against unauthorized access. The Pak Identity app cannot detect login activity from an unknown device. That is a problem because an attacker, once getting hold of an at-risk user's account, could do all bad things using the at-risk user's account, e.g., plant fake location coordinates without the user knowing about it or receiving any warning. One way to solve this problem would be for users to change their passwords frequently. </p></span>
+                    <span><p> The Pak Identity app cannot detect login activity from an unknown device. That is a problem because an attacker, once getting hold of an at-risk user's account, could do all bad things using the at-risk user's account, e.g., plant fake location coordinates without the user knowing about it or receiving any warning. One way to solve this problem would be for users to change their passwords frequently. </p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
