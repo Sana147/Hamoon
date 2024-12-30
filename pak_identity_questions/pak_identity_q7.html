@@ -68,9 +68,9 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p> 
-                    <span><p>SSL pinning is a technique that helps to prevent MITM attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. </p>
+                    <span><p>SSL pinning is a technique that helps to prevent Machine in the Middle (MitM) attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. </p>
                     
-                    <p>The image below shows the use of the okhttp3 library in the app's source code (package name: pk.gov.nadra.pakid) for implementing SSL pinning.</p>
+                    <p>The image below shows the use of the okhttp3 library in the app's source code (package name: <span style="color: purple;">pk.gov.nadra.pakid.</span>) for implementing SSL pinning.</p>
                         <div class="img-container">
                             <img src="certificate_pinner_pakid_marked.png" alt="Pak Identity Authentication Request">
                         </div>
