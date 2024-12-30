@@ -27,6 +27,16 @@
             animation: fadeInSlideUp 3s forwards;
         }
 
+        .recommendations_text {
+            font-size: 2em;
+            font-weight: bold;
+            color: #000000;
+            opacity: 0;
+            text-align: center;
+            transform: translateY(-50px);
+            animation: fadeInSlideUp 5s forwards;
+        }
+
         @keyframes fadeInSlideUp {
             0% {
                 opacity: 0;
@@ -48,6 +58,9 @@
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
+            display: inline-flex; /* Added */
+            align-items: center; /* Added */
+            justify-content: center; /* Added */
         }
 
         .home-button:hover {
@@ -94,6 +107,8 @@
 </head>
 <body>
     <div class="congratulations">Congratulations! You have completed the learning module for the Pak Identity app.</div>
+    <div class="recommendations_text">Users are recommended to use the app only when necessary and uninstall it afterward to prevent sensitive credentials from being stored on their devices. When using a VPN, users should be cautious, as the app transmits location data. Additionally, regularly updating passwords can help safeguard accounts and minimize the risk of compromise.</div>
+    
     <a href="../index.html" class="home-button">Back to Home Page</a>
 
     <!-- Confetti container -->
