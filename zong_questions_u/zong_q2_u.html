@@ -89,10 +89,10 @@
                 if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">درست جواب!</p> 
-                        <span><p>اگرچہ یہ نظری طور پر ممکن ہے کہ ایک طاقتور حریف جیسے ISP کے ساتھ ایک معتمد سرٹیفکیٹ، مواصلات کو روک کر مقام کے کوآرڈینیٹس کو plaintext میں دیکھے، اور پھر انہیں ایپ کے سرور پر محفوظ ہونے سے پہلے جعل سازی کے ڈیٹا سے تبدیل کر دے، تاہم ہمارے تجربات میں ہم اس کو دوبارہ نہیں دہرا سکے۔ اس وجہ سے، اس مسئلے کو فی الحال غیر حتمی سمجھا جا رہا ہے۔ ہم اضافی معلومات کی دستیابی پر اپ ڈیٹ فراہم کریں گے۔</p>
+                        <span><p>اگرچہ یہ نظری طور پر ممکن ہے کہ ایک طاقتور حریف جیسے کہ آئی ایس پی(ISP) جن کے پاس  ٹرسٹڈ سرٹیفکیٹ ہو سکتا ہے، مواصلات کو روک کر مقام کے کوآرڈینیٹس کو سادہ متن میں دیکھے، اور پھر انہیں ایپ کے سرور پر محفوظ ہونے سے پہلے جعل سازی کے ڈیٹا سے تبدیل کر دے،  ہمارے تجربات میں ہم یہ نہیں سکے۔ اس وجہ سے، اس مسئلے کو فی الحال غیر حتمی سمجھا جا رہا ہے۔ ہم اضافی معلومات کی دستیابی پر اپ ڈیٹ فراہم کریں گے۔</p>
                     `;
                     feedback.classList.add('feedback-correct');
-                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
+                    feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied 
 
                     // Increment score
                     score = 2;
