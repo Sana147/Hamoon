@@ -12,34 +12,35 @@
             background-color: #ffffff;
             color: #004d00;
             text-align: center;
-            padding: 50px;
-            margin: 0; /* Ensure no extra space around the body */
-            overflow: hidden; /* Ensures particles stay within the body */
-            box-sizing: border-box; /* Include padding/border in the total width/height calculation */
+            padding: 20px;
+            margin: 0;
+            box-sizing: border-box;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         h1 {
             color: #006400;
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 30px;
         }
 
         h2 {
             color: #004d00;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-top: 20px;
         }
 
         h3 {
             color: #006400;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-top: 15px;
         }
 
         .btn {
-            width: 200px;
+            width: 80%;
+            max-width: 200px;
             font-size: 1.2rem;
-            padding: 15px;
+            padding: 12px;
             margin: 10px;
             border-radius: 5px;
             cursor: pointer;
@@ -72,23 +73,29 @@
             background-color: #006400;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 10px;
             position: relative;
-            width: 100%; /* Make sure the footer spans the entire width */
-            box-sizing: border-box; /* Include padding in total width */
-            margin: 0; /* Ensure no margin around the footer */
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
         }
 
         .image-container {
             display: flex;
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 30px;
         }
-        
+
         .image-container img {
-            max-width: 200px;
+            width: 100%;
+            max-width: 250px;
             margin: 0 0px;
-            cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05); /* Optional: add hover effect */
         }
 
         /* Magic Dust Particle Style */
@@ -121,6 +128,40 @@
             100% {
                 transform: translateY(-1000px) scale(1.5);
                 opacity: 0;
+            }
+        }
+
+        /* Mobile responsiveness with media query */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Adjust font size on smaller screens */
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                width: 90%; /* Make buttons take up more width on mobile */
+            }
+
+            .image-container img {
+                max-width: 80%; /* Ensure images don't overflow */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem; /* Smaller font size for very small screens */
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .image-container img {
+                max-width: 70%;
             }
         }
     </style>
