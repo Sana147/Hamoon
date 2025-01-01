@@ -50,6 +50,8 @@
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
+            align-items: center; /* Added */
+            justify-content: center; /* Added */                                                                        
         }
 
         .home-button:hover {
@@ -66,6 +68,16 @@
             pointer-events: none;
             z-index: 999;
         }
+
+        .recommendations_text {
+            font-size: 1.5em;
+            color: #000000;
+            opacity: 0;
+            text-align: center;
+            margin-top: 10px;
+            transform: translateY(-50px);
+            animation: fadeInSlideUp 5s forwards;
+        }                
 
         .confetti-piece {
             position: absolute;
@@ -96,6 +108,10 @@
 </head>
 <body>
     <div class="congratulations">مبارک ہو! آپ نےمائی ٹیلی نار ایپ کے لئے تعلیمی ماڈیول مکمل کر لیا ہے۔</div>
+    <div class="recommendations_text">
+ہم صارفین کو مشورہ دیتے ہیں کہ اگر ان کا فون چوری یا ضبط ہو جائے تو "پینک بٹن" استعمال کریں۔ یہ فیچر فون کو لاک کر دے گا اور تمام ڈیٹا کو مٹا دے گا۔ مزید برآں، اگر صارفین اپنے فون پر بغیر درخواست کیے  ون ٹائم پاس ورڈ (OTP) وصول کرتے ہیں، تو یہ ان کے اکاؤنٹ تک غیر مجاز رسائی کی نشاندہی کر سکتا ہے۔
+    </div>
+   
     <a href="../index.html" class="home-button">ہوم پیج پر واپس جائیں</a>
 
     <!-- Confetti container -->
