@@ -13,7 +13,9 @@
             color: #004d00;
             text-align: center;
             padding: 50px;
+            margin: 0; /* Ensure no extra space around the body */
             overflow: hidden; /* Ensures particles stay within the body */
+            box-sizing: border-box; /* Include padding/border in the total width/height calculation */
         }
 
         h1 {
@@ -67,20 +69,26 @@
         }
 
         footer {
-            margin-top: 50px;
-            background-color: #004d00;
+            background-color: #006400;
             color: white;
+            text-align: center;
             padding: 15px;
+            position: relative;
+            width: 100%; /* Make sure the footer spans the entire width */
+            box-sizing: border-box; /* Include padding in total width */
+            margin: 0; /* Ensure no margin around the footer */
         }
 
         .image-container {
-            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
         }
-
+        
         .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+            max-width: 200px;
+            margin: 0 0px;
+            cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
         }
 
         /* Magic Dust Particle Style */
@@ -119,7 +127,9 @@
 </head>
 <body>
 
-    <h1><span class="font-weight-bold">Hamoon: The Wizard of Pakistani Apps</span></h1>
+    <h1>
+        <span class="font-weight-bold">Hamoon: The Wizard of Pakistani Apps</span>
+    </h1>
     
     <!-- Inserted image here -->
     <div class="image-container">
@@ -128,15 +138,15 @@
     
     <h2>
         <span style="color: #DAA520; text-shadow: 0 0 1px #DAA520, 0 0 1px #DAA520; font-weight: bold;">
-        Unveiling Digital Security Risks in Popular Pakistani Apps
-    </span>
+            Unveiling Digital Security Risks in Popular Pakistani Apps
+        </span>
     </h2>
     
     <button class="btn btn-english" onclick="window.location.href='homepage_english.html'">English</button>
     <button class="btn btn-urdu" onclick="window.location.href='homepage_urdu.html'">اردو</button>
 
     <footer>
-            <p> &copy; 2024 Sana Habib. All Rights Reserved. Last updated: December 31, 2024.</p>
+        <p>&copy; 2024 Sana Habib. All Rights Reserved. Last updated: December 31, 2024.</p>
     </footer>
 
     <!-- Magic Dust Container -->
