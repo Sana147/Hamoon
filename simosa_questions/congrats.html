@@ -42,11 +42,13 @@
             font-size: 1.5em;
             color: #000000;
             opacity: 0;
-            text-align: center;
+            text-align: justify;
             margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
             transform: translateY(-50px);
             animation: fadeInSlideUp 5s forwards;
-        }        
+        }                
 
         .home-button {
             margin-top: 20px;
@@ -59,7 +61,8 @@
             cursor: pointer;
             text-decoration: none;
             align-items: center; /* Added */
-            justify-content: center; /* Added */                                    
+            justify-content: center; /* Added */  
+            text-align: center;                                                                                           
         }
 
         .home-button:hover {
@@ -81,7 +84,7 @@
             position: absolute;
             width: 10px;
             height: 10px;
-            background-color: #ff0;
+            background-color: #654321;
             animation: confettiFall 3s infinite;
         }
 
@@ -96,17 +99,24 @@
 
         /* Add multiple colors for confetti */
         .confetti-piece:nth-child(odd) {
-            background-color: #ff0;
+            background-color: #654321;
         }
 
         .confetti-piece:nth-child(even) {
-            background-color: #ff6347;
+            background-color: #E91E63;
         }
     </style>
 </head>
 <body>
-    <div class="congratulations">Congratulations! You have completed the learning module for the SIMOSA app.</div>
-    <div class="recommendations_text">We recommend users use the "panic button" if their phone is stolen or confiscated. This feature will lock the phone and erase all data. Additionally, if users receive an OTP (One-Time Password) on their phone without requesting it, this may indicate unauthorized access to their account.</div>
+    <div class="congratulations">Congratulations! You have completed the training for the SIMOSA app.</div>
+    <div class="recommendations_text">
+        <p>We are thrilled you completed the training and hope you found it enjoyable! We certainly had a great time putting together the training module for you.</p>
+
+ <p>As a safety measure, we strongly recommend that users use the "panic button" if their phone is stolen or confiscated. That is because the SIMOSA app does not require a user-specified password. Activating the "panic button" will lock your phone and prevent an attacker from installing the UPTCL app on the at-risk user device to obtain call logs, SMS logs, and other sensitive user information. Users can use the built-in OS functionality for the "panic button" feature, or several third-party "panic button" apps offer similar features.</p>
+
+<p>We also advise users to be cautious if they receive an OTP (One-Time Password) on their phone without initiating the request. That could be a sign of unauthorized access to their account, and users should take immediate action (e.g., locking the SIM or the phone) to secure it. </p>
+
+    </div>
     <a href="../index.html" class="home-button">Back to Home Page</a>
 
     <!-- Confetti container -->
