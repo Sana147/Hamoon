@@ -50,6 +50,7 @@
             text-decoration: none;
             align-items: center; /* Added */
             justify-content: center; /* Added */                        
+            text-align: center;                                                         
         }
 
         .home-button:hover {
@@ -71,11 +72,13 @@
             font-size: 1.5em;
             color: #000000;
             opacity: 0;
-            text-align: center;
+            text-align: justify;
             margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
             transform: translateY(-50px);
             animation: fadeInSlideUp 5s forwards;
-        }
+        }                
 
         .confetti-piece {
             position: absolute;
@@ -96,17 +99,21 @@
 
         /* Add multiple colors for confetti */
         .confetti-piece:nth-child(odd) {
-            background-color: #ff0;
+            background-color: #8B0000; /*#ff0;*/
         }
 
         .confetti-piece:nth-child(even) {
-            background-color: #ff6347;
+            background-color: #2E8B57;
         }
     </style>
 </head>
 <body>
-    <div class="congratulations">Congratulations! You have completed the learning module for the Qeemat Punjab app.</div>
-    <div class="recommendations_text">Users are recommended to use the app only when necessary and uninstall it afterward to prevent sensitive credentials from being stored on their devices. When using a VPN, users should be cautious, as the app transmits location data. Additionally, regularly updating passwords can help safeguard accounts and minimize the risk of compromise.</div>    
+    <div class="congratulations">Congratulations! You have completed the training for the Qeemat Punjab app.</div>
+    <div class="recommendations_text">
+        <p>We are thrilled you completed the training and hope you found it enjoyable! We certainly had a great time putting together the training module for you.</p>
+
+ <p>As a safety measure, we strongly recommend that users use the Qeemat Punjab app only when necessary and uninstall it afterward to prevent sensitive credentials from being stored on their devices. We also recommend that users be careful when using a VPN, as the app transmits location data. Additionally, we recommend regularly updating passwords to safeguard user accounts and minimize the risk of compromise.</p>
+    </div>    
     <a href="../index.html" class="home-button">Back to Home Page</a>
 
     <!-- Confetti container -->
