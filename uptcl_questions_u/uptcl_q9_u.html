@@ -83,10 +83,7 @@
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
-                    if (score <= 9)
-                    {
-                        score += 1;
-                    }
+                    if (score <= 8){ score += 1;}
 
                 } else {
                     feedback.innerHTML = `<p>غلط جواب!</p>
