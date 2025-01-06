@@ -73,11 +73,14 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct">درست جواب!</p> 
-                    <span><p>مائی زونگ ایپ میں ٹرسٹڈ سرٹیفکیٹ موجود ہیں (<span style="color: blue;">assets/golootlo_key_prod.pem</span> اور <span style="color: blue;">assets/zong-staging-public-key.pem</span>), جس کی وجہ سے ایپ کو مشین ان دی مڈل (MITM) حملے کا خطرہ ہو سکتا ہے۔</p></span>
+                    <span><p>مائی زونگ ایپ میں ٹرسٹڈ سرٹیفکیٹ موجود ہیں (<span style="color: blue;">assets/golootlo_key_prod.pem</span> اور <span style="color: blue;">assets/zong-staging-public-key.pem</span>), جس کی وجہ سے ایپ کو مشین ان دی مڈل (MitM) حملے کا خطرہ ہو سکتا ہے۔</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
-                    score += 1;
+                    if (score <= 9)
+                    {  
+                        score += 1;
+                    }
                 } else {
                     feedback.innerHTML = `<p class="feedback-incorrect">غلط جواب!</p> 
                     <span><p>براہ کرم صحیح جواب منتخب کریں، " جی ہاں" تاکہ آپ وجہ جان سکیں۔</p></span>

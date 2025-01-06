@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style_zong.css">
     <style>    
           body {
-            position: relative; /* Ensure the body is positioned for absolute elements */
             direction: rtl; /* Set right to left direction for the text */
             font-family: 'Noto Sans Arabic', sans-serif; /* Use a font that supports Urdu characters */
         }
@@ -74,7 +73,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct">درست جواب!</p> 
-                    <span><p>یہ ایک اہم مسئلہ ہے۔ اس خطرے کو کم کرنے کا ایک طریقہ یہ ہے کہ اگر آپ کو کوئی OTP موصول ہو جو آپ نے درخواست نہیں کی ہو، تو اس کا مطلب یہ ہو سکتا ہے کہ آپ کا اکاؤنٹ خطرے میں ہے۔</p></span>
+                    <span><p>یہ ایک اہم مسئلہ ہے۔ اس خطرے کو کم کرنے کا ایک طریقہ یہ ہے کہ اگر آپ کو کوئی ون ٹائم پاس ورڈ (OTP) موصول ہو جو آپ نے درخواست نہیں کی ہو، تو اس کا مطلب یہ ہو سکتا ہے کہ آپ کا اکاؤنٹ خطرے میں ہے۔</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
