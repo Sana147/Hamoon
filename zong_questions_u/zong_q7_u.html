@@ -92,9 +92,7 @@
                 }
 
                 // Increment score and update display
-                if (answerValue === 'yes') {
-                    score += 1;
-                }
+                if (answerValue === 'yes' && score <= 6) {score += 1;}
                 document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
                 localStorage.setItem('score', score);
                 score = 6;
