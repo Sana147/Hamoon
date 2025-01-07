@@ -88,8 +88,9 @@
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                     // Increment score
-                    score += 1;
-                } else if (answerValue === 'yes') {
+                    if (score <= 7) {score += 1;}
+                    }
+                    else if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">غلط جواب!</p>
                         <span><p>براہ کرم صحیح جواب "غیر قطعی" منتخب کریں تاکہ وجہ جان سکیں۔</p></span>
