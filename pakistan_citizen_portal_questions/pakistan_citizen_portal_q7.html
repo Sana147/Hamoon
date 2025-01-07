@@ -96,7 +96,7 @@
                 }
 
                 // Increment score and update display
-                if (answerValue === 'yes') {
+                if (answerValue === 'yes' && score <= 6) {
                     score += 1;
                 }
                 document.getElementById('score').textContent = `Your score is ${score} out of 10`;
