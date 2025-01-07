@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qeemat Punjab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_qp.css">
+    <style>
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+            margin-bottom: 20px; /* Add some space at the bottom for the next content */
+        }
+
+        /* Adjusting the image size and alignment */
+        .feedback-container img {
+            width: 100%; /* Take up the full width of the container */
+            max-width: 1000px; /* Set a maximum width for the image */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 2px; /* Space between text and image */
+            align-self: center; /* Center the image horizontally */
+        }
+
+    </style>
+</head>
+
+<body class="fixed-top-nav">
+    <!-- Magic Dust Container -->
+    <div id="magic-dust" class="magic-dust"></div>
+
+    <div class="watermark">Hamoon</div>
+
+    <div class="container quiz-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="question">
+                    <p>Question 1: Is it advisable to use the Qeemat Punjab app while connected to a VPN?</p>
+                </div>
+                <form id="quizForm">
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="no" value="no">
+                        <label class="form-check-label" for="no">No</label>
+                    </div>
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="maybe" value="maybe">
+                        <label class="form-check-label" for="maybe">With Caution!</label>
+                    </div>
+                    
+                    <div class="form-check answer">
+                        <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">Yes</label>
+                    </div>
+                    <button type="button" class="btn btn-submit" onclick="checkAnswer()">Submit</button>
+                    <div id="feedback" class="feedback"></div>
+                    <div id="score" class="feedback"></div>
+                    <div class="button-group">
+                        <a href="qp.html" class="btn btn-dark-pink">Back</a>
+                        <a href="qp_q2.html" class="btn btn-dark-pink">Continue</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image fixed on top-right of the page -->
+    <img src="../pictures/qp.jpg" alt="Pakistani Female" class="top-right-image">
+
+    <script>
+        let score = 0;
+
+        function checkAnswer() {
+            const form = document.getElementById('quizForm');
+            const selectedOption = form.querySelector('input[name="answer"]:checked');
+            const feedback = document.getElementById('feedback');
+            const scoreElement = document.getElementById('score');
+
+            if (selectedOption) {
+                const answerValue = selectedOption.value;
+
+                if (answerValue === 'maybe') {
+                    feedback.innerHTML = `
+                        <div class="feedback-container">
+                            <p class="feedback-correct">Awesome! You nailed it.</p>
+                            <span>
+                                <p>The Qeemat Punjab app allows users to view the prices of agricultural products without requiring location permissions. However, if users wish to submit a suggestion or report a complaint about malpractice, they are prompted to grant location permissions. Without these permissions, users will be unable to submit their suggestions or complaints. Once granted, the app transmits precise location coordinates.</p>
+                        <p>The image below demonstrates the redacted location coordinates transmitted by the app when submitting a suggestion.</p>
+                        <div class="img-container">
+                            <img src="qeemat_punjab_suggestion_location_coordinates.png" alt="Qeemat Punjab Location Coordinates">
+                        </div>
+                     <p> This requirement poses a significant problem, as users should be allowed to submit complaints without sharing their location. For example, consider a reporter who is at risk because they are investigating corruption within government departments. If the reporter wishes to remain anonymous, they may not want authorities to track their whereabouts, fearing retaliation. If such a reporter uses this app to report corruption related to agricultural product pricing, the app’s requirement to share location data could expose their location to authorities, putting them at risk. A corrupt police officer, for instance, could send unidentified assailants to intimidate and harass the reporter. </p>
+                     <p>It is also important to note that while a VPN can mask a user’s IP address, making it appear as if they are located elsewhere, it does not provide complete anonymity. When traffic exits the VPN tunnel, precise location coordinates can still reveal the user’s actual location. As a result, Internet Service Providers (ISPs) may detect VPN usage and take action against users who are at risk. In Pakistan, users are required to register their VPN use, or they face a potential service cutoff. </p>
+                     
+                     </span>
+                        </div>
+                    `;
+                    feedback.classList.add('feedback-correct');
+                    feedback.classList.remove('feedback-incorrect');
+
+                    score = 1;
+                } else if (answerValue === 'yes') {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect"><p>Oops, that's not quite right. Try again!</p> <span><p>Please select "No" to understand the reason.</span></p>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct');
+                    score = 0;
+                } else {
+                    feedback.innerHTML = `
+                        <p class="feedback-incorrect"><p>Oops, that's not quite right. Try again!</p> <span><p>Please select "No" to understand the reason.</span></p>
+                    `;
+                    feedback.classList.add('feedback-incorrect');
+                    feedback.classList.remove('feedback-correct');
+                    score = 0;
+                }
+
+                document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
+                localStorage.setItem('score', score);
+
+            } else {
+                alert('Please select an answer.');
+            }
+        }
+    </script>
+
+    <script>
+        // Function to generate random particles of dust
+        function createMagicDust() {
+            const magicDustContainer = document.getElementById('magic-dust');
+            const colors = ['#FFD700', '#8B0000', '#2E8B57']; // Golden, Brown, Pink colors for particles
+
+            // Create a particle every 50ms
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
+                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
+                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
+
+                // Random size for particles
+                const size = Math.random() * 6 + 4; // size between 4px and 10px
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                magicDustContainer.appendChild(particle);
+
+                // Remove particle after animation ends (5 seconds)
+                setTimeout(() => {
+                    particle.remove();
+                }, 5000); // Remove after 5 seconds
+            }, 50); // Create new particle every 50ms
+        }
+
+        // Initialize the magic dust effect
+        createMagicDust();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
