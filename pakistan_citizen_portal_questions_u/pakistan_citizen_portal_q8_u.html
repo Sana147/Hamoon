@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>سوال نمبر 8: کیا پاکستان سیٹیزن پورٹل ایپ کے ذریعے PDF ڈیٹا کو سپوف کیا جا سکتا ہے؟</p>
+                    <p> سوال نمبر 8: کیا پاکستان سیٹیزن پورٹل ایپ کے ذریعے پی ڈی ایف (PDF) ڈیٹا کو سپوف کیا جا سکتا ہے؟</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -85,7 +85,7 @@
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">صحیح جواب!</p>
-                        <span><p>پاکستان سیٹیزن پورٹل ایپ صارفین کو PDF فائلز کے ذریعے معلومات فراہم نہیں کرتی۔ اس کے بجائے یہ ڈیٹا فراہم کرنے کے لیے JSON فائلز کا استعمال کرتی ہے۔ اس لیے PDF ڈیٹا کو سپوف کرنا ممکن نہیں ہے کیونکہ ایپ اس مقصد کے لیے PDFs استعمال نہیں کرتی۔</p></span>
+                        <span><p>پاکستان سیٹیزن پورٹل ایپ صارفین کو پی ڈی ایف (PDF) فائلز کے ذریعے معلومات فراہم نہیں کرتی۔ اس کے بجائے یہ ڈیٹا فراہم کرنے کے لیے جے سون (JSON) فائلز کا استعمال کرتی ہے۔ اس لیے  پی ڈی ایف (PDF) ڈیٹا کو سپوف کرنا ممکن نہیں ہے کیونکہ ایپ اس مقصد کے لیے  پی ڈی ایف (PDF) فائلز کا استعمال نہیں کرتی۔</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -100,7 +100,7 @@
                 }
 
                 // Increment score and update display
-                if (answerValue === 'yes' && score <=7) {
+                if (answerValue === 'no' && score <=7) {
                     score += 1;
                 }
                 document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
