@@ -6,11 +6,6 @@
     <title>UPTCL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_uptcl.css">
-    <style>
-        body {
-/*            background-color: #d3f9d8; /* Light green color */
-        }        
-    </style>
 </head>
 
 <body class="fixed-top-nav">
@@ -80,7 +75,7 @@
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
-                    score += 1;
+                    if (score <= 6) {score += 1;}
 
                 } else {
                     feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> 
