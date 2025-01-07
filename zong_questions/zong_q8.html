@@ -85,7 +85,7 @@
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                     // Increment score
-                    score += 1;
+                    if (score <=7) {score += 1;}
                 } else if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
