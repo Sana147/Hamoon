@@ -1,4 +1,3 @@
-    <script>
         // Function to generate random particles of dust
         function createMagicDust() {
             const magicDustContainer = document.getElementById('magic-dust');
@@ -29,5 +28,4 @@
 
         // Initialize the magic dust effect
         createMagicDust();
-    </script>
 
