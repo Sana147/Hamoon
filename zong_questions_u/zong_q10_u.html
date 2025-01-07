@@ -77,7 +77,7 @@
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
-                    score += 1;
+                    if (score <= 9) {score += 1;}
 
                 } else {
                     feedback.innerHTML = `<p class="feedback-incorrect">غلط جواب!</p></p> <span><p>براہ کرم صحیح جواب منتخب کریں، "جی ہاں" تاکہ آپ وجہ جان سکیں</p></span> 
