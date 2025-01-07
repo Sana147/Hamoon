@@ -75,7 +75,7 @@
                     feedback.innerHTML = `
                         <p class="feedback-correct">صحیح جواب!</p>
                         <span>
-                            <p>ایس ایس ایل پننگ ایک تکنیک ہے جو من ان دی مڈل (MITM) حملوں کو روکنے میں مدد دیتی ہے، جس میں ایپ یا ڈیوائس میں ایس ایس ایل/ٹی ایل ایس سرٹیفکیٹ کے پبلک کی کو ہارڈ کوڈ کیا جاتا ہے۔ اس کا مطلب یہ ہے کہ جب ایپ یا ڈیوائس سرور کے ساتھ بات چیت کرتی ہے، تو وہ سرور کے ایس ایس ایل/ٹی ایل ایس سرٹیفکیٹ کے پبلک کی کو ایپ یا ڈیوائس میں ہارڈ کوڈ کیے گئے کی کے ساتھ موازنہ کرے گی۔</p>
+                            <p>ایس ایس ایل پننگ ایک تکنیک ہے جو مین ان دی مڈل (MitM) حملوں کو روکنے میں مدد دیتی ہے، جس میں ایپ یا ڈیوائس میں ایس ایس ایل/ٹی ایل ایس سرٹیفکیٹ کے پبلک کی کو ہارڈ کوڈ کیا جاتا ہے۔ اس کا مطلب یہ ہے کہ جب ایپ یا ڈیوائس سرور کے ساتھ بات چیت کرتی ہے، تو وہ سرور کے ایس ایس ایل/ٹی ایل ایس سرٹیفکیٹ کے پبلک کی کو ایپ یا ڈیوائس میں ہارڈ کوڈ کیے گئے کی کے ساتھ موازنہ کرے گی۔</p>
                             <p>نیچے کی تصویر میں ایپ کے سورس کوڈ (پیکیج کا نام: pk.gov.nadra.pakid) میں ایس ایس ایل پننگ کے نفاذ کے لیے okhttp3 لائبریری کا استعمال دکھایا گیا ہے۔</p>
                             <div class="img-container">
                                 <img src="certificate_pinner_pakid_marked.png" alt="Pak Identity Authentication Request">
@@ -92,10 +92,11 @@
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
+                    score = 6;
                 }
 
                 // Increment score and update display
-                if (answerValue === 'yes') {
+                if (answerValue === 'yes' && score <=6) {
                     score += 1;
                 }
                 document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
