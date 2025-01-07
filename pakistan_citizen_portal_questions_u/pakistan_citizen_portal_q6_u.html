@@ -102,7 +102,7 @@
                 }
 
                 // Increment score and update display
-                if (answerValue === 'no') {
+                if (answerValue === 'no' && score <= 5) {
                     score += 1;
                 }
                 document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;

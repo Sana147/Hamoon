@@ -101,7 +101,7 @@
                 }
 
                 // Increment score and update display
-                if (answerValue === 'yes') {
+                if (answerValue === 'yes' && score <= 8) {
                     score += 1;
                 }
                 document.getElementById('score').textContent = `آپ کا سکور 10 میں سے ${score} ہے۔`;
