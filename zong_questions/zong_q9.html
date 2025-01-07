@@ -69,7 +69,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The My Zong app contains embedded certificates (<span style="color: blue;"> assets/golootlo_key_prod.pem</span> and <span style="color: blue;">  assets/zong-staging-public-key.pem</span>), which makes it susceptible to a Man-in-the-Middle (MITM) attack.</p></span>
+                    <span><p> The My Zong app contains embedded certificates (<span style="color: blue;">assets/golootlo_key_prod.pem</span> and <span style="color: blue;">  assets/zong-staging-public-key.pem</span>), which makes it susceptible to a Machine-in-the-Middle (MitM) attack.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
