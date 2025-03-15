@@ -132,27 +132,6 @@
             margin-top: 20px; /* Space above footer */
         }
 
-        /* Magic Dust Particle Container */
-        .magic-dust {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999; /* Ensure it is on top of other elements */
-            overflow: hidden;
-        }
-
-        .magic-dust .particle {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            animation: float 5s infinite;
-            opacity: 0;
-        }
-
         /* Particle animation to simulate floating */
         @keyframes float {
             0% {
@@ -167,8 +146,6 @@
     </style>
 </head>
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
 
     <div class="watermark">Hamoon</div>
     <header>
@@ -199,12 +176,13 @@
                 </div>
                 <h2 class="post-subtitle">(State-sponsored App)</h2>
                 <h3 class="spacing-between-headings">
-                    <p>The Pak Identity App allows Pakistani citizens to request, update, or modify their national identity documents. The app has 1M+ downloads and a rating of 1.9 stars out of 5 on Google Play Store. The developer email ID is: <span class="email">mobile.android@nadra.gov.pk</span> and the app package is <span class="package">pk.gov.nadra.pakid.</span></p>
-                    <p> Are you ready to take the quiz and test your understanding of how to use the Pak Identity app securely? If yes, please select the "Start Quiz" button.</p>
+                    <p> The Pak Identity App allows Pakistani citizens to request, update, or modify their national identity documents. As of 2025, the app had 1M+ downloads and a rating of 1.9 stars out of 5 on Google Play Store. The developer email ID is: <span class="email">mobile.android@nadra.gov.pk</span> and the app package is <span class="package">pk.gov.nadra.pakid.</span>.
                 </h3> 
-                <h2 class="large-bold-heading">How the quiz works?</h2> 
+                <h2 class="large-bold-heading">How does the quiz work?</h2> 
                 <h3 class="spacing-between-headings">
-                    <p>This quiz consists of ten questions, and there is no time limit. If you select an incorrect answer, the option to choose the correct answer will appear. Please ensure you select the correct answer for each question to understand the rationale behind it.</p>
+                    <p>This quiz consists of ten questions designed to help you learn more about the security risks related to using the app and what you can do to better protect yourself from them. There is no time limit. If you select an incorrect answer, the option to choose the correct answer will appear. Please ensure you select the correct answer for each question to understand the rationale behind it.</p>
+                
+                <p>Are you ready to take the quiz and test your understanding of how to use the Pak Identity app securely? If yes, please select the "Start Quiz" button to begin!</p>    
                 </h3> 
             </header>
         </div>
@@ -217,43 +195,10 @@
 
     <footer>
         <div class="container mt-0">
-            <p> &copy; 2024 Sana Habib. All Rights Reserved. Last updated: December 31, 2024.</p>
+            <p> &copy; 2025 Sana Habib. All Rights Reserved. Last updated: April 15, 2025.</p>
         </div>
     </footer>
-    
-    <script>
-        // Function to generate random particles of dust
-        function createMagicDust() {
-            const magicDustContainer = document.getElementById('magic-dust');
-            const colors = ['#FFD700', '#005C99', '#3A9D5B']; // Golden, Green, Blue colors for particles
-
-            // Create a particle every 50ms
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
-                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
-                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
-
-                // Random size for particles
-                const size = Math.random() * 6 + 4; // size between 4px and 10px
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                magicDustContainer.appendChild(particle);
-
-                // Remove particle after animation ends (5 seconds)
-                setTimeout(() => {
-                    particle.remove();
-                }, 5000); // Remove after 5 seconds
-            }, 50); // Create new particle every 50ms
-        }
-
-        // Initialize the magic dust effect
-        createMagicDust();
-    </script>    
-    
+        
     <!-- Include JS libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" crossorigin="anonymous"></script>
