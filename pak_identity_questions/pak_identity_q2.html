@@ -9,10 +9,36 @@
 
 </head>
 
+<style>
+    body {
+        font-family: 'Calibri', sans-serif;
+    }
+
+    .black-text {
+        color: black;
+    }
+    
+     /* New CSS class to add margin */
+    .question-text {
+        color: blue;
+        margin-top: 20px; /* space before the text */
+        margin-bottom: 20px; /* space after the text */
+    }
+
+    
+    #score {
+        font-size: 1.5rem; /* Same size as h4 */
+        font-family: 'Calibri', sans-serif;
+    }
+
+    /* Set the font size for the radio options */
+    .form-check-label {
+        font-size: 1.5rem; /* Set size for Yes, No, Maybe options */
+    }
+
+</style>
+
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magicdust.js"></script>
 
     <div class="watermark">Hamoon</div>
     <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
@@ -20,8 +46,15 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            
+                <h4>
+                    <p class="question-text">Answer the question below.</p>
+                </h4>
+            
                 <div class="question">
-                    <p>Question 2: Is it possible to falsify location coordinates using the Pak Identity app?</p>
+                <h4>
+                    <p><b>Question 2</b>: Is it possible for an adversary to falsify a user’s location coordinates using the Pak Identity app?</p>
+                </h4>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -72,8 +105,13 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
+                        <h4>
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>A powerful adversary (such as an ISP with a trusted certificate) can see the location coordinates in plaintext,  intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server. That allows a powerful adversary to plant fake evidence indicating the presence of an at-risk user at a geo-location at a time. This effect becomes pronounced in the context of recent events in Pakistan, where local police used geo-fencing and geo-tracking technologies to make arbitrary arrests of protestors,  journalists, and activists. The image below shows spoofed location data with coordinates <span style="color: green;">"latitude"</span>: 0 and <span style="color: green;">"longitude"</span>: 0.</p> 
+                        </h4>
+                        <h4>
+                        <p  class="black-text">A powerful adversary (such as an ISP with a trusted certificate) can see the location coordinates in plaintext, intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server. This security shortcoming gives a powerful adversary the ability to plant fake evidence indicating the presence of an at-risk user at a geo-location at a specific time. The associated risk for at-risk users is even more pronounced in the context of recent events in Pakistan, where local police used geo-fencing and geo-tracking technologies to make arbitrary arrests of protestors, journalists, and activists. </p>
+
+                         <p  class="black-text">The image below shows spoofed location data with coordinates <span style="color: green;">"latitude"</span>: 0 and <span style="color: green;">"longitude"</span>: 0.</p> </h4>
                         <div class="img-container">
                             <img src="pak_identity_spoofed_location_coordinates.png" alt="Spoofed Location Coordinates">
                         </div>
@@ -85,8 +123,12 @@
                     score = 2;
                 } else {
                     feedback.innerHTML = `
+                        <h4>
                         <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
+                        </h4>
+                        <h4>
                         <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>
+                        </h4>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
