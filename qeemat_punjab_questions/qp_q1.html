@@ -7,6 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_qp.css">
     <style>
+       body {
+            background-color: #ffffff; /* Light green color */            
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+    
         .feedback-container {
             display: flex;
             flex-direction: column; /* Stack text and image vertically */
@@ -27,17 +33,16 @@
 </head>
 
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magic_dust_qp.js"></script>
 
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>The Qeemat Punjab app allows users to view the prices of agricultural products without requiring location permissions. If users wish to submit a suggestion or report a complaint about malpractice, however, they must grant location permissions.</p>
+                <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p>Question 1: Is it advisable to use the Qeemat Punjab app while connected to a VPN?</p>
+                    <p><b>Question 1</b>: Should you use the Qeemat Punjab app while connected to a VPN?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -85,14 +90,15 @@
                         <div class="feedback-container">
                             <p class="feedback-correct">Awesome! You nailed it.</p>
                             <span>
-                                <p>The Qeemat Punjab app allows users to view the prices of agricultural products without requiring location permissions. However, if users wish to submit a suggestion or report a complaint about malpractice, they are prompted to grant location permissions. Without these permissions, users will be unable to submit their suggestions or complaints. Once granted, the app transmits precise location coordinates.</p>
-                        <p>The image below demonstrates the redacted location coordinates transmitted by the app when submitting a suggestion.</p>
+                                <p>As mentioned, users must grant location permissions in order to submit a suggestion or report a complaint about malpractice through the Qeemat Punjab app. If users refuse to do so, they will be unable to submit their suggestions or complaints. Once granted, the app transmits precise location coordinates.</p>
+                        
+                        <p>The image below shows redacted location coordinates transmitted by the app when submitting a suggestion.</p>        
+                                
                         <div class="img-container">
                             <img src="qeemat_punjab_suggestion_location_coordinates.png" alt="Qeemat Punjab Location Coordinates">
                         </div>
-                     <p> This requirement poses a significant problem, as users should be allowed to submit complaints without sharing their location. For example, consider a reporter who is at risk because they are investigating corruption within government departments. If the reporter wishes to remain anonymous, they may not want authorities to track their whereabouts, fearing retaliation. If such a reporter uses this app to report corruption related to agricultural product pricing, the app’s requirement to share location data could expose their location to authorities, putting them at risk. A corrupt police officer, for instance, could send unidentified assailants to intimidate and harass the reporter. </p>
-                     <p>It is also important to note that while a VPN can mask a user’s IP address, making it appear as if they are located elsewhere, it does not provide complete anonymity. When traffic exits the VPN tunnel, precise location coordinates can still reveal the user’s actual location. As a result, Internet Service Providers (ISPs) may detect VPN usage and take action against users who are at risk. In Pakistan, users are required to register their VPN use, or they face a potential service cutoff. </p>
-                     
+                     <p> This requirement poses a significant problem, as users should be allowed to submit complaints without being forced to share their location. Consider a reporter who is at risk because they are investigating corruption within government departments. If the reporter wishes to remain anonymous, they may not want authorities to track their whereabouts—fearing retaliation. If such a reporter uses the Qeemat Punjab app to report corruption related to agricultural product pricing, however, the app’s location-sharing requirement could expose their whereabouts to authorities, putting them at risk. A corrupt police officer, for instance, could then use these coordinates to send unidentified assailants to intimidate and harass the reporter.</p>
+                     <p>It is also important to note that while a VPN can mask a user’s IP address, making it appear as if they are located elsewhere, the use of such a tool does not provide complete anonymity. When internet traffic exits the VPN tunnel, precise location coordinates can still reveal the user’s actual location. As a result, Internet Service Providers (ISPs) may detect VPN usage and take action against users who are at risk. In Pakistan, users are required to register their VPN use or face a potential service cutoff.</p>
                      </span>
                         </div>
                     `;

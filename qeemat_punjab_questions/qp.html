@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png"/>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Calibri', sans-serif;
             background-color: #ffffff; /* Soft background color */
             
 /*            background-color: #f4f4f4; /* Soft background color */
@@ -72,7 +72,7 @@
             width: 200px;
             padding: 12px;
             text-align: center;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             background-color: #2E8B57;
             color: #fff;
             border: none;
@@ -109,6 +109,7 @@
         }
         footer {
             background-color: #2E8B57;
+            font-size: 1.5rem;
             color: white;
             text-align: center;
             padding: 15px 0;
@@ -152,8 +153,6 @@
     </style>
 </head>
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
 
     <div class="watermark">Hamoon</div>
     <header>
@@ -182,15 +181,16 @@
                     <h1 class="post-title">Qeemat Punjab App</h1>
                     <img src="../pictures/qeematpunjab.png" alt="Pak Identity" class="header-image">
                 </div>
-                <h2 class="post-subtitle">(Government App)</h2>
+                <h2 class="post-subtitle">(State-Sponsored App)</h2>
                 <h3 class="spacing-between-headings">
-                    <p>The Qeemat Punjab app, developed by the Punjab IT Board, is designed to inform the public about the daily prices of agricultural products set by Deputy Commissioners in Punjab, the country’s second-largest and most densely populated province. The app has 1M+ downloads and a rating of 3.5 stars out of 5 on Google Play Store.. The developer email ID is: <span class="email">	pitb.mobileapps@gmail.com</span> and the app package is <span class="package">com.pitb.qeematpunjab</span></p>
- <p>Are you ready to take the quiz and test your understanding of how to use the Pakistan Citizen Portal app securely? If yes, please select the "Start Quiz" button.</p>
+                <p>The Qeemat Punjab app, developed by the Punjab IT Board, is designed to inform the general public about the daily prices of agricultural products set by Deputy Commissioners in Punjab (Pakistan’s second-largest, and most densely populated, province). As of 2025, the app had 1M+ downloads and a rating of 3.5 stars out of 5 on Google Play Store. The developer email ID is: <span class="email">pitb.mobileapps@gmail.com</span> and the app package is <span class="package">com.pitb.qeematpunjab</span>.
+</p>
                 </h3> 
 
-                <h2 class="large-bold-heading">How the quiz works?</h2> 
+                <h2 class="large-bold-heading">How does the quiz work?</h2> 
                 <h3 class="spacing-between-headings">
-                    <p>This quiz consists of ten questions, and there is no time limit. If you select an incorrect answer, the option to choose the correct answer will appear. Please ensure you select the correct answer for each question to understand the rationale behind it.</p>
+                    <p>This quiz consists of ten questions designed to help you learn more about the security risks related to using the app and what you can do to better protect yourself from them. There is no time limit. If you select an incorrect answer, the option to choose the correct answer will appear. Please ensure you select the correct answer for each question to understand the rationale behind it.</p>
+                    <p>Are you ready to take the quiz and test your understanding of how to use the Qeemat Punjab app securely? If yes, please select the "Start Quiz" button to begin!</p>
                 </h3> 
             </header>
             <article>
@@ -206,43 +206,10 @@
 
     <footer>
         <div class="container mt-0">
-            <p> &copy; 2024 Sana Habib. All Rights Reserved. Last updated: December 31, 2024.</p>
+            <p> &copy; 2025 Sana Habib. All Rights Reserved. Last updated: April 15, 2025.</p>
         </div>
     </footer>
-    
-    <script>
-        // Function to generate random particles of dust
-        function createMagicDust() {
-            const magicDustContainer = document.getElementById('magic-dust');
-            const colors = ['#FFD700', '#8B0000', '#2E8B57']; // Golden, Brown, Pink colors for particles
-
-            // Create a particle every 50ms
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
-                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
-                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
-
-                // Random size for particles
-                const size = Math.random() * 6 + 4; // size between 4px and 10px
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                magicDustContainer.appendChild(particle);
-
-                // Remove particle after animation ends (5 seconds)
-                setTimeout(() => {
-                    particle.remove();
-                }, 5000); // Remove after 5 seconds
-            }, 50); // Create new particle every 50ms
-        }
-
-        // Initialize the magic dust effect
-        createMagicDust();
-    </script>
-    
+        
     <!-- Include JS libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" crossorigin="anonymous"></script>
