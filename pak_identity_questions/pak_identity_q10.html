@@ -8,6 +8,57 @@
     <link rel="stylesheet" href="style_pak_identity.css">
 
 </head>
+
+ <style>
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+        }
+        .feedback-container img {
+            max-width: 350px; /* Adjust as needed */
+            margin-top: 10px; /* Space between text and image */
+        }
+        
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .img-container {
+            margin-bottom: 20px; /* You can adjust this value as needed */
+        }
+
+        h3 {
+            text-align: justify;
+        }
+
+        h4 {
+            text-align: justify;
+            font-weight: normal;
+        }
+    
+        #score {
+            font-size: 1.5rem; /* Same size as h4 */
+            font-family: 'Calibri', sans-serif;
+        }
+
+        /* Set the font size for the radio options */
+        .form-check-label {
+            font-size: 1.5rem;
+        }
+    
+        /* New CSS class to add margin */
+        .question-text {
+            color: blue;
+            margin-top: 20px; /* space before the text */
+            margin-bottom: 20px; /* space after the text */
+            font-size: 1.5rem;
+            font-weight: normal; /* Ensure text is not bold */
+        }
+    </style>
+    
 <body class="fixed-top-nav">
 
     <div class="watermark">Hamoon</div>
@@ -16,14 +67,16 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p class="question-text">Answer the question below.</p>    
+                <p>Some apps contain a feature that informs users if login activity from an unknown device is detected. These alerts are often indications of an unauthorized attempt to gain access to a user’s account.</p>            
                 <div class="question">
-                    <p>Question 10: The Pak Identity app does not has the feature to detect unknown login activity. Is this a problem and how to go about it?</p>
+                    <p><b>Question 10</b>: The Pak Identity app does not have a feature to detect unknown login activity. Is this a problem, and if so, how can users mitigate the associated risk?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
                         <label class="form-check-label" for="yes">
-                            Yes, and one way to go about that is to change the password frequently. 
+                            Yes this is a problem, and one way to mitigate it is to change your password frequently.
                         </label>
                     </div>
                     <div class="form-check answer">
@@ -66,7 +119,9 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The Pak Identity app cannot detect login activity from an unknown device. That is a problem because an attacker, once getting hold of an at-risk user's account, could do all bad things using the at-risk user's account, e.g., plant fake location coordinates without the user knowing about it or receiving any warning. One way to solve this problem would be for users to change their passwords frequently. </p></span>
+                    <span><p> The Pak Identity app cannot detect login activity from an unknown device. This presents a security problem because once an attacker obtains access to an at-risk user's account, they are able to perform malicious actions (such as planting fake location coordinates) without the user receiving any warning that login activity has occurred from an unknown device.</p>
+                    
+                    <p>One way to reduce the risks associated with this security shortcoming is for users to change their passwords frequently. A more robust solution, however, would be a top-down approach in which stronger authentication measures—such as multi-factor authentication—were implemented within the app. This would provide a more vigorous defense against unauthorized access and protect users from potential security breaches.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

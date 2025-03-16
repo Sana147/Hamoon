@@ -8,6 +8,57 @@
     <link rel="stylesheet" href="style_pak_identity.css">
 
 </head>
+
+ <style>
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+        }
+        .feedback-container img {
+            max-width: 350px; /* Adjust as needed */
+            margin-top: 10px; /* Space between text and image */
+        }
+        
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .img-container {
+            margin-bottom: 20px; /* You can adjust this value as needed */
+        }
+
+        h3 {
+            text-align: justify;
+        }
+
+        h4 {
+            text-align: justify;
+            font-weight: normal;
+        }
+    
+        #score {
+            font-size: 1.5rem; /* Same size as h4 */
+            font-family: 'Calibri', sans-serif;
+        }
+
+        /* Set the font size for the radio options */
+        .form-check-label {
+            font-size: 1.5rem;
+        }
+    
+        /* New CSS class to add margin */
+        .question-text {
+            color: blue;
+            margin-top: 20px; /* space before the text */
+            margin-bottom: 20px; /* space after the text */
+            font-size: 1.5rem;
+            font-weight: normal; /* Ensure text is not bold */
+        }
+    </style>
+
 <body class="fixed-top-nav">
 
     <div class="watermark">Hamoon</div>
@@ -16,8 +67,10 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>PDF data spoofs are a type of phishing attack in which adversaries use PDFs that appear to be normal (but are not) in an attempt to trick users into providing personal information or downloading malware. </p>
+                <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p>Question 8: Is it possible to spoof PDF data via the Pak Identity app?</p>
+                    <p><b>Question 8</b>: Is it possible to spoof PDF data via the Pak Identity app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -67,11 +120,11 @@
                 
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct">Awesome! You nailed it.</p> 
-                    <span><p>The Pak Identity app server sends four distinct PDF files to the client device, each providing instructions for different tasks: taking and uploading photos, fingerprinting, making payments, and uploading documents. However, these PDF files could potentially be spoofed. If an at-risk user encounters a fake page—disguised as one of these instruction files—they might be prompted to re-enter their credentials, which could then be stolen.</p>
-                    <p> The following image shows the original PDF files containing guidelines for capturing fingerprints and the fuzzed PDF file.</p>
+                    <span><p>In helping users request or update their National Identity documents, the Pak Identity app server sends four distinct PDF files to the client device, each providing instructions for different tasks: (1) taking and uploading photos, (2) fingerprinting, (3) making payments, and (4) uploading documents. It is possible, however, that these PDF files could potentially be spoofed. If an at-risk user encounters a fake page—disguised as one of these instruction files—they might be prompted to re-enter their credentials, which could then be stolen.</p>
+                    <p>The images below show the original PDF file containing guidelines for capturing fingerprints and then a fuzzed PDF file.</p>
                     <img src="pak_identity_fingerprint_guidelines_orig.png" alt="Police Officer" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 30px;">
                     <img src="pak_identity_fingerprint_guidelines_fuzzed.jpg" alt="Police Officer" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
-                    <p>In our experiments we replaced the original PDF  file with a spoofed one, which was successfully sent to the mobile device.</p></span>
+                    <p>As part of the research process for this project, an original PDF file was replaced with a spoofed one, which was successfully sent to a mobile device (confirming the viability of a PDF data spoof attack through the app).</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

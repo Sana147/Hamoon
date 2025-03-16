@@ -9,6 +9,11 @@
 </head>
 
 <style>
+    body {
+        font-family: 'Calibri', sans-serif;
+        font-size: 1.5rem;
+    }
+
     h3 {
         text-align: justify;
     }
@@ -39,7 +44,6 @@
 
 </style>
 
-
 <body class="fixed-top-nav">
 
     <div class="watermark">Hamoon</div>
@@ -53,9 +57,7 @@
                 <p class="question-text">Answer the question below.</p>
 
                 <div class="question">
-                    <h4>
-                        <p><b>Question 3</b>: Does the Pak Identity app collect additional user credentials beyond those necessary for its functionality?</p>
-                    </h4>
+                    <p><b>Question 3</b>: Does the Pak Identity app collect additional user credentials beyond those necessary for its core functionality?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -103,13 +105,11 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <h4>
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        </h4>
-                        <h4>
+                        
                         <span><p>Citizens use the Pak Identity app to request, update, and modify their National Identity documents. While location coordinates are not necessary to access these services, the app requires location permission to function. Upon every login, the app transmits the user's location coordinates to the app server. This creates a potential vulnerability, as a state actor or attacker could track the movements of at-risk individuals.</p>
 
-<p>The image below illustrates the transmission of precise location coordinates to the app server. For privacy reasons, the coordinates (<span style="color: green;">"latitute"</span> and <span style="color: green;">"longitude"</span>) have been redacted.</p></h4>
+<p>The image below illustrates the transmission of precise location coordinates to the app server. For privacy reasons, the coordinates (<span style="color: green;">"latitute"</span> and <span style="color: green;">"longitude"</span>) have been redacted.</p>
                         <div class="img-container">
                             <img src="pak_identity_authentication_request.png" alt="Spoofed Location Coordinates">
                         </div>
@@ -121,8 +121,8 @@
                     score = 3;
                 } else {
                     feedback.innerHTML = `
-                        <h4><p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
-                        <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span></h4>
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
+                        <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

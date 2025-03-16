@@ -8,6 +8,57 @@
     <link rel="stylesheet" href="style_pak_identity.css">
 
 </head>
+
+ <style>
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+        }
+        .feedback-container img {
+            max-width: 350px; /* Adjust as needed */
+            margin-top: 10px; /* Space between text and image */
+        }
+        
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .img-container {
+            margin-bottom: 20px; /* You can adjust this value as needed */
+        }
+
+        h3 {
+            text-align: justify;
+        }
+
+        h4 {
+            text-align: justify;
+            font-weight: normal;
+        }
+    
+        #score {
+            font-size: 1.5rem; /* Same size as h4 */
+            font-family: 'Calibri', sans-serif;
+        }
+
+        /* Set the font size for the radio options */
+        .form-check-label {
+            font-size: 1.5rem;
+        }
+    
+        /* New CSS class to add margin */
+        .question-text {
+            color: blue;
+            margin-top: 20px; /* space before the text */
+            margin-bottom: 20px; /* space after the text */
+            font-size: 1.5rem;
+            font-weight: normal; /* Ensure text is not bold */
+        }
+    </style>
+
 <body class="fixed-top-nav">
 
     <div class="watermark">Hamoon</div>
@@ -17,8 +68,9 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p>Question 9: Is it possible to do Machine in the Middle due to trusted certificate for the Pak Identity app?</p>
+                    <p><b>Question 9</b>: Is it possible to do Machine in the Middle due to trusted certificate for the Pak Identity app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -67,7 +119,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The Pak Identity app does not include an embedded trusted certificate, making it resistant to Machine in the Middle (MitM) attacks unless the Internet Service Provider (ISP) or the attacker possesses a trusted certificate.</p></span>
+                    <span><p> The Pak Identity app does not include an embedded trusted certificate, making it resistant to Machine in the Middle attacks unless the ISP or attacker possesses a trusted certificate.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

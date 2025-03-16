@@ -8,6 +8,57 @@
     <link rel="stylesheet" href="style_pak_identity.css">
 
 </head>
+
+    <style>
+        .feedback-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            text-align: justify; /* Align text to the left */
+            align-items: flex-start; /* Align items to the start */
+        }
+        .feedback-container img {
+            max-width: 350px; /* Adjust as needed */
+            margin-top: 10px; /* Space between text and image */
+        }
+        
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .img-container {
+            margin-bottom: 20px; /* You can adjust this value as needed */
+        }
+
+        h3 {
+            text-align: justify;
+        }
+
+        h4 {
+            text-align: justify;
+            font-weight: normal;
+        }
+    
+        #score {
+            font-size: 1.5rem; /* Same size as h4 */
+            font-family: 'Calibri', sans-serif;
+        }
+
+        /* Set the font size for the radio options */
+        .form-check-label {
+            font-size: 1.5rem;
+        }
+    
+        /* New CSS class to add margin */
+        .question-text {
+            color: blue;
+            margin-top: 20px; /* space before the text */
+            margin-bottom: 20px; /* space after the text */
+            font-size: 1.5rem;
+            font-weight: normal; /* Ensure text is not bold */
+        }
+    </style>
+    
 <body class="fixed-top-nav">
 
     <div class="watermark">Hamoon</div>
@@ -16,8 +67,10 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>SSL pinning is a technique that helps to prevent Machine in the Middle attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. In general, this is a beneficial security feature. </p>
                 <div class="question">
-                    <p>Question 7: Does the Pak Identity app uses SSL pinning?</p>
+                    <p class="question-text">Answer the question below.</p>                
+                    <p><b>Question 7</b>: Does the Pak Identity app use SSL pinning?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -66,9 +119,9 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p> 
-                    <span><p>SSL pinning is a technique that helps to prevent Machine in the Middle (MitM) attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. </p>
+                    <span><p>Yes, the Pak Identity app uses SSL pinning. With SSL pinning, whenever the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. This is a security benefit that helps reduce the chance of Machine in the Middle attacks by ensuring the app only communicates with trusted servers (a good thing!). </p>
                     
-                    <p>The image below shows the use of the okhttp3 library in the app's source code (package name: <span style="color: purple;">pk.gov.nadra.pakid.</span>) for implementing SSL pinning.</p>
+                    <p>The image below shows the use of the okhttp3 library in the app's source code (package name: pk.gov.nadra.pakid.) for implementing SSL pinning.</p>
                         <div class="img-container">
                             <img src="certificate_pinner_pakid_marked.png" alt="Pak Identity Authentication Request">
                         </div>

@@ -8,16 +8,66 @@
     <link rel="stylesheet" href="style_pak_identity.css">
 </head>
 
+<style>
+    /* Set the font for the entire page */
+    body {
+        font-family: 'Calibri', sans-serif;
+    }
+
+    .img-container {
+        margin-bottom: 20px; /* You can adjust this value as needed */
+    }
+
+    h3 {
+        text-align: justify;
+    }
+
+    h4 {
+        text-align: justify;
+        font-weight: normal;
+    }
+    
+    #score {
+        font-size: 1.5rem; /* Same size as h4 */
+        font-family: 'Calibri', sans-serif;
+    }
+
+    /* Set the font size for the radio options */
+    .form-check-label {
+        font-size: 1.5rem;
+    }
+    
+    /* New CSS class to add margin */
+    .question-text {
+        color: blue;
+        margin-top: 20px; /* space before the text */
+        margin-bottom: 20px; /* space after the text */
+        font-size: 1.5rem;
+        font-weight: normal; /* Ensure text is not bold */
+    }
+
+</style>
+
 <body class="fixed-top-nav">
 
     <div class="watermark">Hamoon</div>
     <img src="../pictures/reporter_blue.jpeg" alt="Logo" class="top-left-image">
 
+
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <h4><p>
+                Some users choose to root (or “unlock”) their phone to allow for more control and customization. A rooted phone is an Android device that has been modified to gain superuser access, also known as root access.<p>
+                
+            <p class="question-text">Answer the question below.</p>
+
+            </h4>
+
                 <div class="question">
-                    <p>Question 4: Should concerns arise if your phone is rooted, the Pak Identity app is installed, and the device is later stolen?</p>
+                <h4>
+                    <p><b>Question 4</b>: Does the installation of the Pak Identity app on a rooted phone create any unique security concerns if the device is later stolen?</p>
+                </h4>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -66,9 +116,12 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
+                    <h4>
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>The Pak Identity app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is stolen, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, password, and location coordinates from the <span style="color: blue;">cd /data/data/pk.gov.nadra.pakid/databases</span> directory and use that to spy on at-risk users.</p>
-                        <p>The following image shows redacted user credentials that are stored in plaintext in the root directory of the Android File System. </p></span> 
+                        <span><p>The Pak Identity app stores user credentials in plaintext in the root directory of the Android File System. This means if a rooted device has the Pak Identity app installed and is subsequently stolen, an attacker can exfiltrate user credentials (including full name, email, mobile number, citizen number, password, and location coordinates) from the <span style="color: blue;">cd /data/data/pk.gov.nadra.pakid/databases</span> directory and use that information to spy on at-risk users.</p>
+                        
+                        <p>The following image shows redacted user credentials that are stored in plaintext in the root directory of the Android File System.</p></span>
+                        </h4> 
                         <div class="img-container">
                             <img src="pak_identity_app_android_file_system.png" alt="Spoofed Location Coordinates">
                         </div>
@@ -79,8 +132,10 @@
                     score = 4;
                 } else {
                     feedback.innerHTML = `
+                    <h4>
                     <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                     <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>
+                    </h4>
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

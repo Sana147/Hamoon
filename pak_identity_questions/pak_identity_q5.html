@@ -19,6 +19,43 @@
             max-width: 350px; /* Adjust as needed */
             margin-top: 10px; /* Space between text and image */
         }
+        
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .img-container {
+            margin-bottom: 20px; /* You can adjust this value as needed */
+        }
+
+        h3 {
+            text-align: justify;
+        }
+
+        h4 {
+            text-align: justify;
+            font-weight: normal;
+        }
+    
+        #score {
+            font-size: 1.5rem; /* Same size as h4 */
+            font-family: 'Calibri', sans-serif;
+        }
+
+        /* Set the font size for the radio options */
+        .form-check-label {
+            font-size: 1.5rem;
+        }
+    
+        /* New CSS class to add margin */
+        .question-text {
+            color: blue;
+            margin-top: 20px; /* space before the text */
+            margin-bottom: 20px; /* space after the text */
+            font-size: 1.5rem;
+            font-weight: normal; /* Ensure text is not bold */
+        }
     </style>
 
 <body class="fixed-top-nav">
@@ -31,7 +68,11 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question">
-                    <p>Question 5: Should you be concerned if your phone is rooted, the Pak Identity app is installed, and your device is confiscated?</p>
+                <h4>
+                    <p class="question-text">Answer the question below.</p>
+
+                    <p><b>Question 5</b>: Does the installation of the Pak Identity app on a rooted phone create any unique security concerns if the device is later confiscated?</p>
+                </h4>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -79,21 +120,28 @@
 
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
-                    feedback.innerHTML = `<p class="feedback-correct">Awesome! You nailed it.</p> 
-                    <span><p>Yes, the reason is same as for Question 4. The Pak Identity app stores user credentials in plaintext in the root directory of the Android File System. In case a rooted device is confiscated, an attacker can exfiltrate user credentials including full name, email, mobile number, citizen number, password, and location coordinates from the <span style="color: blue;">cd /data/data/pk.gov.nadra.pakid/databases</span> directory and use that to spy on at-risk users.</p>
-                        <p>The following image shows redacted user credentials that are stored in plaintext in the root directory of the Android File System. </p></span> 
-                        <div class="img-container">
-                            <img src="pak_identity_app_android_file_system.png" alt="Spoofed Location Coordinates">
-                        </div>
-                        `;
+                    feedback.innerHTML = `
+                    <h4>
+                    <p class="feedback-correct">Awesome! You nailed it.</p> 
+                    <span><p>
+                        In this type of situation, confiscation presents the same risks as theft (from Question 4). Because the Pak Identity app stores user credentials in plaintext in the root directory of the Android File System, an attacker who has confiscated a rooted phone can exfiltrate user credentials (including full name, email, mobile number, citizen number, password, and location coordinates) from the <span style="color: blue;">cd /data/data/pk.gov.nadra.pakid/databases</span> directory and use that information to spy on at-risk users.
+                    </p>
+                    
+                    <p>The following image shows redacted user credentials that are stored in plaintext in the root directory of the Android File System.</p>
+                    </span>
+                                      
+                   <div class="img-container">
+                        <img src="pak_identity_app_android_file_system.png" alt="Spoofed Location Coordinates">
+                   </div>
+                       `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                     // Increment score
                     score = 5;
                 } else {
-                    feedback.innerHTML = `<p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
-                    <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span>`;
+                    feedback.innerHTML = `<h4><p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
+                    <span><p> Please select the correct answer, "Yes" to learn the reason.</p></span></h4>`;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
                     score = 4;
