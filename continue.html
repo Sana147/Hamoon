@@ -14,59 +14,83 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="shortcut icon" href="/assets/img/favicon.png"/>
     <style>
-        /* Add custom CSS here */
         body {
-            background-color: #d3f9d8; /* Light green color */
-            margin: 0;
-            padding: 0;
-            position: relative;
-            min-height: 100vh; /* Ensure body takes full viewport height */
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            background-color: #ffffff;
+            text-align: center;
         }
-        .post-header {
-            display: flex;
-            flex-direction: column; /* Arrange h1 and h2 in a column */
-            align-items: center; /* Center align both headers horizontally */
-            text-align: center; /* Center align text within headers */
-            margin: 2rem 0; /* Space around the headers */
+
+        h2 {
+            font-family: 'Calibri', sans-serif;
+            text-align: center;
+        }                
+        
+        h3 {
+            font-family: 'Calibri', sans-serif;
+            font-size:  1.5rem;         
+            text-align: justify;
         }
+        
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem;
+            color: rgba(0, 100, 0, 0.1);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            z-index: -1;
+            font-weight: bold;
+            text-align: center;
+        }
+        
         .post-title span.font-weight-bold {
             color: #006400; /* Dark green color */
-            font-size: 4rem; /* Increased font size */
+            font-size: 4rem; /* Decreased font size */
         }
         .post-subtitle {
-            font-size: 3rem; /* Font size for main subheading */
+            font-size: 2.5rem; /* Adjusted subtitle size */
             color: #004d00; /* Darker green for contrast */
-            margin-top: 1rem; /* Space above the subheading */
+            margin-top: 0.5rem; /* Space above the subheading */
         }
-        .quote {
-            font-size: 1.5rem; /* Font size for quote */
-            color: #333; /* Dark grey color for contrast */
-            margin-top: 2rem; /* Space above the quote */
-            font-style: italic; /* Italicize the quote */
-            border-left: 4px solid #006400; /* Add a left border for emphasis */
-            padding-left: 1rem; /* Space between the border and the text */
+
+        .navbar {
+            background-color: #ffffff; /* White navbar for contrast */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .button-container {
-            position: fixed; /* Fixes position relative to viewport */
-            bottom: 20px; /* Distance from the bottom of the viewport */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for width */
-            z-index: 1000; /* Ensure button is above other elements */
+        .navbar-nav .nav-link {
+            font-size: 1.9rem; 
+            color: #004d00; /* Dark green color */
+            transition: color 0.3s;
         }
-        .back-button {
-            width: 150px;
-            padding: 10px;
+        .navbar-nav .nav-link:hover {
+            color: #006400;
+        }
+        .main-content {
+            margin-top: 100px; 
+            padding: 20px;
+        }
+        
+        .text-right { text-align: right; } /* Added class for right alignment */
+        footer {
+            background-color: #006400; /* Footer background */
+            color: white;
             text-align: center;
-            font-size: 1.25rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            color: #fff;
-            background-color: #006400; /* Dark green background */
+            margin-top: 30px;
+            padding: 15px 0; /* Increased padding */
+            position: relative;
         }
-        .back-button:hover {
-            background-color: #004d00; /* Darker green for hover effect */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 40px; /* Added bottom margin */
+        }
+        .image-container img {
+            max-width: 45%; /* Adjust size as needed */
+            margin: 0 20px; /* Spacing between images */
         }
         .square-buttons-container {
             display: flex;
@@ -101,41 +125,84 @@
         }
         /* Specific style for button 1 */
         .square-button-1 {
-            background-image: url('pak_identity.png'); /* Set image URL here */
+            background-image: url('pictures/pak_identity.png'); /* Set image URL here */
         }
         /* Specific style for button 2 */
         .square-button-2 {
-            background-image: url('pakistan_citizen_portal.png'); /* Set image URL here */
+            background-image: url('pictures/pakistan_citizen_portal.png'); /* Set image URL here */
         }
         /* Specific style for button 3 */
         .square-button-3 {
-            background-image: url('simosa.png'); /* Set image URL here */
+            background-image: url('pictures/qeematpunjab.png'); /* Set image URL here */
         }
+
         /* Specific style for button 4 */
         .square-button-4 {
-            background-image: url('uptcl.png'); /* Set image URL here */
+            background-image: url('pictures/simosa.png'); /* Set image URL here */
         }
          /* Specific style for button 5 */
         .square-button-5 {
-            background-image: url('telenor.png'); /* Set image URL here */
+            background-image: url('pictures/zong1.png'); /* Set image URL here */
         }
          /* Specific style for button 6 */
         .square-button-6 {
-            background-image: url('zong.png'); /* Set image URL here */
+            background-image: url('pictures/telenor.png'); /* Set image URL here */
         }
-
+        /* Specific style for button 7 */
+        .square-button-7 {
+            background-image: url('pictures/uptcl.png'); /* Set image URL here */
+        }
         .square-button span {
             display: none; /* Hide text content inside the button */
         }
-        /* Increase font size of navigation tabs */
-        .navbar-nav .nav-link {
-            font-size: 1.5rem; /* Adjust font size as needed */
-        }
+
     </style>
+
+    <!-- Include the CanvasConfetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // Always trigger confetti on page load
+        window.onload = function() {
+            confetti({
+                particleCount: 200,
+                spread: 70,
+                origin: { x: 0.5, y: 0.5 },
+                colors: ['#ff0', '#ff0', '#ff0000', '#0000ff', '#00ff00']
+            });
+        }
+
+        function toggleLanguage(lang) {
+            document.querySelectorAll('.language').forEach(function (element) {
+                element.classList.remove('active');
+            });
+            document.getElementById(lang).classList.add('active');
+
+            // Update navbar links based on selected language
+            const navbarLinks = document.querySelectorAll('.nav-link');
+            navbarLinks.forEach(link => {
+                if (lang === 'english') {
+                    link.textContent = link.dataset.en; // English text
+                } else {
+                    link.textContent = link.dataset.ur; // Urdu text
+                }
+            });
+
+            // Right-align text for Urdu
+            const urduContent = document.getElementById('urdu');
+            if (lang === 'urdu') {
+                urduContent.classList.add('text-right');
+            } else {
+                urduContent.classList.remove('text-right');
+            }
+        }
+    </script>    
+         
 </head>
+
 <body class="fixed-top-nav">
     <header>
-        <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
             <div class="container">
                 <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar top-bar"></span>
@@ -144,7 +211,15 @@
                 </button>
                 <div class="collapse navbar-collapse text-right" id="navbarNav">
                     <ul class="navbar-nav ml-auto flex-nowrap">
-                        <!-- Navigation items removed -->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="homepage_english.html" data-en="Home" data-ur="گھر">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="background.html" data-en="Background" data-ur="پس منظر">Background</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-en="About" data-ur="بارے میں">About</a>
+                        </li>
                         <div class="toggle-container">
                             <a id="light-toggle"></a>
                         </div>
@@ -154,35 +229,46 @@
         </nav>
     </header>
     <div id="particles-js"></div>
-    <div class="container mt-5">
+    <div class="container main-content mt-5">
         <div class="post">
             <header class="post-header">
                 <h1 class="post-title">
                     <span class="font-weight-bold">Hamoon: Pakistani Apps Ki Kahani</span>
+                    <h2 class="post-subtitle">How well do you know your mobile app? Let’s find out!</h2>
+                    <h3>
+                    <p>The seven apps listed below are extremely popular in Pakistan—used daily by millions across the country to update government identity documents, report corruption, manage cellular communication, and more. Yet behind these benefits lies a surprising degree of user risk.</p>
+
+<p>Recent research revealed significant security and privacy concerns for all seven, particularly related to the excessive collection, storage, and management of Personally Identifiable Information. Vulnerabilities related to passwords, login security, and encryption were found as well.</p>
+
+<p>So take action today! Click on an app below to test your knowledge, understand potential risks, and learn what you can do to better protect yourself when using it.</p>
+                    </h3>
+                    
                 </h1>
-                <h2 class="post-subtitle">Which of the following apps do you use?</h2>
             </header>
-            <article>
-                <!-- Add your article content here -->
-            </article>
-            <!-- Square Buttons Container -->
-            <div class="square-buttons-container">
-                <div class="square-button-row">
-                    <button class="square-button square-button-1" onclick="window.location.href='page1.html'"><span>1</span></button>
-                    <button class="square-button square-button-2" onclick="window.location.href='page2.html'"><span>2</span></button>
-                    <button class="square-button square-button-3" onclick="window.location.href='page3.html'"><span>3</span></button>
-                </div>
-                <div class="square-button-row">
-                    <button class="square-button square-button-4" onclick="window.location.href='page4.html'"><span>4</span></button>
-                    <button class="square-button square-button-5" onclick="window.location.href='page5.html'"><span>5</span></button>
-                    <button class="square-button square-button-6" onclick="window.location.href='page6.html'"><span>6</span></button>
-                </div>
-            </div>
         </div>
     </div>
-    <div class="button-container">
-        <button class="back-button" onclick="window.location.href='index.html'">Back</button>
+    
+    <div class="square-buttons-container">
+        <div class="square-button-row">
+            <button class="square-button square-button-1" onclick="window.location.href='pak_identity_questions/pak_identity.html'"><span>1</span></button>
+            <button class="square-button square-button-2" onclick="window.location.href='pakistan_citizen_portal_questions/pakistan_citizen_portal.html'"><span>2</span></button>
+            <button class="square-button square-button-3" onclick="window.location.href='qeemat_punjab_questions/qp.html'"><span>3</span></button>
+
+            <button class="square-button square-button-4" onclick="window.location.href='simosa_questions/simosa.html'"><span>4</span></button>
+        </div>
+        <div class="square-button-row">
+            <button class="square-button square-button-5" onclick="window.location.href='zong_questions/zong.html'"><span>5</span></button>
+            <button class="square-button square-button-6" onclick="window.location.href='telenor_questions/telenor.html'"><span>6</span></button>
+            <button class="square-button square-button-7" onclick="window.location.href='uptcl_questions/uptcl.html'"><span>7</span></button>
+        </div>
     </div>
+
+    <footer>
+        <div class="container mt-0">
+            <p> &copy; 2025 Sana Habib. All Rights Reserved. Last updated: April 15, 2025.</p>
+        </div>
+    </footer>
+
     <!-- Include JS libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-DfXdz2htPH0lsSSs5nCTpuj/zy1z/2nN4R0CB5t8g3I=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha256-ZfQ7f0P1p2p/9JvQuDlbwn61A5qf1LpT5cVvWcC7Ylg=" crossorigin="anonymous"></script>
