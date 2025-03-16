@@ -15,22 +15,49 @@
             display: block;      /* Block-level element */
             margin: 0 auto;      /* Center the image horizontally */
         }
+        
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            }
+            
+    /* New CSS class to add margin */
+    .question-text {
+        color: blue;
+        margin-top: 20px; /* space before the text */
+        margin-bottom: 20px; /* space after the text */
+    }
+
+    #score {
+        font-size: 1.5rem; /* Same size as h4 */
+        font-family: 'Calibri', sans-serif;
+    }
+
+    /* Set the font size for the radio options */
+    .form-check-label {
+        font-size: 1.5rem; /* Set size for Yes, No, Maybe options */
+    }
+
+    /* Add a class for black text */
+    .black-text {
+        color: black;
+    }
+                        
     </style>
-    
     
 </head>
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-
+    
     <div class="watermark">Hamoon</div>
     <img src="../pictures/blue_green_female_reporter.jpeg" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top left -->
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>SSL pinning is a technique that helps to prevent Machine in the Middle attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. In general, this is a beneficial security feature.</p>
+                <p class="question-text">Answer the question below.</p>                        
                 <div class="question">
-                    <p>Question 7: Does the Pakistan Citizen Portal app uses SSL pinning?</p>
+                    <p><b>Question 7</b>: Does the Pakistan Citizen Portal app use SSL pinning?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -79,7 +106,10 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p> 
-                    <span><p>SSL pinning is a technique that helps to prevent Machine in the Middle (MitM) attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app. The image below shows the use of okhttp3 library in the source code of the Pakistan Citizen Portal app (<span style="color:blue;">package name: com.govpk.citizensportal</span>).</p>
+                    <span>
+                    <p>Yes, the Pakistan Citizen Portal app uses SSL pinning. With SSL pinning, whenever the app communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app. This is a security benefit that helps reduce the chance of Machine in the Middle attacks by ensuring the app only communicates with trusted servers (a good thing!).
+</p>
+                    <p>The image below shows the use of okhttp3 library in the source code of the Pakistan Citizen Portal app (<span style="color:blue;">package name: com.govpk.citizensportal</span>).</p>
                     </span>
                     <img src="pakistan_citizen_portal_ssl_pinning_marked.png" alt="Pak Identity Authentication Request" class="responsive-image">
 
@@ -107,39 +137,6 @@
                 alert('Please select an answer.');
             }
         }
-    </script>
-
-    <script>
-        // Function to generate random particles of dust
-        function createMagicDust() {
-            const magicDustContainer = document.getElementById('magic-dust');
-            const colors = ['#FFD700', '#3399FF', '#2C8E6D']; // Golden, Green, Blue colors for particles
-
-            // Create a particle every 50ms
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
-                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
-                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
-
-                // Random size for particles
-                const size = Math.random() * 6 + 4; // size between 4px and 10px
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                magicDustContainer.appendChild(particle);
-
-                // Remove particle after animation ends (5 seconds)
-                setTimeout(() => {
-                    particle.remove();
-                }, 5000); // Remove after 5 seconds
-            }, 50); // Create new particle every 50ms
-        }
-
-        // Initialize the magic dust effect
-        createMagicDust();
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

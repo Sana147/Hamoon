@@ -8,10 +8,35 @@
     <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
 </head>
 
+<style>
+     body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+           }
+            
+    /* New CSS class to add margin */
+    .question-text {
+        color: blue;
+        margin-top: 20px; /* space before the text */
+        margin-bottom: 20px; /* space after the text */
+    }
 
-<body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
+    #score {
+        font-size: 1.5rem; /* Same size as h4 */
+        font-family: 'Calibri', sans-serif;
+    }
+
+    /* Set the font size for the radio options */
+    .form-check-label {
+        font-size: 1.5rem; /* Set size for Yes, No, Maybe options */
+    }
+
+    /* Add a class for black text */
+    .black-text {
+        color: black;
+    }
+
+</style>
 
     <div class="watermark">Hamoon</div>
     <img src="../pictures/blue_green_female_reporter.jpeg" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top right -->
@@ -20,8 +45,10 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="question-container">
+                    <p>The Pakistan Citizen Portal app does not require location coordinates upon login, however, the app mandates that location permissions be enabled when submitting a complaint.</p>
+                    <p class="question-text">Answer the question below.</p>                
                     <div class="question">
-                        <p>Question 1: Is it recommended to use the Pakistan Citizen Portal app while connected to a VPN?</p>
+                        <p><b>Question 1</b>: Should you use the Pakistan Citizen Portal app while connected to a VPN?</p>
                     </div>
                 </div>
                 <form id="quizForm">
@@ -66,11 +93,12 @@
                         <div class="feedback-container">
                             <p class="feedback-correct">Awesome! You nailed it.</p>
                             <span>
-                                <p>The Pakistan Citizen Portal app does not require location coordinates upon login. However, when submitting a complaint, the app mandates that location permissions be enabled; otherwise, the complaint cannot be submitted. Additionally, there is an option to <span style="color:blue";>"hide my identity"</span>, but if selected, a warning appears that says <span style="color:blue";>"Do not unnecessarily hide your identity"</span>, preventing the complaint from being submitted unless the user provides their identification. The image below shows the app's transmission of exact location coordinates with the device's IP address for complaint/suggestion submission.<p>
+                            <p>As mentioned, the Pakistan Citizen Portal app does not require location coordinates upon login, but does mandate location permissions be enabled when submitting a complaint—otherwise it cannot be submitted. Although an option exists for users to select <span style="color:blue";>"hide my identity"</span>, doing so results in a warning that says <span style="color:blue";>"Do not unnecessarily hide your identity"</span>. The complaint is subsequently prevented from being submitted unless the user chooses to provide their location coordinates. The image below shows the app's transmission of exact location coordinates with the device's IP address for complaint/suggestion submission.</p>
+                            
                         <div class="img-container">
                             <img src="pakistan_citizen_portal_suggestion_req1.png" alt="Pak Identity Authentication Request">
                         </div>
-<p>If the app is used for general browsing or purposes other than submitting a complaint, users can safely use a VPN. However, using a VPN to submit a complaint may reveal the user's actual location. ISPs can detect that the request originates from an IP address outside their network, while the location coordinates still suggest the user is in Pakistan. Since users are required to register their VPN usage, at-risk users who have not done so may be vulnerable, as ISPs could use this as an excuse to target them.</p></span>
+<p>If the app is used for general browsing or purposes other than submitting a complaint, users can safely use a VPN. Based on the unique location permission requirements, however, using a VPN to submit a complaint may reveal the user's actual location. In this manner, an Internet Service Provider (ISP) may be able to detect that the request originates from an IP address outside their network, while the location coordinates still suggest the user is in Pakistan. Since users are required to register their VPN usage in Pakistan, at-risk users who have not done so may be vulnerable and ISPs could use this as an excuse to target them.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect');
@@ -92,39 +120,6 @@
                 alert('Please select an answer.');
             }
         }
-    </script>
-
-    <script>
-        // Function to generate random particles of dust
-        function createMagicDust() {
-            const magicDustContainer = document.getElementById('magic-dust');
-            const colors = ['#FFD700', '#3399FF', '#2C8E6D']; // Golden, Green, Blue colors for particles
-
-            // Create a particle every 50ms
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
-                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
-                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
-
-                // Random size for particles
-                const size = Math.random() * 6 + 4; // size between 4px and 10px
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                magicDustContainer.appendChild(particle);
-
-                // Remove particle after animation ends (5 seconds)
-                setTimeout(() => {
-                    particle.remove();
-                }, 5000); // Remove after 5 seconds
-            }, 50); // Create new particle every 50ms
-        }
-
-        // Initialize the magic dust effect
-        createMagicDust();
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

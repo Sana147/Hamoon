@@ -8,10 +8,37 @@
     <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
 
 </head>
-<body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
 
+<style>
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            }
+
+    /* New CSS class to add margin */
+    .question-text {
+        color: blue;
+        margin-top: 20px; /* space before the text */
+        margin-bottom: 20px; /* space after the text */
+    }
+
+    #score {
+        font-size: 1.5rem; /* Same size as h4 */
+        font-family: 'Calibri', sans-serif;
+    }
+
+    /* Set the font size for the radio options */
+    .form-check-label {
+        font-size: 1.5rem; /* Set size for Yes, No, Maybe options */
+    }
+
+    /* Add a class for black text */
+    .black-text {
+        color: black;
+    }            
+</style>
+
+<body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
 
     <img src="../pictures/blue_green_female_reporter.jpeg" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top right -->
@@ -19,8 +46,10 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p>The Pakistan Citizen Portal app collects location coordinates and stores it in plaintext—even though this information is not necessary for the app’s core functionality.</p>
+                <p class="question-text">Answer the question below.</p>            
                 <div class="question">
-                    <p>Question 2: Is it possible to falsify location coordinates using the Pakistan Citizen Portal app?</p>
+                    <p><b>Question 2</b>: Is it possible for an adversary to falsify a user’s location coordinates using the Pakistan Citizen Portal app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -72,8 +101,9 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>A powerful adversary (such as an ISP with a trusted certificate) can see the location coordinates in plaintext,  intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server. That allows a powerful adversary to plant fake evidence indicating the presence of an at-risk user at a geo-location at a time. This effect becomes pronounced in the context of recent events in Pakistan, where local police used geo-fencing and geo-tracking technologies to make arbitrary arrests of protestors.</p>
-                        <p> The image below shows spoofed location data with <span style="color: green;">gps longitude</span>:<span style="color: red;">"0"</span> and <span style="color: green;">gps_latitude</span>:<span style ="color: red;">"0"</span>.</p></span>
+                        <span><p>A powerful adversary (such as an ISP with a trusted certificate) can see the location coordinates in plaintext, intercept the communication, and modify it with spoofed location coordinates before they get stored at the app server. This security shortcoming gives a powerful adversary the ability to plant fake evidence indicating the presence of an at-risk user at a geo-location at a specific time. The associated risk for at-risk users is even more pronounced in the context of recent events in Pakistan, where local police used geo-fencing and geo-tracking technologies to make arbitrary arrests of protestors.</p>
+                        
+                        <p>The image below shows spoofed location data with <span style="color: green;">gps longitude</span>:<span style="color: red;">"0"</span> and <span style="color: green;">gps_latitude</span>:<span style="color: red;">"0"</span>.</p>
                         <div class="img-container">
                             <img src="pakistan_citizen_portal_spoofed_location_coordinates.png" alt="Spoofed Location Coordinates">
                         </div>
@@ -101,39 +131,6 @@
                 alert('Please select an answer.');
             }
         }
-    </script>
-
-    <script>
-        // Function to generate random particles of dust
-        function createMagicDust() {
-            const magicDustContainer = document.getElementById('magic-dust');
-            const colors = ['#FFD700', '#3399FF', '#2C8E6D']; // Golden, Green, Blue colors for particles
-
-            // Create a particle every 50ms
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
-                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
-                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
-
-                // Random size for particles
-                const size = Math.random() * 6 + 4; // size between 4px and 10px
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                magicDustContainer.appendChild(particle);
-
-                // Remove particle after animation ends (5 seconds)
-                setTimeout(() => {
-                    particle.remove();
-                }, 5000); // Remove after 5 seconds
-            }, 50); // Create new particle every 50ms
-        }
-
-        // Initialize the magic dust effect
-        createMagicDust();
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

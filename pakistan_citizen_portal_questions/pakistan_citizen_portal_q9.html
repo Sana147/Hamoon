@@ -8,9 +8,38 @@
     <link rel="stylesheet" href="style_pakistan_citizen_portal.css">
 
 </head>
+
+<style>
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            }
+
+    /* New CSS class to add margin */
+    .question-text {
+        color: blue;
+        margin-top: 20px; /* space before the text */
+        margin-bottom: 20px; /* space after the text */
+    }
+
+    #score {
+        font-size: 1.5rem; /* Same size as h4 */
+        font-family: 'Calibri', sans-serif;
+    }
+
+    /* Set the font size for the radio options */
+    .form-check-label {
+        font-size: 1.5rem; /* Set size for Yes, No, Maybe options */
+    }
+
+    /* Add a class for black text */
+    .black-text {
+        color: black;
+    }
+            
+</style>
+
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
 
     <div class="watermark">Hamoon</div>
     <img src="../pictures/blue_green_female_reporter.jpeg" alt="Pakistan Citizen Portal Logo" class="top-right-image"> <!-- Image at the top left -->
@@ -18,8 +47,9 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p class="question-text">Answer the question below.</p>                        
                 <div class="question">
-                    <p>Question 9: Is it possible to Machine in the Middle due to trusted certificate for the Pakistan Citizen Portal app?</p>
+                    <p><b>Question 9</b>: Is it possible to Machine in the Middle due to trusted certificate for the Pakistan Citizen Portal app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -68,7 +98,9 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The Pakistan Citizen Portal app contains an embedded trusted certificate, <span style="color:blue;">pmdu_gov_pk.crt</span>, located in the folder <span style="color:blue;">res/raw/</span>. This means that a Machine in the Middle (MitM) attack is possible, as the app relies on this trusted certificate for communication.</p></span>
+                    <span>
+                    <p>The Pakistan Citizen Portal app contains an embedded trusted certificate (<span style="color:blue;">pmdu_gov_pk.crt</span>) located in the folder <span style="color:blue;">res/raw/</span>. This means adversaries can attempt a Machine in the Middle attack, as the app relies on this trusted certificate for communication.
+</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -95,39 +127,6 @@
         }
     </script>
     
-    <script>
-        // Function to generate random particles of dust
-        function createMagicDust() {
-            const magicDustContainer = document.getElementById('magic-dust');
-            const colors = ['#FFD700', '#3399FF', '#2C8E6D']; // Golden, Green, Blue colors for particles
-
-            // Create a particle every 50ms
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.left = `${Math.random() * 100}%`; // Random horizontal position
-                particle.style.top = `${Math.random() * 100}%`;  // Random vertical position
-                particle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration for each particle
-
-                // Random size for particles
-                const size = Math.random() * 6 + 4; // size between 4px and 10px
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                magicDustContainer.appendChild(particle);
-
-                // Remove particle after animation ends (5 seconds)
-                setTimeout(() => {
-                    particle.remove();
-                }, 5000); // Remove after 5 seconds
-            }, 50); // Create new particle every 50ms
-        }
-
-        // Initialize the magic dust effect
-        createMagicDust();
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
