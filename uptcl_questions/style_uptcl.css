@@ -2,6 +2,15 @@
         body {
             background-color: #ffffff; /* Light green color */
         }
+        
+        .question-text {
+            color: #004d00;
+            margin-top: 20px; /* space before the text */
+            margin-bottom: 20px; /* space after the text */
+            font-size: 1.5rem;
+            font-weight: normal; /* Ensure text is not bold */
+        }
+
 
         .quiz-container {
             margin-top: 20px;
@@ -28,11 +37,11 @@
         }
         .feedback {
             margin-top: 30px;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             text-align: justify; /* Justify text alignment */
         }
         .btn {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             padding: 10px 20px;
             color: white;
             background-color: #004d00;

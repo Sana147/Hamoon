@@ -7,6 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_uptcl.css">
     <style>
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+
+        }
         /* Add justify style to feedback paragraphs */
         .feedback-container {
             text-align: justify; /* Justify the text inside the feedback container */
@@ -37,17 +42,16 @@
 </head>
 
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magicdust.js"></script>
 
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>The UPTCL app does not require location coordinates to function, but users must enable location permissions if they wish to view promotional offers available in their area.</p>
+            <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p>Question 1: Is it recommended to use the UPTCL app while connected to a VPN?</p>
+                    <p><b>Question 1</b>: Should you use the UPTCL app while connected to a VPN?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
