@@ -17,21 +17,23 @@
             height: auto; /* Maintain aspect ratio */
             margin-bottom: 10px; /* Space between images */
         }
+           body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            text-align: justify;
+        }
     </style>
 </head>
 
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magic_dust_simosa.js"></script>    
-
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p>Question 3: Does the SIMOSA app collect additional user credentials beyond those necessary for its functionality?</p>
+                    <p><b>Question 3</b>: Does the SIMOSA app collect additional user credentials beyond those necessary for its core functionality?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -80,7 +82,9 @@
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span>
-                            <p>The SIMOSA app does not collect unnecessary user credentials. To log in, it only requires the mobile number and a One-Time Password (OTP) sent to that number. However, the app stores the user's full name, call history, and SMS history for the past thirty days. Additionally, it allows users to download a tax certificate, which includes the mobile number, national identity number, and physical address of the user. The image below shows a tax certificate downloaded via the SIMOSA app, with the user's full name, permanent address, mobile number, and national identity number redacted for privacy. </p></span>
+                            <p>Unlike some of the other apps studied for this project, the SIMOSA app does not collect unnecessary user credentials. To log in, it only requires the mobile number and a One-Time Password (OTP) sent to that number.</p>
+                       <p>The app does, however, store a user's full name, call history, and SMS history for the past thirty days. It also allows users to download a tax certificate, which includes the mobile number, national identity number, and physical address of the user. The image below shows a tax certificate downloaded via the SIMOSA app, with the user's full name, permanent address, mobile number, and national identity number redacted for privacy.</p>     
+                            </span>
                         <div class="img-container">
                             <img src="SIMOSA_Tax.png" alt="Qeemat Punjab Location Coordinates">
                         </div> 

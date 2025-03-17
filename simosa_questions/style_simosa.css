@@ -1,12 +1,21 @@
     <style>
        body {
             background-color: #ffffff; /* Light green color */
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            text-align: justify;
         }
+
+        .question-text {
+        color: #E91E63;
+        margin-top: 20px; /* space before the text */
+        margin-bottom: 20px; /* space after the text */
+        }                        
                 
         .feedback-container {
             display: flex;
             flex-direction: column; /* Stack text and image vertically */
-            text-align: left; /* Align text to the left */
+            text-align: justify; /* Align text to the left */
             align-items: flex-start; /* Align items to the start */
         }
         .feedback-container img {
@@ -29,7 +38,7 @@
             margin-bottom: 10px;
         }
         .answer {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 20px;
             text-align: justify;
             display: flex;
@@ -46,14 +55,14 @@
         }
         .feedback {
             margin-top: 30px;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             text-align: justify; /* Justify text alignment */
         }
         .btn {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             padding: 10px 20px;
             color: white;
-            background-color:  #E91E63;
+            background-color: #E91E63;
             border-color:  #E91E63;
         }
 
@@ -104,7 +113,7 @@
 
         /* New class for score styling */
         .score-display {
-            font-size: 1rem; /* Adjust font size here */
+            font-size: 1.5rem; /* Adjust font size here */
             font-weight: bold; /* Make text bold */
             color: #004d00; /* Set text color */
             margin-top: 20px; /* Space above the score */

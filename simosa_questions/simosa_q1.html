@@ -9,32 +9,27 @@
     <link rel="stylesheet" href="style_simosa.css">
 
     <style>
-        .feedback-container {
-            display: flex;
-            flex-direction: column; /* Stack text and image vertically */
-            text-align: justify; /* Align text to the left */
-            align-items: flex-start; /* Align items to the start */
-        }
-        .feedback-container img {
-            max-width: 350px; /* Adjust as needed */
-            margin-top: 10px; /* Space between text and image */
+           body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            text-align: justify;
         }
     </style>
 
 </head>
 
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magic_dust_simosa.js"></script>    
 
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p>The SIMOSA app does not require location coordinates to function, but users must enable location permissions if they wish to view promotional offers available in their area.</p>
+                <p class="question-text">Answer the question below.</p>                
+
                 <div class="question">
-                    <p>Question 1: Is it recommended to use the SIMOSA app while connected to a VPN?</p>
+                    <p><b>Question 1</b>: Should you use the SIMOSA app while connected to a VPN?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -80,8 +75,9 @@
                         <div class="feedback-container">
                             <p class="feedback-correct">Awesome! You nailed it.</p>
                             <span>
-                                <p>The SIMOSA app does not require location coordinates to function. However, users must enable location permissions if they wish to view promotional offers available in their area. When users grant location permissions, the app transmits precise location coordinates.</p>
-<p>It is important to note that while a VPN can mask a user's IP address, making it appear as if the user is connecting from a different location, it does not provide complete anonymity. When traffic exits the VPN  tunnel, the precise location coordinates can potentially expose the user's location. As a result, Internet Service Providers (ISPs)  may detect VPN usage and take action against users who are at risk. That is because, in Pakistan, users must register for VPN use or face a cut-off. </p></span>
+                                <p>As mentioned, the SIMOSA app does not require location coordinates to function, but users must enable location permissions if they wish to view promotional offers available in their area. When users do grant location permissions, the app transmits precise location coordinates.</p>
+                                
+<p>It is important to note that while a VPN can mask a user's IP address, making it appear as if the user is connecting from a different location, the use of such a tool does not provide complete anonymity. When internet traffic exits the VPN tunnel, the precise location coordinates can potentially expose the user's location. As a result, Internet Service Providers (ISPs) may detect VPN usage and take action against users who are at risk. In Pakistan, users are required to register their VPN use or face a potential service cutoff.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect');

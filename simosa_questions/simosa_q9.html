@@ -8,18 +8,24 @@
     <link rel="stylesheet" href="style_simosa.css">
 
 </head>
-<body class="fixed-top-nav">
 
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magic_dust_simosa.js"></script>    
+<style>
+           body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            text-align: justify;
+        }
+</style>
+
+<body class="fixed-top-nav">
 
     <div class="watermark">Hamoon</div>
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p>Question 9: Is it possible to Machine in the Middle due to trusted certificate for the SIMOSA app?</p>
+                    <p><b>Question 9</b>: Is it possible to Machine in the Middle due to a trusted certificate for the SIMOSA app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -70,7 +76,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The SIMOSA app contains embedded certificates (<span style="color: blue;"> /assets/jazz_cert.crt</span> and <span style="color: blue;"> /assets/new_cert.der</span>), which makes it susceptible to a Man-in-the-Middle (MITM) attack.</p></span>
+                    <span><p>The SIMOSA app contains embedded certificates (<span style="color: blue;">/assets/jazz_cert.crt and /assets/new_cert.der</span>), which makes the app susceptible to a Machine in the Middle attack.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
