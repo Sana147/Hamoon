@@ -20,9 +20,10 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>PDF data spoofs are a type of phishing attack in which adversaries use PDFs that appear to be normal (but are not) in an attempt to trick users into providing personal information or downloading malware. </p>
                 <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p><b>Question 8</b>: Is it possible to spoof PDF data via the My Telenor?</p>
+                    <p><b>Question 8</b>: Is it possible to spoof PDF data via the My Telenor app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -65,7 +66,7 @@
         let score = 7 || 0;
 
         // Display initial score
-        document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+        document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
 
         function checkAnswer() {
             // Get the selected answer
@@ -83,9 +84,9 @@
                 if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>The My Telenor app offers users the option to either download the Tax Certificate PDF directly to their mobile device or have it sent to the provided email address. However, in our experiments, we were unable to spoof the PDF file. We will provide updates if new results emerge.</p>
+                        <span><p>The My Telenor app offers users the option to either download the tax certificate PDF directly to their mobile device or have it sent to the provided email address. Given this, it should be theoretically possible for a powerful adversary (such as an ISP with a trusted certificate) to intercept and spoof data. In our research experiments, however, we were unable to spoof the PDF file. As a result, our team considers the answer to this question to be inconclusive at the moment. We will do our best to provide an update if further information becomes available at a future date.</p>
 
-<p>That said, we did find an interesting detail. When a user requests to download the tax certificate, the app transmits the user's mobile number and OTP to the app server. After successful authentication, the app server responds with a URL to retrieve the tax certificate. The request and response messages are shown in the images below.</p> 
+<p>That said, our team did discover an interesting detail in our experiments on this issue. When a user requests to download the tax certificate, the My Telenor app transmits the user's mobile number and OTP to the app server. After successful authentication, the app server responds with a URL to retrieve the tax certificate. The request and response messages are shown in the images below.</p> 
                         
                         <div class="img-container">
                             <img src="request_download_Tax_Certificate_marked.png" alt="User Mobile Number">
@@ -93,11 +94,11 @@
                         <div class="img-container">
                             <img src="response_download_Tax_Certificate_marked.png" alt="User Mobile Number">
                         </div>
-                        <p> Interestingly, the link can be accessed in any browser to retrieve the tax certificate without requiring authentication.</p>
+                        <p>Interestingly, the link can be accessed in any browser to retrieve the tax certificate without requiring authentication.</p>
                         <div class="img-container">
                             <img src="url_tax_mytelenor_marked.png" alt="User Mobile Number">
                         </div> 
-                        <p>To understand the attack path, consider a scenario where the ISP possesses a valid TLS certificate. With this, the ISP can intercept and observe all traffic between the user's mobile phone and the app server. The user's mobile number is easily accessible as it is included in every request sent to the server. If the user requests to download the tax certificate, the attacker, positioned in the data path, can capture the URL for downloading the certificate. This URL can then be used to access the user's citizen identity number. Once the attacker has the user's mobile number and citizen identity number, they possess sufficient information to further target the user, potentially uncovering additional personal details such as the user's physical address, which could be exploited for surveillance purposes. </p></span>
+                        <p>To understand the potential attack path associated with this process, consider a scenario in which the ISP possesses a valid TLS certificate allowing the ISP to intercept and observe all traffic between the user's mobile phone and the app server. The user's mobile number is easily accessible in this manner as it is included in every request sent to the server. Accordingly, if the user requests to download the tax certificate, an attacker positioned in the data path can capture the URL for downloading the certificate. This URL can then be accessed in any browser and used to access the user's citizen identity number. Once the attacker has the user's mobile number and citizen identity number, they possess sufficient information to further target the user, potentially uncovering additional personal details such as the user's physical address, which could be exploited for surveillance purposes.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

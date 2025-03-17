@@ -58,7 +58,7 @@
         let score = 8 || 0;
 
         // Display initial score
-        document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+        document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
 
         function checkAnswer() {
             // Get the selected answer
@@ -73,7 +73,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The My Telenor app contains embedded certificates (<span style="color: blue;">assets/cbg_root.cer</span> and <span style="color: blue;"> res/GX.pem</span>),  which makes it susceptible to a Man-in-the-Middle (MITM) attack.</p></span>
+                    <span><p>The My Telenor app contains embedded certificates (<span style="color: blue;">assets/cbg_root.cer and res/GX.pem</span>), which makes the app susceptible to a Machine-in-the-Middle attack.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -88,7 +88,7 @@
                     score = 8;
                 }
 
-                document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+                document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
                 localStorage.setItem('score', score);
             } else {
                 // No option selected

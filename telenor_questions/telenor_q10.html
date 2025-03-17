@@ -20,21 +20,23 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p>Some apps contain a feature that informs users if login activity from an unknown device is detected. These alerts are often indications of an unauthorized attempt to gain access to a user’s account.</p>
+                
                 <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p><b>Question 10</b>: The My Telenor app does not have the feature to detect unknown login activity. Is this a problem, and how do we go about it?</p>
+                    <p><b>Question 10</b>: The My Telenor app does not have a feature to detect unknown login activity. Is this a problem, and if so, how can users mitigate the associated risk?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
                         <label class="form-check-label" for="yes">
-                            Yes. 
+                            Yes, this is a problem, and one way to mitigate it is to be on alert if you receive an OTP that you did not request. 
                         </label>
                     </div>
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="no" value="no">
                         <label class="form-check-label" for="no">
-                            No. 
+                            No, it is not a problem.
                         </label>
                     </div>
                     <button type="button" class="btn btn-submit" onclick="checkAnswer()">Submit</button>
@@ -58,7 +60,7 @@
         let score = 9 || 0;
 
         // Display initial score
-        document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+        document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
 
         function checkAnswer() {
             // Get the selected answer
@@ -73,21 +75,21 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> This is a significant issue. One way to mitigate the risk is to be cautious if you receive an OTP you did not request, as it could indicate a potential compromise of your account.</p></span>
+                    <span><p> This is a significant issue. One way to mitigate the risk associated with it is to be cautious if you receive an OTP you did not request. This could indicate a potential compromise of your account, and you should take immediate action (e.g., locking the SIM or the phone) to secure it.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
                     if (score <= 9) {score += 1;}
 
                 } else {
-                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> <span><p>Please select the correct answer, "Yes" to learn the reason</p></span> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> <span><p>Please select the correct answer, "Yes" to learn the reason.</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
                     score = 9;
                 }
 
-                document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+                document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
                 localStorage.setItem('score', score);
             } else {
                 // No option selected
