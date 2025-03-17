@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="style_uptcl.css">
 
 </head>
+
+<style>
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+</style>
+
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p>PDF data spoofs are a type of phishing attack in which adversaries use PDFs that appear to be normal (but are not) in an attempt to trick users into providing personal information or downloading malware. </p>
                 <p class="question-text">Answer the question below.</p>                                        
                 <div class="question">
                     <p><b>Question 8</b>: Is it possible to spoof PDF data via the UPTCL?</p>
@@ -58,7 +67,7 @@
         let score = 7 || 0;
 
         // Display initial score
-        document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+        document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
 
         function checkAnswer() {
             // Get the selected answer
@@ -76,7 +85,7 @@
                 if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>While it is possible for a powerful adversary, such as an ISP with a trusted certificate, to intercept and spoof PDF data exchanged between the app and the server via the tax certificate file, we were unable to replicate this in our experiments. As a result, we consider this issue inconclusive for now. We will provide an update if further developments occur.</p> 
+                        <span><p>While it is theoretically possible for a powerful adversary (such as an ISP with a trusted certificate) to intercept and spoof PDF data exchanged between the app and the server via the tax certificate file, we were unable to replicate this in our research experiments. By contrast, we were able to replicate similar processes with other apps that share the same security issue. As a result, our team considers the answer to this question to be inconclusive at the moment. We will do our best to provide an update if further information on this issue becomes available at a future date.</p> 
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

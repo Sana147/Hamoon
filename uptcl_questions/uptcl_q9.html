@@ -6,8 +6,14 @@
     <title>UPTCL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_uptcl.css">
-
 </head>
+
+<style>
+        body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+</style>
 
 <body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
@@ -54,7 +60,7 @@
         let score = 8 || 0;
 
         // Display initial score
-        document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+        document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
 
         function checkAnswer() {
             // Get the selected answer
@@ -69,7 +75,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The UPTCL app does not an embedded trusted certificate. So, it is not possible to do Machine in The Middle unless the ISP has a trusted certificate.</p></span>
+                    <span><p>The UPTCL app does not use an embedded trusted certificate. So, it is not possible for an adversary to perform a Machine in The Middle attack unless the ISP has a trusted certificate.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -84,7 +90,7 @@
                     score = 8;
                 }
 
-                document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+                document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
                 localStorage.setItem('score', score);
             } else {
                 // No option selected

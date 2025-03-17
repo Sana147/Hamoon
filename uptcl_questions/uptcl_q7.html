@@ -61,7 +61,7 @@
         let score = 6 || 0;
 
         // Display initial score
-        document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+        document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
 
         function checkAnswer() {
             // Get the selected answer
@@ -76,7 +76,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p> 
-                    <span><p>SSL pinning is a technique that helps to prevent MITM attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. </p></span>
+                    <span><p>Yes, the UPTCL app uses SSL pinning. With SSL pinning, whenever the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. This is a security benefit that helps reduce the chance of Machine in the Middle attacks by ensuring the app only communicates with trusted servers (a good thing!).</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
@@ -90,7 +90,7 @@
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied
                 }
 
-                document.getElementById('score').textContent = `Your score is ${score} out of 10`;
+                document.getElementById('score').textContent = `Your score is ${score} out of 10.`;
                 localStorage.setItem('score', score);
                 score = 6;
             } else {
