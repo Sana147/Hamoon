@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style_uptcl.css">
     <style>
         body {
-/*            background-color: #d3f9d8; /* Light green color */
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
         }
         .img-container {
             display: flex;
@@ -31,7 +32,7 @@
             <div class="col-md-8 offset-md-2">
                 <p class="question-text">Answer the question below.</p>                                        
                 <div class="question">
-                    <p><b>Question 3</b>: Does the UPTCL app collect additional user credentials beyond those necessary for its functionality?</p>
+                    <p><b>Question 3</b>: Does the UPTCL app collect additional user credentials beyond those necessary for its core functionality?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -80,7 +81,10 @@
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span>
-                            <p>The UPTCL app does not collect unnecessary user credentials. Logging in only requires the mobile number and a One-Time Password (OTP) sent to that number. However, the app stores the user's full name, call history, and SMS history for the past fourteen days. Additionally, it allows users to download a tax certificate, which includes the mobile number, full name, national identity number, and physical address of the user. The image below shows a tax certificate downloaded via the UPTCL app, with the user's mobile number, full name, national identity number, and physical address redacted for privacy. </p>
+                            <p>Unlike some of the other apps studied for this project, the UPTCL app does not collect unnecessary user credentials. Logging in only requires the mobile number and a One-Time Password (OTP) sent to that number.</p>
+                            
+                            <p>The app does, however, store a user's full name, call history, and SMS history for the past fourteen days. It also allows users to download a tax certificate, which includes the user’s mobile number, full name, national identity number, and physical address. The image below shows a tax certificate downloaded via the UPTCL app, with the user's mobile number, full name, national identity number, and physical address redacted for privacy.</p> 
+ 
                         <div class="img-container">
                             <img src="UPTCL_tax.png" alt="Qeemat Punjab Location Coordinates">
                         </div>                                                

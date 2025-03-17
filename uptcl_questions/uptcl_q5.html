@@ -20,7 +20,7 @@
             <div class="col-md-8 offset-md-2">
                 <p class="question-text">Answer the question below.</p>                                        
                 <div class="question">
-                    <p><b>Question 5</b>: Should you be concerned if your phone is rooted, the UPTCL app is installed on it, and your device is confiscated?</p>
+                    <p><b>Question 5</b>: Does the installation of the UPTCL app on a rooted phone create any unique security concerns if the device is subsequently confiscated?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -71,7 +71,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `<p class="feedback-correct"> Awesome! You nailed it.</p> 
-                    <span><p>No, the UPTCL app cannot be installed on a rooted device because it has root detection capabilities.</p>
+                    <span><p>Once again, the answer is no because this scenario cannot occur. As noted above, the UPTCL app cannot be installed on a rooted device because it has root detection capabilities.</p>
                         `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

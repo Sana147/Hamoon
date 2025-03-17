@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style_uptcl.css">
     <style>
         body {
-/*            background-color: #d3f9d8; /* Light green color */
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
         }
         .img-container {
             display: flex;
@@ -29,9 +30,10 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p>Some users choose to root (or “unlock”) their phone to allow for more control and customization. A rooted phone is an Android device that has been modified to gain superuser access, also known as root access. Not all apps allow for installation on rooted phones.</p>
                 <p class="question-text">Answer the question below.</p>                                        
                 <div class="question">
-                    <p><b>Question 4</b>: Should concerns arise if you have a rooted phone, the UPTCL app is installed on the device, and your phone is subsequently stolen?</p>
+                    <p><b>Question 4</b>: Does the installation of the UPTCL app on a rooted phone create any unique security concerns if the device is subsequently stolen?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -82,7 +84,7 @@
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>No, the UPTCL app cannot be installed on a rooted device because it has root detection capabilities. </p></span> 
+                        <span><p>No, this scenario does not present any unique security threats because it cannot, in fact, occur. The UPTCL app cannot be installed on a rooted device because it has root detection capabilities.</p></span> 
                         
                     `;
                     feedback.classList.add('feedback-correct');
