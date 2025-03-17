@@ -8,17 +8,23 @@
     <link rel="stylesheet" href="style_telenor.css">
 </head>
 
-<body class="fixed-top-nav">
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magic_dust_telenor.js"></script>    
+<style>
+         body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            }
+</style>
 
+<body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p>The My Telenor app stores the location coordinates it collects in plaintext.</p>
+                <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p>Question 2: Is it possible to falsify location coordinates using the My Telenor app?</p>
+                    <p><b>Question 2</b>: Is it possible for an adversary to falsify a user’s location coordinates using the My Telenor app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -79,7 +85,7 @@
                 if (answerValue === 'inconclusive') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>While it is possible for a powerful adversary, such as an ISP with a trusted certificate, to intercept the communication, view the location coordinates in plaintext, and modify them with spoofed data before it is stored on the app's server, we were unable to replicate this in our experiments. As a result, we consider this issue inconclusive at the moment. We will provide an update if further information becomes available.</p>
+                        <span><p>While it is technically possible for a powerful adversary (such as an ISP with a trusted certificate) to intercept a communication, view the location coordinates in plaintext, and modify them with spoofed data before it is stored on the app's server, we were unable to replicate this in our research experiments. By contrast, we were able to replicate similar processes with other apps that share the same security issue. As a result, our team considers the answer to this question to be inconclusive at the moment. We will do our best to provide an update if further information on this issue becomes available at a future date.</p></span>
                         
                     `;
                     feedback.classList.add('feedback-correct');
@@ -89,7 +95,7 @@
                     score = 2;
                 } else if (answerValue === 'yes') {
                     feedback.innerHTML = `
-                        <p class="feedback-incorrect">Oops, that's not quite right. Try again</p> 
+                        <p class="feedback-incorrect">Oops, that's not quite right. Try again!</p> 
                         <span><p>Please select the correct answer, "Inconclusive" to learn the reason.</p></span>
                     `;
                     feedback.classList.add('feedback-incorrect');

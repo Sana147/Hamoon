@@ -17,20 +17,22 @@
             height: auto; /* Maintain aspect ratio */
             margin-bottom: 10px; /* Space between images */
         }
+         body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+            }
     </style>
 </head>
 
 <body class="fixed-top-nav">
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magic_dust_telenor.js"></script>    
-
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p>Question 3: Does the My Telenor app collect additional user credentials beyond those necessary for its functionality?</p>
+                    <p><b>Question 3</b>: Does the My Telenor app collect additional user credentials beyond those necessary for its core functionality?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -79,7 +81,8 @@
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span>
-                            <p>The My Telenor app does not collect unnecessary user credentials. To log in, it only requires the mobile number and a One-Time Password (OTP) sent to that number. However, the app stores the user's full name, call history, and SMS history for the past seven days. Additionally, it allows users to download a tax certificate, which includes the mobile number and national identity number. The image below shows a tax certificate downloaded via the My Telenor app, with the user's full name, mobile number, and national identity number redacted for privacy. </p>
+                            <p>Unlike some of the other apps studied for this project, the My Telenor app does not collect unnecessary user credentials. To log in, it only requires the mobile number and a One-Time Password (OTP) sent to that number.</p>
+                        <p>The app does, however, store a user's full name, call history, and SMS history for the past seven days. It allows users to download a tax certificate, which includes the user’s associated mobile number and national identity number. The image below shows a tax certificate downloaded via the My Telenor app, with the user's full name, mobile number, and national identity number redacted for privacy.</p>                                
                         <div class="img-container">
                             <img src="MyTelenor_tax_cert.png" alt="Qeemat Punjab Location Coordinates">
                         </div>                                                
