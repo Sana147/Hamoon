@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="style_zong.css">
 </head>
 
-<body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magicdust.js"></script>
+<style>
+       body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+</style>
 
+<body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>SSL pinning is a technique that helps to prevent Machine in the Middle attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. In general, this is a beneficial security feature.</p>
+                <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p>Question 7: Does the My Zong app uses SSL pinning?</p>
+                    <p><b>Question 7</b>: Does the My Zong app use SSL pinning?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -71,7 +76,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p> 
-                    <span><p>SSL pinning is a technique that helps to prevent MITM attacks by hardcoding the SSL/TLS certificate’s public key into the app or device. This means that when the app or device communicates with the server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. The My Zong app uses SSL pinning, which is a good thing. </p></span>
+                    <span><p>Yes, the My Zong app uses SSL pinning. With SSL pinning, whenever an app or device communicates with a server, it will compare the server’s SSL/TLS certificate’s public key with the one that is hardcoded into the app or device. This is a security benefit that helps reduce the chance of Machine in the Middle attacks by ensuring the app only communicates with trusted servers (a good thing!).</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

@@ -7,6 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_zong.css">
     <style>
+       body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+
         .img-container {
             display: flex;
             flex-direction: column; /* Stack images vertically */
@@ -21,17 +26,14 @@
 </head>
 
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magicdust.js"></script>
-
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p>Question 3: Does the My Zong app collect additional user credentials beyond those necessary for its functionality?</p>
+                    <p><b>Question 3</b>: Does the My Zong app collect additional user credentials beyond those necessary for its core functionality?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -80,7 +82,8 @@
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span>
-                            <p>The My Zong app does not collect unnecessary user credentials. To log in, it only requires the mobile number and a One-Time Password (OTP) sent to that number. However, the app stores the user's full name, call history, and SMS history for the past seven days. Additionally, it allows users to download a tax certificate, which includes the mobile number and national identity number. The image below shows a tax certificate obtained via the My Zong app, with the user's mobile number and national identity number redacted for privacy. </p>
+                            <p>Unlike some of the other apps studied for this project, the My Zong app does not collect unnecessary user credentials. To log in, it only requires the mobile number and a One-Time Password (OTP) sent to that number.</p>
+                        <p>The app does, however, store a user's full name, call history, and SMS history for the past seven days. It also allows users to download a tax certificate, which includes the user’s associated mobile number and national identity number. The image below shows a tax certificate obtained via the My Zong app, with the user's mobile number and national identity number redacted for privacy.</p>
                         <div class="img-container">
                             <img src="My_Zong_Tax.png" alt="Qeemat Punjab Location Coordinates">
                         </div>                  

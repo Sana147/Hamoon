@@ -6,19 +6,23 @@
     <title>My Zong</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_zong.css">
-
 </head>
-<body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magicdust.js"></script>
 
+<style>
+       body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+</style>
+
+<body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p>Question 9: Is it possible to Machine in the Middle due to trusted certificate for the My Zong app?</p>
+                    <p><b>Question 9</b>: Is it possible to do Machine in the Middle due to a trusted certificate for the My Zong app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -69,7 +73,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The My Zong app contains embedded certificates (<span style="color: blue;">assets/golootlo_key_prod.pem</span> and <span style="color: blue;">  assets/zong-staging-public-key.pem</span>), which makes it susceptible to a Machine-in-the-Middle (MitM) attack.</p></span>
+                    <span><p>The My Zong app contains embedded certificates (<span style="color: blue;">assets/golootlo_key_prod.pem and assets/zong-staging-public-key.pem</span>), which makes the app susceptible to a Machine-in-the-Middle attack.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="style_zong.css">
 </head>
 
+<style>
+       body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+</style>
+
 <body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magicdust.js"></script>
 
     <div class="watermark">Hamoon</div>
 
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p>Question 5: Should you be concerned if your phone is rooted, the My Zong app is installed on it, and your device is confiscated?</p>
+                    <p><b>Question 5</b>: Does the installation of the My Zong app on a rooted phone create any unique security concerns if the device is later confiscated?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -70,11 +75,11 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct"> Awesome! You nailed it.</p> 
-                        <span><p> Yes, the reason is same as for Question 4, i.e., because of the My Zong app storing the phone number, full name, and coarse location of the at-risk user in plaintext in the root directory of the Android File System (<span style="color: blue;">cd /data/data/com.zong.customercare/shared_pref/com. zong.customercare_preferences.xml</span>). The image below shows redacted mobile number of the user (<span style="color: purple;">starting with 318</span>) along with the full name and coarse location shown in plaintext in the root directory of the Android File System.</p>
+                        <span><p>In this type of situation, confiscation presents the same risks as theft (from Question 4) because the My Zong app stores a user’s phone number, full name, and coarse location in plaintext in the root directory of the Android File System (<span style="color: blue;">cd /data/data/com.zong.customercare/shared_pref/com. zong.customercare_preferences.xml</span>). The image below shows the redacted mobile number of a user (starting with 318) along with their full name and coarse location shown in plaintext in the root directory of the Android File System.</p>
                         <div class="img-container">
                             <img src="myzong_androidmemoryforensics.png" alt="User Mobile Number">
                         </div>
-<p>To understand the attack path, consider a scenario where an at-risk user's device is confiscated. The My Zong app is installed on the device, but the attacker is unaware of the user's phone number. However, the attacker can extract the phone number, full name, and coarse location from the root directory of the Android file system. Once the phone number is obtained, the attacker can use it to log into the app. Since the app does not require a user-specified password and only asks for a One-Time Password (OTP) sent to the mobile device, the attacker can gain access to the app simply by knowing the phone number. Once logged in, the attacker can access sensitive information, including the call history (from the last fourteen days), SMS history (from the last fourteen days), and national identity number (via the tax certificate).</p> </span>
+<p>To understand the potential security risks associated with this type of storage, consider a scenario in which an at-risk user's device is confiscated by an adversary. Although the attacker is initially unaware of the user's phone number, because the My Zong app is installed on the device the attacker can extract the user’s phone number, full name, and coarse location from the root directory of the Android file system. Once the phone number is obtained, the attacker can then use it to log into the app. Because the app does not require a user-specified password, and instead only asks for an OTP sent to the mobile device, the attacker can gain access to the app simply by knowing the phone number. Once logged in, the attacker can access sensitive information, including the call history for the last fourteen days, SMS history for the last fourteen days, and national identity number (via the downloadable tax certificate).</p> </span>
                         `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

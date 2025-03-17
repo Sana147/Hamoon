@@ -6,19 +6,24 @@
     <title>My Zong</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_zong.css">
-
 </head>
-<body class="fixed-top-nav">
-    <!-- Magic Dust Container -->
-    <div id="magic-dust" class="magic-dust"></div>
-    <script src="magicdust.js"></script>
 
+<style>
+       body {
+            font-family: 'Calibri', sans-serif;
+            font-size: 1.5rem;
+        }
+</style>
+
+<body class="fixed-top-nav">
     <div class="watermark">Hamoon</div>
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>PDF data spoofs are a type of phishing attack in which adversaries use PDFs that appear to be normal (but are not) in an attempt to trick users into providing personal information or downloading malware. </p>
+                <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p>Question 8: Is it possible to spoof PDF data via the My Zong app?</p>
+                    <p><b>Question 8</b>: Is it possible to spoof PDF data via the My Zong app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -79,7 +84,7 @@
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>The My Zong app gives the option to download the PDF file for Tax Certificate on the mobile device. However, due to a bug in the app, the PDF file is never downloaded even though the console says that the PDF file is downloaded. Because there is no PDF file sent by the server to the mobile device, we conclude it is not possible to spoof data via PDF files. </p> 
+                        <span><p>The My Zong app gives users the option to download a PDF file for the Tax Certificate on their mobile device. However, due to a bug in the app, the PDF file is never downloaded even though the console says that the PDF file is downloaded. Because there is no PDF file sent by the server to the mobile device, our research team concluded it is not possible to spoof data via PDF files through the My Zong app (pending any resolution of the bug).</p> 
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
