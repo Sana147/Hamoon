@@ -21,6 +21,7 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p>PDF data spoofs are a type of phishing attack in which adversaries use PDFs that appear to be normal (but are not) in an attempt to trick users into providing personal information or downloading malware. </p>
                 <p class="question-text">Answer the question below.</p>                
 
                 <div class="question">
@@ -85,9 +86,9 @@
                 if (answerValue === 'no') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p>The Qeemat Punjab app does not use PDF files for data storage or transmission, which removes the risk of spoofing PDF data. However, there is a potential vulnerability in the app related to JSON data, where attackers can spoof and tamper with the prices of agri-poultry products. The images below illustrate this, showing the original prices (left) and the spoofed prices (right). </p> 
+                        <span><p>The Qeemat Punjab app does not use PDF files for data storage or transmission, which removes the risk of spoofing PDF data. However, there is a potential vulnerability in the app related to JSON data, where attackers can spoof and tamper with the prices of agri-poultry products. The images below illustrate this, showing the original prices (left) and the spoofed prices (right).</p> 
                     <img src="qeemat_punjab_orig_prices.png" alt="original" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
-                    <img src="qeemat_punjab_fuzzed_prices.png" alt="fuzzed" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 100px;">
+                    <img src="qeemat_punjab_fuzzed_prices.png" alt="fuzzed" style="max-width: 250px; height: auto; vertical-align: middle; margin-left: 94px;">
 </span>
                     `;
                     feedback.classList.add('feedback-correct');

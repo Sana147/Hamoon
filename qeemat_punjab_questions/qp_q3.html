@@ -35,7 +35,7 @@
             <div class="col-md-8 offset-md-2">
                 <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p><b>Question 3</b>: Does the Qeemat Punjab app collect additional user credentials beyond those required for its core functionality?</p>
+                    <p><b>Question 3</b>: Does the Qeemat Punjab app collect additional user credentials beyond those necessary for its core functionality?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -84,12 +84,11 @@
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
                         <span>
-                            <p>The Qeemat Punjab app offers easy access to its features without user registration. Users can browse agricultural product prices freely without sharing personal details. However, things take a turn when users wish to submit suggestions or complaints about the app's services or report any malpractices. To do so, they must first complete a registration process.
-During the registration, the app asks for a troubling array of personal information. That includes sensitive data such as the user's gender, guardian's name, profession, mobile number, physical address, citizen identity number, and even the relationship between the user and their guardian. These details are mandatory for users wishing to voice their concerns. Below is a redacted sample of these credentials required for registration, highlighting the level of personal information collected by the app. </p>
+                            <p>The Qeemat Punjab app offers easy access to its features without user registration. Users can freely browse agricultural product prices without sharing personal details. As mentioned above, however, this freedom takes a turn when users wish to submit suggestions or complaints about the app's services or report malpractices. To do so, they must first complete a registration process. During the registration, the app asks for an expansive array of personal information including sensitive data such as the user's gender, profession, mobile number, physical address, and citizen identity number. When applicable, questions are also asked about a guardian’s name and the relationship between the user and their guardian. These details are required to be provided if users wish to voice their concerns. Below is a redacted sample of the credentials required for registration, highlighting the level of personal information collected by the app.</p>
                         <div class="img-container">
                             <img src="qeematpunjab_login.png" alt="Qeemat Punjab Location Coordinates">
                         </div>
-                        <p> But there's more to it. Once registered, users must also grant the app access to their location. Without this permission, they are unable to submit any complaints or suggestions. That becomes especially alarming for vulnerable individuals, such as journalists and activists, who might be trying to report corruption or highlight an issue involving a local agro-businessman. These users, already at risk,  may find themselves further exposed. With the help of a corrupt local official, a corrupt person in business could obtain the user's credentials and exploit them. The (state, non-state, or hybrid) attacker could use location data to track these individuals, putting them at greater risk of surveillance,  harassment, or targeted attacks.  </p>
+                        <p> Once registered, users must also go a step further and grant the app access to their location. Failure to do so prevents them from submitting complaints or suggestions. This requirement becomes especially problematic for vulnerable individuals, such as journalists and activists, who might be trying to report corruption or highlight an issue involving a local agro-businessman. These users, already at risk, may find themselves further exposed if they share their location. With the help of a corrupt local official, a corrupt person in business could obtain the user's credentials and exploit them. The (state, non-state, or hybrid) attacker could use location data to track these individuals—putting them at greater risk of surveillance, harassment, or targeted attacks. </p>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

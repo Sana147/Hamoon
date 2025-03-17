@@ -23,9 +23,10 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <p>Some users choose to root (or “unlock”) their phone to allow for more control and customization. A rooted phone is an Android device that has been modified to gain superuser access, also known as root access.</p>
                 <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p><b>Question 4</b>: Should concerns be raised if your phone is rooted, the Qeemat Punjab app is installed on the device, and the phone is subsequently stolen?</p>
+                    <p><b>Question 4</b>: Does the installation of the Qeemat Punjab app on a rooted phone create any unique security concerns if the device is later stolen?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -77,14 +78,14 @@
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `
                         <p class="feedback-correct">Awesome! You nailed it.</p> 
-                        <span><p> Yes, this is because the Qeemat Punjab app stores user credentials in plaintext within the root directory of the Android File System. Specifically, these credentials can be found at the following path: <span style="color: blue;">cd data/data/com.pitb.qeematpunjab/shared_prefs/ focial-session.xml</span>. The image below displays redacted information, including the mobile number, email ID, national identity number, and other personal details of an individual stored in plaintext in the root directory of the Android File System.</p>
+                        <span><p> Yes, because the Qeemat Punjab app stores user credentials in plaintext within the root directory of the Android File System. These credentials can be found at the following path: <span style="color: blue;">cd data/data/com.pitb.qeematpunjab/shared_prefs/ focial-session.xml</span>. The image below displays redacted personal information (including mobile number, email ID, national identity number, and other personal details) stored in plaintext in the root directory of the Android File System.</p>
                         <div class="img-container">
                             <img src="qeemat_punjab_android_file_system.png" alt="User Mobile Number">
                         </div>
                         <div class="img-container">
                             <img src="qeemat_punjab_android_file_system1.png" alt="Call History">
                         </div>
-                        <p>If the device is stolen, attackers may be able to extract the user credentials stored on it, potentially using this information to monitor or spy on at-risk individuals.</p></span>
+                        <p>Because this information is stored in an insecure manner, attackers may be able to extract it if the device is stolen—potentially using the information to monitor or spy on at-risk individuals.</p></span>
 
                     `;
                     feedback.classList.add('feedback-correct');

@@ -25,7 +25,7 @@
             <div class="col-md-8 offset-md-2">
                 <p class="question-text">Answer the question below.</p>                            
                 <div class="question">
-                    <p><b>Question 6</b>: Does the Qeemat Punjab app has root detection capability?</p>
+                    <p><b>Question 6</b>: Does the Qeemat Punjab app have root detection functionality? Root detection means users cannot install the app on a rooted phone.</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -77,8 +77,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `<p class="feedback-correct">Awesome! You nailed it.</p> 
-                    <span><p>Root detection is a security measure that prevents apps from being installed on rooted phones. A rooted phone refers to an Android device modified to grant superuser or root access, allowing users to bypass limitations imposed by the manufacturer and the operating system, thereby gaining complete control over the phone’s software and settings. </p>
-<p>The Qeemat Punjab app does not feature root detection, allowing users to install the app on rooted phones. While this in itself is not necessarily a security issue, it becomes a significant concern if the rooted phone is stolen or confiscated. This is because the app stores user credentials in plaintext within the root directory of the Android File System. If an attacker gains access to the device, they could extract these unencrypted credentials, potentially using the information to track or target vulnerable individuals..
+                    <span><p>The Qeemat Punjab app does not feature root detection, allowing users to install the app on rooted phones. While this in and of itself is not necessarily a security issue, as noted in Questions 4 and 5 it becomes a significant concern if a rooted phone with Qeemat Punjab installed is stolen or confiscated. This is because the app stores user credentials in plaintext within the root directory of the Android File System. If an attacker gains access to the device, they may be able to extract these unencrypted credentials and use the information to track or target vulnerable individuals.</p>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

@@ -23,15 +23,16 @@
     <div class="container quiz-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+            <p>Some apps contain a feature that informs users if login activity from an unknown device is detected. These alerts are often indications of an unauthorized attempt to gain access to a user’s account.</p>
                 <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p><b>Question 10</b>: The Qeemat Punjab app lacks a feature to detect unknown login activity. Is this a potential security issue, and how can it be addressed?</p>
+                    <p><b>Question 10</b>: The Qeemat Punjab app lacks a feature to detect unknown login activity. Is this a potential security issue, and if so, how can it be addressed?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
                         <input class="form-check-input" type="radio" name="answer" id="yes" value="yes">
                         <label class="form-check-label" for="yes">
-                            Yes. 
+                            Yes, this is a problem, and one way to mitigate it is to change your password frequently.
                         </label>
                     </div>
                     <div class="form-check answer">
@@ -76,13 +77,14 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> This is a significant issue. One effective way to mitigate the risk is by changing the password regularly to enhance security.</p></span>
+                    <span><p> The Qeemat Punjab app cannot detect login activity from an unknown device. This presents a significant security risk because once an attacker obtains access to an at-risk user's account, they are able to perform malicious actions without the user receiving any warning that login activity has occurred from an unknown device.</p>
+                    <p>One way to reduce the risks associated with this security shortcoming is for users to change their passwords frequently. A more robust solution, however, would be a top-down approach in which stronger authentication measures—such as multi-factor authentication—were implemented within the app. This would provide a more vigorous defense against unauthorized access and protect users from potential security breaches.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
 
                 } else {
-                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> <span><p>Please select "Yes" to learn the reason</p></span> 
+                    feedback.innerHTML = `<p>Oops, that's not quite right. Try again!</p> <span><p>Please select "Yes" to learn the reason.</p></span> 
                     `;
                     feedback.classList.add('feedback-incorrect');
                     feedback.classList.remove('feedback-correct'); // Remove incorrect feedback styling if previously applied

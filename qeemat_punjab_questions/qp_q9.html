@@ -25,7 +25,7 @@
             <div class="col-md-8 offset-md-2">
                 <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p><b>Question 9</b>: Is it possible to Machine in the Middle due to the trusted certificate for the Qeemat Punjab app?</p>
+                    <p><b>Question 9</b>: Is it possible to Machine in the Middle due to a trusted certificate for the Qeemat Punjab app?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -76,7 +76,7 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'no') {
                     feedback.innerHTML = `<p>Awesome! You nailed it.</p>
-                    <span><p> The Qeemat Punjab app does not contain an embedded certificate. So, unless the attackers posses a valid TLS certificate, it is not possible to do MitM attack using this app.</p></span>
+                    <span><p>The Qeemat Punjab app does not contain an embedded certificate—meaning unless an attacker possesses a valid TLS certificate, it is not possible for them to perform a Machine in the Middle attack using the app.</p></span>
                     `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied

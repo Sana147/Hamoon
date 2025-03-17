@@ -25,7 +25,7 @@
             <div class="col-md-8 offset-md-2">
             <p class="question-text">Answer the question below.</p>                
                 <div class="question">
-                    <p><b>Question 5</b>: Should you be concerned if your phone is rooted, the Qeemat Punjab app is installed, and your device is confiscated?</p>
+                    <p><b>Question 5</b>: Does the installation of the Qeemat Punjab app on a rooted phone create any unique security concerns if the device is later confiscated?</p>
                 </div>
                 <form id="quizForm">
                     <div class="form-check answer">
@@ -76,14 +76,16 @@
                 // Provide feedback based on the selected answer
                 if (answerValue === 'yes') {
                     feedback.innerHTML = `<p class="feedback-correct"> Awesome! You nailed it.</p> 
-                        <span><p> Yes, the reason is the same as for Question 4: the Qeemat Punjab app stores user credentials in plaintext within the root directory of the Android File System. Specifically, these credentials are located at: <span style="color: blue;">cd data/data/com.pitb.qeematpunjab/shared_prefs/ focial-session.xml</span>. The image below shows redacted details, including the mobile number, email ID, national identity number, and other personal information, all stored in plaintext in the root directory of the Android File System.</p>
+                        <span><p>In this type of situation, confiscation presents the same risks as theft (from Question 4). Because the Qeemat Punjab app stores user credentials in plaintext within the root directory of the Android File System, an attacker who has confiscated a rooted phone can exfiltrate user credentials (including mobile number, email ID, national identity number, and other personal information) from the <span style="color: blue;">cd data/data/com.pitb.qeematpunjab/shared_prefs/ focial-session.xml</span> directory and use that information to monitor or spy on at-risk users.
+
+<p>The image below shows redacted user credentials stored in plaintext in the root directory of the Android File System.</p>
                        <div class="img-container">
                             <img src="qeemat_punjab_android_file_system.png" alt="User Mobile Number">
                         </div>
                         <div class="img-container">
                             <img src="qeemat_punjab_android_file_system1.png" alt="Call History">
                         </div>
-                        <p>In the event of device confiscation, attackers can extract user credentials stored on the device, potentially using this information to monitor or spy on at-risk individuals. </p></span>
+</span>
                                                 `;
                     feedback.classList.add('feedback-correct');
                     feedback.classList.remove('feedback-incorrect'); // Remove incorrect feedback styling if previously applied
